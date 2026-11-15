@@ -3,6 +3,8 @@
 A complete introductory teaching package for high-school students: a one-hour
 meeting, a guided particle simulation, Colab practice and independent work at home.
 
+**[Student website](https://ybs-lab.github.io/alpha-mentorship/)** · **[GitHub repository](https://github.com/ybs-lab/alpha-mentorship)**
+
 ## Start here
 - [Mentor facilitation guide](mentor/facilitation_guide.md)
 - [60-minute agenda](meetings/01_introduction/agenda.md)
@@ -46,14 +48,16 @@ Optional browser checks: install Playwright and Chromium, then run
 `python tools/check_browser.py`. See [contributing](CONTRIBUTING.md).
 
 ## Hosting and backup
-Set `repository` to the actual `owner/repository` in site/config.json after creating
-the GitHub repository. Push main, enable GitHub Pages with GitHub Actions, and the
-included workflow builds/deploys dist/. The default project address is
-`https://<owner>.github.io/<repository>/`; this template is not a deployment claim.
-If no remote is configured, the local site offers notebook downloads and Colab upload.
-After authenticating GitHub CLI, `python tools/publish_github.py --owner OWNER` can
-create a new public repository, configure Colab links, push and enable Pages. It
-requires the local initial commit and does not replace unrelated remote history.
+The source and full Git history are backed up in
+[ybs-lab/alpha-mentorship](https://github.com/ybs-lab/alpha-mentorship).
+The [student book](https://ybs-lab.github.io/alpha-mentorship/) is deployed through
+GitHub Actions. Pushing `main` rebuilds and publishes the student site. Notebook
+buttons open the corresponding public GitHub templates in Colab.
+
+For a separate copy, configure `repository` in site/config.json and use
+`python tools/publish_github.py --owner OWNER --name REPOSITORY` after GitHub CLI
+sign-in. The helper creates a public repository and does not replace unrelated
+remote history.
 
 This repo is independent of GNN and lives in its ignored workstreams/ directory.
 It must be committed/backed up separately. It uses no GNN datasets, server or GPU.

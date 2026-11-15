@@ -1,8 +1,9 @@
 # Implementation plan
 
 Updated: 2026-11-15. This is the deliverable inventory for the Alpha mentorship
-repository. Most local deliverables are implemented. Remaining unchecked items require account
-access, official program details or a human classroom check. See STATUS.md and
+repository. Deliverables are implemented, backed up on GitHub and published through GitHub Pages.
+Remaining unchecked items require actual student/mentor accounts, official program
+details or a human classroom check. See STATUS.md and
 validation/ for evidence; local notebook execution is distinct from live Colab.
 
 ## Current scope
@@ -31,10 +32,10 @@ See [the site and submission design](docs/student_site_and_submissions.md) and
 - [x] Record licensing for original material and attribution requirements for
   adapted third-party code or figures. Preserve upstream license notices.
 - [x] Prepare and review the complete initial local commit.
-- [ ] Create the GitHub remote, push the history and verify Pages deployment. The
-  owner authorized publication; GitHub API sign-in remains required.
-- [ ] After a remote exists, add and verify student-facing clone/download and
-  Colab links. Do not invent a remote URL in advance.
+- [x] Create the GitHub remote, push the history and verify Pages deployment:
+  https://github.com/ybs-lab/alpha-mentorship.
+- [x] Configure repository-specific student downloads and Colab links.
+  Live Google account save/share checks remain separate below.
 
 ## 2. First meeting package
 
@@ -185,8 +186,9 @@ scientific campaigns retain their own scope and authorization.
 
 - [x] Check relative links and ensure all advertised files exist.
 - [x] Check that the slides and handouts agree on controls, units and tasks.
-- [ ] Run each notebook from a fresh CPU environment and, separately, in live
-  Colab. Record date, versions, elapsed time and any required manual steps.
+- [x] Run all eight notebooks from a fresh local CPU environment; record execution
+  details in validation/notebook_execution.json.
+- [ ] Run the notebooks in live Colab using actual student/mentor accounts.
 - [x] Rehearse the browser activity from the supplied initial states; document
   actual observations and ambiguous cases rather than promise a phase outcome.
 - [x] Check data import, particle identity, neighbour calculation and plots on
@@ -212,8 +214,8 @@ scientific campaigns retain their own scope and authorization.
   outputs and a clear distinction between example data and student observations.
 - [x] Add notebook downloads and Open in Colab buttons using the configured remote.
 - [x] Add GitHub Actions deployment restricted to the student site build artifact.
-- [ ] Configure the GitHub remote/Pages destination; verify the project-site base
-  path. A hosted site and real Colab links require the selected GitHub owner.
+- [x] Configure the GitHub remote and Pages destination; verify the project-site
+  base path at https://ybs-lab.github.io/alpha-mentorship/.
 - [x] Add `mentor/review_workflow.md`: practice submission, access checks, feedback
   and revision process; keep completed review records outside public source history.
 - [ ] Blank private-review tracker and storage guidance are implemented. Identify the

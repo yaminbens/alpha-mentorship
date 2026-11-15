@@ -6,6 +6,9 @@
   "local_document_links": "passed",
   "advertised_deliverable_paths": "all exist",
   "live_colab_account_checks": "not performed; requires real accounts",
-  "github_backup": "pending API authentication",
-  "classroom_projector_rehearsal": "mentor check pending"
+  "github_backup": "source and Git history pushed to https://github.com/ybs-lab/alpha-mentorship",
+  "classroom_projector_rehearsal": "mentor check pending",
+  "github_pages": "deployed successfully at https://ybs-lab.github.io/alpha-mentorship/",
+  "live_pages_page_viewport_checks_passed": 16,
+  "live_notebook_downloads_match_source": 8
 }

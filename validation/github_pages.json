@@ -1,0 +1,91 @@
+{
+  "checked_at": "2026-11-15T11:48:08.222435+00:00",
+  "url": "https://ybs-lab.github.io/alpha-mentorship/",
+  "checks": [
+    {
+      "page": "index",
+      "width": 1280,
+      "status": "passed"
+    },
+    {
+      "page": "task-0",
+      "width": 1280,
+      "status": "passed"
+    },
+    {
+      "page": "task-1",
+      "width": 1280,
+      "status": "passed"
+    },
+    {
+      "page": "task-2",
+      "width": 1280,
+      "status": "passed"
+    },
+    {
+      "page": "browser",
+      "width": 1280,
+      "status": "passed"
+    },
+    {
+      "page": "readings",
+      "width": 1280,
+      "status": "passed"
+    },
+    {
+      "page": "submit",
+      "width": 1280,
+      "status": "passed"
+    },
+    {
+      "page": "next",
+      "width": 1280,
+      "status": "passed"
+    },
+    {
+      "page": "index",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "task-0",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "task-1",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "task-2",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "browser",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "readings",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "submit",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "next",
+      "width": 390,
+      "status": "passed"
+    }
+  ],
+  "notebook_downloads_match_source": 8,
+  "colab_links": [
+    "https://colab.research.google.com/github/ybs-lab/alpha-mentorship/blob/main/notebooks/00_getting_started.ipynb"
+  ],
+  "live_colab_save_share": "not tested; requires actual student and mentor accounts"
+}
