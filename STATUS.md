@@ -7,6 +7,9 @@
 - Colab launch links now point to the public repository templates.
 
 ## Implemented
+- Student tasks now have numbered steps, sentence starters, completion checklists and
+  matching fill-in notebook/document templates. Task 2 includes raw-export averaging,
+  four explicit result rows and graph/CSV downloads. Hebrew instructions match.
 - Independent Git repository; 60-minute meeting package with six-slide editable source
   and PDF, speaker notes, bilingual worksheet and a 12-minute demonstration guide.
 - Mentor facilitation, background, answers, assessment, troubleshooting, communications,

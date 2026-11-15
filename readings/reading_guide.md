@@ -8,4 +8,7 @@
 
 Times are planning estimates. Focus on explanations and figures; advanced derivations
 are optional. For each reading write one claim, its supporting explanation, one
-limitation and one unresolved question. Use questions.md or questions_he.md.
+limitation and one unresolved question. Choose two questions from questions.md or questions_he.md and answer each in 1–3
+sentences in your current notebook. Include the title, one claim, its supporting
+explanation or figure, one limitation and one open question. English or Hebrew is
+welcome. The student website and Task 1 notebook contain a fill-in reading template.

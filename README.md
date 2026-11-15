@@ -12,6 +12,7 @@ meeting, a guided particle simulation, Colab practice and independent work at ho
 - [Guided simulation](meetings/01_introduction/demonstration.md) and [exact browser procedure](simulation/browser_guide.md)
 - [Student website source](site/pages/index.md)
 - [Reading guide](readings/reading_guide.md) and [first assignment](assignments/01_first_experiment/task.md)
+- [Task 1 fill-in worksheet](assignments/01_first_experiment/exploration_template.md) and [Task 2 report template](assignments/01_first_experiment/report_template.md)
 - [Review workflow](mentor/review_workflow.md)
 - [Delivery status and remaining account checks](STATUS.md)
 - [Detailed implementation checklist](IMPLEMENTATION_PLAN.md)

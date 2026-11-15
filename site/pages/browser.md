@@ -7,7 +7,7 @@ Lengths and times use reduced model units; temperatures are not automatically ke
 ## Load a reproducible starting state
 1. Download [ordered_initial.txt](presets/ordered_initial.txt) from the course page or use the file in
    `meetings/01_introduction/presets/`.
-2. Pause the simulator. Open **Data**, paste the file's complete text into the data
+2. Pause the simulator. Open **Data**, select **All atoms**, paste the file's complete text into the data
    box and click **Input state**. Keep a copy of the file you loaded.
 3. Check N=64, box side=12, gravity=0 and time step=0.005. The file specifies all
    particle positions and velocities. It is a seeded triangular starting arrangement.
@@ -31,14 +31,14 @@ This is a classroom protocol, not a proof of equilibration.
 ## Record a measurement window
 Press **Reset stats** after settling; this resets the displayed time/statistics,
 not the particle state. Open Data, choose **System totals** and **More detail**.
-Clear old data. Set Steps per frame to 25. Repeat **Step**, then **Write data**, 40 times. This records a 5-unit window in increments of 0.125. Copy the tab-separated
+Set **Auto interval** to its off setting and clear old data. Set Steps per frame to 25. Repeat **Step**, then **Write data**, 40 times. This records a 5-unit window in increments of 0.125. Copy the tab-separated
 data into a text file and save it outside the simulator.
 
 The detailed export includes N, KE and PE. Average KE/N for temperature in this 2D
 unanchored model, and PE/N for potential energy per particle across the recorded
 rows. The displayed T column can be a running average; do not treat that column as
-an independent instantaneous sample. Notebook 02 includes a helper for the detailed
-export. Save screenshots and record settings, preparation and the measurement window.
+an independent instantaneous sample. The Task 2 notebook includes a helper for this detailed
+export; notebook 02 is an optional later analysis tool. Save screenshots and record settings, preparation and the measurement window.
 
 Repeat the middle condition from the same saved state. Exact replay checks the
 procedure; it is not an independent-seed uncertainty estimate. A broader study needs

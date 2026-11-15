@@ -1,25 +1,46 @@
 # Task 0 · Your first notebook
-**In class · about 20 minutes · no programming experience needed**
+**Together in class · about 20 minutes**
+
+**Goal:** learn to write an answer, run code, and save a notebook you can reopen.
+A notebook is a document containing text, code and the results of running that code.
+You do not need to understand every line of Python today.
 
 {{notebook:00_getting_started.ipynb}}
 
-## Before you edit
-Open the notebook and choose **File → Save a copy in Drive**. Rename it with your
-student code and task. Work in your copy; the course template belongs to everyone.
+## 1. Make your own copy
+Click **Open in Colab**, sign in, then choose **File → Save a copy in Drive**.
+Rename your copy `YOUR-CODE_task-0`. Use the student code agreed with your mentor.
+From now on, edit your copy. Keep this instruction page open in another tab.
 
-## Try it together
-1. Run the first code cell using its play button or Shift+Enter.
-2. Edit a text cell and write a prediction about the `scale` parameter.
-3. Run the plotting cell. Explain its axes. Its values are invented teaching data.
-4. Change `scale`, run that cell again and then rerun the plot.
-5. Save, close and reopen your copy. Check that your answer and plot remain.
-6. Use [the submission instructions](submit.html) to share a practice link with your mentor.
+## 2. Run one cell
+A *cell* is one block in the notebook. Find the first code cell and click the triangle
+at its left. Wait for the message below it. If Colab asks to connect, let it connect.
+Run code cells from top to bottom; later cells can depend on earlier ones.
 
-## What to leave with
-Your own saved notebook, one prediction, an example plot, and a working review link.
-A notebook saves text, code and outputs. Temporary runtime files need separate saving.
+## 3. Predict, then change one number
+1. Double-click the text cell headed **My prediction**. Replace `…` with your answer:
+   “If I change `scale` from 1 to 2, I think … because …”.
+2. Run the plotting cell. Look at the first graph.
+3. In the first code cell, change only `scale = 1.0` to `scale = 2.0`.
+4. Run that first cell again, then run the plotting cell again.
+5. Fill in **My observation**: “The horizontal axis shows … . The vertical axis shows … .
+   After the change, … . This agrees/disagrees with my prediction because …”.
 
-<div lang="he" dir="rtl" class="hebrew">שמרו עותק אישי לפני העריכה. כתבו תחזית, הריצו תא, שנו ערך ופתחו מחדש את המחברת כדי לבדוק שהעבודה נשמרה.</div>
+These are invented values for learning to plot, not observations of atoms.
 
+## 4. Check that your work is saved
+Save, close the notebook tab, and reopen your copy from Drive. Confirm that your
+answer and graph are still there. Follow [Save & submit](submit.html) and send a
+practice link to your mentor. Ask the mentor to check that they can open it.
+
+## Finished when
+- Your own notebook has a prediction, a graph and an explanation of what changed.
+- You have reopened it and checked that those items remain.
+- Your mentor can open your practice link.
+
+**If something goes wrong:** run the cells again from the top. If an error remains,
+copy its message into a text cell and ask for help. You do not need to solve it alone.
+
+<div lang="he" dir="rtl" class="hebrew">המטרה: לשמור מחברת אישית, לכתוב תחזית, לשנות מספר אחד ולבדוק את הגרף. בסוף פתחו מחדש את המחברת ושלחו למנחה קישור לבדיקה.</div>
 
 [Hebrew classroom worksheet](downloads/student_worksheet_he.md)

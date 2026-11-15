@@ -17,8 +17,8 @@ Then explain what the evidence supports — and what remains uncertain.
 
 ## Your route through the project
 1. [Task 0: your first notebook](task-0.html) — begin together in class.
-2. [Task 1: explore atomic motion](task-1.html) — try the simulation at home.
-3. [Task 2: compare three conditions](task-2.html) — keep a record and make a plot.
+2. [Task 1: watch what changes](task-1.html) — 20–30 minutes at home; save a prediction, two screenshots and observations.
+3. [Task 2: measure and compare](task-2.html) — allow 60–90 minutes; collect four runs, fill the table and explain one graph.
 4. [Read and ask questions](readings.html) — develop your explanation.
 5. [Save and submit](submit.html) — share your work for feedback.
 
@@ -26,3 +26,12 @@ Bring a laptop and charger. Check that your Google account can use Colab. No pri
 programming or local installation is required for the first meeting.
 
 <div lang="he" dir="rtl" class="hebrew">ברוכים הבאים. נתחיל מהתבוננות ושאלות, נלמד לשמור מחברת אישית, ואת הניסוי המלא תבצעו בבית. אין צורך בניסיון קודם בתכנות.</div>
+
+## Start with the template
+Each task button opens a notebook with headings and blanks to fill in. Save your own
+copy first. You may write in Hebrew or English. Follow the tasks in order; later and
+optional notebooks are not part of this first homework. Your mentor will give the due date.
+
+Prefer a document? Download the [Task 1 worksheet](downloads/exploration_template.md)
+or [Task 2 report template](downloads/report_template.md). These are plain text files:
+open them and copy their contents into a document.

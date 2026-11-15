@@ -10,5 +10,6 @@
   "classroom_projector_rehearsal": "mentor check pending",
   "github_pages": "deployed successfully at https://yaminbens.github.io/alpha-mentorship/",
   "live_pages_page_viewport_checks_passed": 16,
-  "live_notebook_downloads_match_source": 8
+  "live_notebook_downloads_match_source": 8,
+  "student_task_workflow": "step-by-step worksheets, averaging controls, missing-data behavior and file export passed"
 }

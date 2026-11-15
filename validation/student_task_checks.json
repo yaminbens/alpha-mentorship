@@ -1,0 +1,12 @@
+{
+  "data": "synthetic known-answer controls, not physical evidence",
+  "export_header": "Schroeder detailed System totals schema",
+  "checks": [
+    "KE/N and PE/N averaging passed; running T column ignored",
+    "unexpected row count flagged while preserving averages",
+    "missing KE/PE has a student-readable error",
+    "empty worksheet does not invent results",
+    "filled table produces four-row CSV and labelled graph"
+  ],
+  "checked_at": "2026-11-15T12:17:39.798261+00:00"
+}

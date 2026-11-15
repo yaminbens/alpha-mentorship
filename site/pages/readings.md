@@ -10,6 +10,34 @@ Times are planning estimates. Focus on explanations and figures; advanced deriva
 are optional. For each reading write one claim, its supporting explanation, one
 limitation and one unresolved question. Use the questions below.
 
+## A small reading task
+For each assigned reading, allow the time above. Read the selected parts, then choose
+**two** of its guiding questions below. Write 1–3 sentences for each in a text cell in
+your current notebook. You may answer in Hebrew or English. Unknown words and questions
+are useful things to bring to the meeting; you do not need to understand every equation.
+Levitt is optional; Grazioli is for a later activity.
+
+Copy this answer template into a text cell:
+
+> Reading title: …
+>
+> Question I chose: …
+>
+> My answer in my own words: …
+>
+> Second question and my answer: …
+>
+> One claim from the reading: …
+>
+> A figure or explanation that supports it: …
+>
+> One limitation of the model or explanation: …
+>
+> One word or question I want to discuss: …
+
+**Finished when:** your saved notebook has the title, two short answers and the four
+reflection prompts. Point to a section or figure when useful; do not paste whole paragraphs.
+
 ## Guiding questions
 ## Schroeder
 What are the particles and what rules govern them? What is simplified? How would

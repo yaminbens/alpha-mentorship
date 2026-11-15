@@ -20,6 +20,26 @@ If your school account prevents sharing, download the notebook (`.ipynb`) and da
 and send them through the agreed program channel. Do not publish personal work in
 public GitHub issues. Your mentor can return comments or a short feedback document.
 
+## Message template
+Copy this into the private channel agreed with your mentor and replace the brackets:
+
+> Student code: [your code] — Task: [0, 1 or 2]
+>
+> My notebook: [link to my saved copy]
+>
+> Supporting files: [shared folder or file links]
+>
+> Status: [complete / partial — stopped at step …]
+>
+> One thing I found: […]
+>
+> One thing I would like help with: […]
+
+For Task 1, include your two screenshots. For Task 2, include the four raw tables,
+screenshots, graph and results CSV. Check file access as well as notebook access.
+If you do not yet have the mentor's account or submission channel, ask for them;
+keep your work saved until they are provided.
+
 ## After feedback
 Revise the same working copy and add a short revision note. If you need a fixed
 submission version, keep a dated notebook download as a snapshot.
