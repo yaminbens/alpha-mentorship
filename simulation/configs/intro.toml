@@ -1,0 +1,15 @@
+# Tiny teaching example, not a phase-boundary calculation
+model = "Lennard-Jones"
+dimensions = 2
+particles = 16
+box_side = 8.0
+periodic = true
+initial_temperature = 0.3
+seed = 42
+time_step = 0.002
+steps = 200
+sample_every = 5
+sigma = 1.0
+epsilon = 1.0
+mass = 1.0
+cutoff = 3.0

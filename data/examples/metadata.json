@@ -1,0 +1,67 @@
+{
+  "source": "https://physics.weber.edu/schroeder/md/",
+  "page_sha256_at_rehearsal": "0745acea20aa5bc90fa5c3789f8d5a90b23c4f01a249f456d1e624eb8b5e5dce",
+  "date": "2026-11-15",
+  "preparation": "64 triangular positions, seeded velocities at initial kinetic T=0.05; 1000 steps before energy intervention",
+  "units": "sigma=epsilon=m=k_B=1",
+  "records": [
+    {
+      "condition": "low",
+      "faster_clicks": 0,
+      "velocity_factor": 1.0,
+      "N": 64,
+      "L": 12,
+      "settle_steps": 1000,
+      "window_steps": 1000,
+      "dt": 0.005,
+      "T_mean": 0.026422462082917535,
+      "U_per_particle_mean": -2.68081155868934,
+      "E_range": 1.274436833575976e-05,
+      "flags": []
+    },
+    {
+      "condition": "middle",
+      "faster_clicks": 8,
+      "velocity_factor": 2.1435888100000016,
+      "N": 64,
+      "L": 12,
+      "settle_steps": 1000,
+      "window_steps": 1000,
+      "dt": 0.005,
+      "T_mean": 0.07120630388037784,
+      "U_per_particle_mean": -2.6319248589283113,
+      "E_range": 3.9605508453277594e-05,
+      "flags": []
+    },
+    {
+      "condition": "middle_repeat",
+      "faster_clicks": 8,
+      "velocity_factor": 2.1435888100000016,
+      "N": 64,
+      "L": 12,
+      "settle_steps": 1000,
+      "window_steps": 1000,
+      "dt": 0.005,
+      "T_mean": 0.07120630388037784,
+      "U_per_particle_mean": -2.6319248589283113,
+      "E_range": 3.9605508453277594e-05,
+      "flags": []
+    },
+    {
+      "condition": "high",
+      "faster_clicks": 24,
+      "velocity_factor": 9.84973267580763,
+      "N": 64,
+      "L": 12,
+      "settle_steps": 1000,
+      "window_steps": 1000,
+      "dt": 0.005,
+      "T_mean": 0.9914338768719041,
+      "U_per_particle_mean": -1.1439343451041593,
+      "E_range": 0.0005736301219469997,
+      "flags": []
+    }
+  ],
+  "interpretation": "Short teaching observations; no equilibrium phase assignment. middle_repeat is a deterministic replay, not an independent seed.",
+  "recording": "30 browser canvas frames, 50 simulation steps between frames, played at 10 frames/s. Recording begins after high condition."
+}

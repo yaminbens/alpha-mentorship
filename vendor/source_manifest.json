@@ -1,0 +1,13 @@
+{
+  "upstream": "https://github.com/ggrazioli/LennardJonesFluidLab",
+  "commit": "9f3f932bb3ffdf47bc0de23378aba196bdc9452b",
+  "license": "MIT",
+  "sha256": {
+    "LICENSE": "36de33ca97bf89a872c7e00578b7b1e71514276cba6f189ca003bf621b2db622",
+    "analysis.py": "018c2f9d13abde46ebe09ad3468920c935441c793612309ba00139916e238599",
+    "classes.py": "90c53b632780b20d8b6b0e9078cc24d9abcf7e5480cd4ebdd5b8af37fb8f0a36",
+    "dynamics.py": "0db62c33a9c5fd68ef6dd8c251abe5b44810317127cf6c29e283868b4d32997d",
+    "mathTools.py": "17e6c29a9348b42c1a68c04caba66762d89b483110013b6a6facf5a3792012cc",
+    "visualizationTools.py": "3e0e08230b06f63991b050a715ea0aee9f324f1e83d81c62dd444b1b16de7d8f"
+  }
+}

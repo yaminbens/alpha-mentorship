@@ -1,0 +1,11 @@
+{
+  "local_notebooks_passed": 8,
+  "unit_checks_passed": 6,
+  "browser_page_viewport_checks_passed": 16,
+  "pdf_pages_rendered": 6,
+  "local_document_links": "passed",
+  "advertised_deliverable_paths": "all exist",
+  "live_colab_account_checks": "not performed; requires real accounts",
+  "github_backup": "pending API authentication",
+  "classroom_projector_rehearsal": "mentor check pending"
+}

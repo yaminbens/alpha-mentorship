@@ -1,0 +1,11 @@
+# Exact versions used for the isolated local acceptance run
+Markdown==3.7
+nbformat==5.10.4
+nbclient==0.10.2
+ipykernel==6.31.0
+numpy==2.0.2
+matplotlib==3.9.4
+pandas==2.3.3
+reportlab==5.1.0
+Pillow==11.3.0
+pytest==8.4.2

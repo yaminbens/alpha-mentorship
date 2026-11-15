@@ -1,0 +1,82 @@
+[
+  {
+    "page": "index",
+    "width": 1280,
+    "status": "passed"
+  },
+  {
+    "page": "task-0",
+    "width": 1280,
+    "status": "passed"
+  },
+  {
+    "page": "task-1",
+    "width": 1280,
+    "status": "passed"
+  },
+  {
+    "page": "task-2",
+    "width": 1280,
+    "status": "passed"
+  },
+  {
+    "page": "browser",
+    "width": 1280,
+    "status": "passed"
+  },
+  {
+    "page": "readings",
+    "width": 1280,
+    "status": "passed"
+  },
+  {
+    "page": "submit",
+    "width": 1280,
+    "status": "passed"
+  },
+  {
+    "page": "next",
+    "width": 1280,
+    "status": "passed"
+  },
+  {
+    "page": "index",
+    "width": 390,
+    "status": "passed"
+  },
+  {
+    "page": "task-0",
+    "width": 390,
+    "status": "passed"
+  },
+  {
+    "page": "task-1",
+    "width": 390,
+    "status": "passed"
+  },
+  {
+    "page": "task-2",
+    "width": 390,
+    "status": "passed"
+  },
+  {
+    "page": "browser",
+    "width": 390,
+    "status": "passed"
+  },
+  {
+    "page": "readings",
+    "width": 390,
+    "status": "passed"
+  },
+  {
+    "page": "submit",
+    "width": 390,
+    "status": "passed"
+  },
+  {
+    "page": "next",
+    "width": 390,
+    "status": "passed"
+  }
+]
