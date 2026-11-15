@@ -1,6 +1,6 @@
 {
-  "checked_at": "2026-11-15T11:48:08.222435+00:00",
-  "url": "https://ybs-lab.github.io/alpha-mentorship/",
+  "checked_at": "2026-11-15T11:58:13.021455+00:00",
+  "url": "https://yaminbens.github.io/alpha-mentorship/",
   "checks": [
     {
       "page": "index",
@@ -85,7 +85,7 @@
   ],
   "notebook_downloads_match_source": 8,
   "colab_links": [
-    "https://colab.research.google.com/github/ybs-lab/alpha-mentorship/blob/main/notebooks/00_getting_started.ipynb"
+    "https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/00_getting_started.ipynb"
   ],
   "live_colab_save_share": "not tested; requires actual student and mentor accounts"
 }
