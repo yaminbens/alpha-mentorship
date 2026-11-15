@@ -8,8 +8,9 @@
   {
     "notebook": "01_first_simulation.ipynb",
     "status": "passed",
-    "seconds": 1.83,
-    "execution": "fresh local Python kernel; not live Colab"
+    "seconds": 2.58,
+    "execution": "fresh local Python kernel; not live Colab",
+    "license_download": "verified"
   },
   {
     "notebook": "02_analyse_browser_data.ipynb",

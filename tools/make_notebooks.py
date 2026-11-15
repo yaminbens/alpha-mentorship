@@ -18,13 +18,14 @@ SAVE='''## Save and submit / שמירה והגשה
 '''
 def notebook(name,title,cells):
  n=nbf.v4.new_notebook(cells=[md('# '+title),md(SAVE)]+cells+[md('## Reflection and revision\nWhat did you learn? What remains uncertain? What changed after feedback?\n\n**Your answer:** …')])
+ for i,cell in enumerate(n.cells): cell['id']=f'cell-{i:03d}'
  n.metadata={'kernelspec':{'display_name':'Python 3','language':'python','name':'python3'},'language_info':{'name':'python','version':'3'},'colab':{'name':name,'provenance':[]}}
  p=ROOT/'notebooks'/name;p.parent.mkdir(exist_ok=True);nbf.write(n,p)
-BOOT='''# Fetch only three MIT-licensed teaching modules from a pinned upstream commit.
+BOOT='''# Fetch three MIT-licensed teaching modules and their license from a pinned commit.
 # The content hashes verify the exact source used by this course.
 import urllib.request, hashlib, sys, tempfile
 from pathlib import Path
-MODULES = '''+repr({f:hashlib.sha256((VENDOR/f).read_bytes()).hexdigest() for f in ['mathTools.py','classes.py','dynamics.py']})+'''
+MODULES = '''+repr({f:hashlib.sha256((VENDOR/f).read_bytes()).hexdigest() for f in ['mathTools.py','classes.py','dynamics.py','LICENSE']})+'''
 module_dir = Path(tempfile.gettempdir()) / "alpha_lj_pinned"
 module_dir.mkdir(exist_ok=True)
 for filename, expected in MODULES.items():
