@@ -33,7 +33,7 @@ See [the site and submission design](docs/student_site_and_submissions.md) and
   adapted third-party code or figures. Preserve upstream license notices.
 - [x] Prepare and review the complete initial local commit.
 - [x] Create the GitHub remote, push the history and verify Pages deployment:
-  https://github.com/ybs-lab/alpha-mentorship.
+  https://github.com/yaminbens/alpha-mentorship.
 - [x] Configure repository-specific student downloads and Colab links.
   Live Google account save/share checks remain separate below.
 
@@ -215,7 +215,7 @@ scientific campaigns retain their own scope and authorization.
 - [x] Add notebook downloads and Open in Colab buttons using the configured remote.
 - [x] Add GitHub Actions deployment restricted to the student site build artifact.
 - [x] Configure the GitHub remote and Pages destination; verify the project-site
-  base path at https://ybs-lab.github.io/alpha-mentorship/.
+  base path at https://yaminbens.github.io/alpha-mentorship/.
 - [x] Add `mentor/review_workflow.md`: practice submission, access checks, feedback
   and revision process; keep completed review records outside public source history.
 - [ ] Blank private-review tracker and storage guidance are implemented. Identify the

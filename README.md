@@ -3,7 +3,7 @@
 A complete introductory teaching package for high-school students: a one-hour
 meeting, a guided particle simulation, Colab practice and independent work at home.
 
-**[Student website](https://ybs-lab.github.io/alpha-mentorship/)** · **[GitHub repository](https://github.com/ybs-lab/alpha-mentorship)**
+**[Student website](https://yaminbens.github.io/alpha-mentorship/)** · **[GitHub repository](https://github.com/yaminbens/alpha-mentorship)**
 
 ## Start here
 - [Mentor facilitation guide](mentor/facilitation_guide.md)
@@ -49,8 +49,8 @@ Optional browser checks: install Playwright and Chromium, then run
 
 ## Hosting and backup
 The source and full Git history are backed up in
-[ybs-lab/alpha-mentorship](https://github.com/ybs-lab/alpha-mentorship).
-The [student book](https://ybs-lab.github.io/alpha-mentorship/) is deployed through
+[yaminbens/alpha-mentorship](https://github.com/yaminbens/alpha-mentorship).
+The [student book](https://yaminbens.github.io/alpha-mentorship/) is deployed through
 GitHub Actions. Pushing `main` rebuilds and publishes the student site. Notebook
 buttons open the corresponding public GitHub templates in Colab.
 

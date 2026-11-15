@@ -1,8 +1,8 @@
 # Delivery status
 
 ## Published
-- Source and history: https://github.com/ybs-lab/alpha-mentorship
-- Student book: https://ybs-lab.github.io/alpha-mentorship/
+- Source and history: https://github.com/yaminbens/alpha-mentorship
+- Student book: https://yaminbens.github.io/alpha-mentorship/
 - GitHub Actions build and deployment succeeded on 2026-11-15.
 - Colab launch links now point to the public repository templates.
 
