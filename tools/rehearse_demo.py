@@ -30,7 +30,7 @@ with sync_playwright() as pw:
   if not np.isfinite(vals).all():record['flags'].append('NONFINITE')
   records.append(record)
   with (D/f'browser_{name}.csv').open('w') as f:
-   writer=csv.DictWriter(f,fieldnames=['time','T','U','E']);writer.writeheader();writer.writerows(samples)
+   writer=csv.DictWriter(f,fieldnames=['time','T','U','E'],lineterminator='\n');writer.writeheader();writer.writerows(samples)
   page.evaluate('showState()');(P/f'{name}_observed.txt').write_text(page.locator('#dataArea').input_value())
   page.locator('canvas').first.screenshot(path=str(F/f'{name}.png'))
   frames.append(snapshot['xy'])
