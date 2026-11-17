@@ -36,23 +36,31 @@ learning about the students' backgrounds and interests.
 Use the following six visual prompts within ten minutes. Keep explanations short;
 the readings and later meetings develop the concepts further.
 
-1. **Why do materials behave differently?** Show solid and liquid configurations.
-   Ask what changes and what stays the same; invite predictions first.
+1. **How is atomic motion related to material properties?** Show two saved
+   configurations at the same scale. Describe their preparation and visible
+   arrangement without assigning an equilibrium phase from a snapshot.
 2. **How do we simulate atoms?** Explain how positions determine forces, forces
    change motion and motion changes positions. Introduce a simplified model with
    attraction at moderate separation and strong repulsion at short separation.
-3. **From a movie to a measurement.** Introduce temperature, energy, neighbour
-   distances and changes in neighbours. Ask what would convince someone who cannot
-   see the animation.
-4. **Where the mentor's research enters.** Explain the investigation of atomic
+3. **From a movie to a measurement.** Track one labelled particle and its four
+   closest neighbours at two times. Count how many identities are retained.
+   Label this teaching example as a synthetic schematic, not simulation data.
+4. **A controlled comparison.** Keep the initial state, particle count, box and
+   observation protocol fixed while changing the energy preparation. Explain
+   why the measurement window and a repeat must be recorded.
+5. **Where the mentor's research enters.** Explain the investigation of atomic
    arrangements and statistical relationships in materials. Introduce “How much
    does knowing one region tell us about another?” and machine learning as one
    tool being investigated for measuring such relationships.
-5. **Why many observations matter.** Show several configurations under the same
-   conditions. Fluctuations are part of the system. Mutual information describes
-   a distribution of observations and cannot be determined from one snapshot.
+   Collect many observations under specified conditions: mutual information
+   describes a distribution and cannot be determined from one snapshot.
 6. **The students' question.** Present the comparison and invite a measurement
    and a prediction. Keep predictions separate from measured results.
+
+The presentation has six research slides, three activity slides and three appendix
+slides. Keep the interaction equation, recorded temperature/energy comparison and
+time-series plot in the appendix. The main talk remains ten minutes; the full
+meeting remains one hour.
 
 ## Classroom simulation
 

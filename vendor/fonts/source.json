@@ -1,0 +1,9 @@
+{
+  "source": "https://raw.githubusercontent.com/google/fonts/7af0d90b4d532ffa4b041937b560c6df4e7b1e95/ofl/notosanshebrew/",
+  "commit": "7af0d90b4d532ffa4b041937b560c6df4e7b1e95",
+  "license": "SIL Open Font License 1.1",
+  "sha256": {
+    "NotoSansHebrew.ttf": "7ef36a2c3593758cdb622e1bdef4f84523e92fbc3ccc667438dd80ff54c2de88",
+    "OFL.txt": "9b9fe028b5ba74d231659a1bbaf0ed09b11e759d1ca6a070999e16d151616b47"
+  }
+}

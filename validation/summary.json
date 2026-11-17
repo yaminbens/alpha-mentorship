@@ -2,7 +2,7 @@
   "local_notebooks_passed": 8,
   "unit_checks_passed": 6,
   "browser_page_viewport_checks_passed": 16,
-  "pdf_pages_rendered": 10,
+  "pdf_pages_rendered": 12,
   "local_document_links": "passed",
   "advertised_deliverable_paths": "all exist",
   "live_colab_account_checks": "not performed; requires real accounts",
@@ -13,5 +13,5 @@
   "live_notebook_downloads_match_source": 8,
   "student_task_workflow": "step-by-step worksheets, averaging controls, missing-data behavior and file export passed",
   "hebrew_facilitator_guide_pages": 4,
-  "hebrew_presentation_layout_checks_passed": 10
+  "hebrew_presentation_layout_checks_passed": 12
 }

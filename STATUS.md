@@ -10,8 +10,8 @@
 - Student tasks now have numbered steps, sentence starters, completion checklists and
   matching fill-in notebook/document templates. Task 2 includes raw-export averaging,
   four explicit result rows and graph/CSV downloads. Hebrew instructions match.
-- Independent Git repository; 60-minute meeting package with ten Hebrew slides
-  (six research slides plus welcome/activity prompts), editable Markdown, standalone
+- Independent Git repository; 60-minute meeting package with twelve Hebrew slides
+  (six research slides, three activity slides and three scientific appendix slides), editable Markdown, standalone
   HTML and PDF. Detailed Hebrew facilitator plan for 2026-11-18, speaker notes,
   bilingual worksheet and a 12-minute demonstration guide.
 - Mentor facilitation, background, answers, assessment, troubleshooting, communications,
@@ -26,6 +26,10 @@
 - Research question options, provisional plan, proposal/report/poster templates and timeline.
 
 ## Validation
+The revised presentation distinguishes saved particle coordinates from synthetic
+neighbour diagrams. Font provenance and license are in vendor/fonts/. Scientific
+plots remain available in the appendix. No new simulation was run for the redesign.
+
 Live Pages checks passed for all eight pages at desktop and mobile widths. All
 eight hosted notebook downloads match the source files. Repository-specific Colab
 launch links were verified; this does not test Google sign-in or sharing. See

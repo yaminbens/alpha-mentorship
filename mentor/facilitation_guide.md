@@ -8,7 +8,7 @@ record: an apparent ordered/disordered state is an observation, not an equilibri
 
 ## During the hour
 0–8: invite introductions and one reading question. Ask what a graph axis means and
-whether they have used Python. 8–18: show research slides 2–7; invite a prediction before
+whether they have used Python. 8–18: show research slides 1–6; invite a prediction before
 revealing an example. 18–30: run only the guided demo. 30–50: everyone saves their own
 notebook, runs two cells, edits an answer and reopens the saved copy. 50–60: walk through
 Task 1 and Task 2, show submission steps, and check one practice notebook link per student.

@@ -1,123 +1,129 @@
-"""Build a Hebrew, self-contained presentation and printable mentor guide.
+"""Build six research slides, three activity slides and three scientific appendices.
 
-Figures reuse recorded classroom data; no new simulation is performed.
-Requires Playwright/Chromium in addition to the course's plotting/Markdown tools.
+Saved teaching data and labelled schematics only: this builder runs no simulation.
+The HTML embeds its figures and licensed Hebrew font for offline presentation.
 """
 from pathlib import Path
-import base64, html, io, json, re
+import base64,html,io,re
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import markdown
 from playwright.sync_api import sync_playwright
+from presentation_figures import configuration,neighbours,force_pair,FIRST,LATER
 
 R=Path(__file__).resolve().parent.parent
 M=R/'meetings/01_introduction'
-TEAL='#087f83'; INK='#172f39'; GOLD='#edaf59'; PAPER='#faf7ef'
+COURSE='https://yaminbens.github.io/alpha-mentorship/'
 
-def uri(data, mime='image/png'):
-    return 'data:'+mime+';base64,'+base64.b64encode(data).decode()
-
-def photo(name):
-    return uri((M/'fallback'/f'{name}.png').read_bytes())
+def uri(data,mime):return 'data:'+mime+';base64,'+base64.b64encode(data).decode()
+font_uri=uri((R/'vendor/fonts/NotoSansHebrew.ttf').read_bytes(),'font/ttf')
+font_css='@font-face{font-family:NotoHebrew;src:url("'+font_uri+'");font-weight:100 900;font-display:block}'
 
 def chart(kind):
-    fig,ax=plt.subplots(figsize=(7,3.8),facecolor=PAPER)
-    ax.set_facecolor(PAPER)
+    fig,ax=plt.subplots(figsize=(8.2,3.8));color='#146d75'
     if kind=='potential':
-        r=np.linspace(.96,3,250); u=4*(r**-12-r**-6)
-        ax.plot(r,u,color=TEAL,lw=4);ax.axhline(0,color='#aaa',lw=1)
-        ax.set(xlabel='Separation / sigma',ylabel='Pair energy / epsilon',ylim=(-1.2,2))
+        r=np.linspace(.96,3,250);ax.plot(r,4*(r**-12-r**-6),color=color,lw=3)
+        ax.axhline(0,color='#9aa7b2',lw=1)
+        ax.set(xlabel='Separation r / sigma',ylabel='Pair energy U / epsilon',ylim=(-1.2,2))
     elif kind=='energy':
         d=np.genfromtxt(R/'data/examples/window_averages.csv',delimiter=',',names=True,dtype=None,encoding='utf8')
-        ax.scatter(d['T_reduced'],d['U_per_particle'],s=140,color=TEAL,edgecolor=INK)
-        ax.set(xlabel='Measured k_B T / epsilon',ylabel='Potential energy / (N epsilon)')
+        for name,tx,uy in zip(d['condition'],d['T_reduced'],d['U_per_particle']):
+            repeat=name=='middle_repeat'
+            ax.scatter(tx,uy,s=160 if repeat else 80,marker='x' if repeat else 'o',color='#a65d36' if repeat else color,label='middle repeat' if repeat else name)
+        ax.set(xlabel='Mean k_B T / epsilon',ylabel='Mean U / (N epsilon)');ax.legend(frameon=False,fontsize=12)
     else:
         d=np.genfromtxt(R/'data/examples/browser_high.csv',delimiter=',',names=True)
-        ax.plot(d['time'],d['T'],lw=3,color=TEAL)
-        ax.scatter(d['time'][0],d['T'][0],s=160,color=GOLD,zorder=3)
+        ax.plot(d['time'],d['T'],color=color,lw=2.5)
         ax.set(xlabel='Time / reduced unit',ylabel='Instantaneous k_B T / epsilon')
-    ax.spines[['top','right']].set_visible(False)
-    ax.tick_params(labelsize=13);ax.xaxis.label.set_size(14);ax.yaxis.label.set_size(14)
-    ax.grid(alpha=.15);fig.tight_layout(pad=1.4)
-    b=io.BytesIO();fig.savefig(b,format='png',dpi=160);plt.close(fig)
-    return uri(b.getvalue())
+    ax.spines[['top','right']].set_visible(False);ax.tick_params(labelsize=13)
+    ax.xaxis.label.set_size(14);ax.yaxis.label.set_size(14);ax.grid(axis='y',alpha=.16)
+    fig.tight_layout(pad=1);b=io.BytesIO();fig.savefig(b,format='svg');plt.close(fig)
+    return '<img class="chart" src="'+uri(b.getvalue(),'image/svg+xml')+'" alt="'+{'potential':'אנרגיית זוג לפי נוסחת המודל','energy':'ממוצעי הטמפרטורה והאנרגיה בהדגמה','fluctuations':'תנודות בטמפרטורה לאורך חלון תצפית'}[kind]+'">'
 
-def atoms():
-    dots=[]
-    for j in range(5):
-        for i in range(6):
-            x=45+55*i+(j%2)*12;y=40+53*j
-            dots.append(f'<circle cx="{x}" cy="{y}" r="{12+(i+j)%4}" fill="{TEAL if i<3 else GOLD}"/>')
-    return '<svg viewBox="0 0 390 300" role="img" aria-label="איור של חלקיקים בשני צבעים">'+''.join(dots)+'</svg>'
+low=configuration(M/'presets/low_observed.txt');high=configuration(M/'presets/high_observed.txt')
 
-def image(src,alt):return f'<img src="{src}" alt="{alt}">'
+def panel(title,visual,caption=''):
+    return '<figure><figcaption>'+title+'</figcaption>'+visual+('<p class="figure-note">'+caption+'</p>' if caption else '')+'</figure>'
 
-visuals=[
-    '<div class="atom-hero">'+atoms()+'<p>לשאול · להתבונן · לבדוק</p></div>',
-    '<div class="photos"><figure>'+image(photo('low'),'מצב מהדגמת המודל באנרגיה נמוכה')+'<figcaption>לפני הוספת אנרגיה</figcaption></figure><figure>'+image(photo('high'),'מצב מהדגמת המודל לאחר הוספת אנרגיה')+'<figcaption>אחרי הוספת אנרגיה</figcaption></figure></div><p class="caption">הצבע מציין מהירות, לא סוג אטום. תצפיות קצרות מהמודל — לא קביעת פאזה בשיווי משקל</p>',
-    image(chart('potential'),'גרף אנרגיית הזוג כתלות במרחק, לפי מודל לנארד־ג׳ונס')+'<div class="formula" dir="ltr">U(r) = 4ε [(σ/r)¹² − (σ/r)⁶]</div><p class="caption">r — מרחק; σ — סולם אורך; ε — סולם אנרגיה. משוואת המודל, לא נתון נמדד.</p>',
-    image(chart('energy'),'ממוצעי אנרגיה וטמפרטורה מההדגמה הקצרה')+'<p class="caption">כל נקודה: ממוצע של 40 קריאות לאורך 5 יחידות זמן של המודל. החזרה עשויה לחפוף לנקודה המקורית.</p>',
-    '<div class="regions"><div><b>אזור א׳</b><span>מה אנחנו רואים כאן?</span></div><div><b>אזור ב׳</b><span>מה זה עוזר לנו לדעת שם?</span></div></div>'+atoms()+'<p class="caption">איור בלבד. בודקים קשר בעזרת תצפיות רבות שנאספו בתנאים מוגדרים.</p>',
-    image(chart('fluctuations'),'טמפרטורה רגעית לאורך חלון תצפית קצר בהדגמה')+'<p class="caption">סדרת תצפיות אמיתית מתוך ההדגמה. נקודה בודדת אינה כל הסיפור.</p>',
-    '<div class="steps"><div><b>01</b>תחזית<span>מה אני מצפה שיקרה?</span></div><div><b>02</b>תצפית<span>מה קרה בפועל?</span></div><div><b>03</b>הסבר<span>מה הנתונים תומכים בו?</span></div></div>',
-    '<div class="demo">'+image(photo('high'),'תצפית מההדגמה, לקראת מעבר להדמיה החיה')+'<div class="badge">מנחשים לפני שמפעילים</div></div>',
-    '<div class="notebook"><div class="notebook-bar">המחברת האישית שלי</div><p>התחזית שלי: אם אכפיל את המספר, אז…</p><pre dir="ltr"><span>▶</span> scale = 1.0\n<span>▶</span> scale = 2.0</pre><div class="mini-bars"><i></i><i></i><i></i><i></i><i></i></div><p class="caption">איור של תרגול המחברת — הנתונים בתרגיל מומצאים</p></div>',
-    '<div class="homework"><div><small>קודם מתבוננים</small><b>משימה 1</b><span>20–30 דקות · שני צילומים ושאלה</span></div><div><small>אחר כך מודדים</small><b>משימה 2</b><span>60–90 דקות · אפשר בשני חלקים</span></div></div><a class="site-link" href="https://yaminbens.github.io/alpha-mentorship/" dir="ltr">yaminbens.github.io/alpha-mentorship</a>'
+def link(path,text):return '<a href="'+COURSE+path+'">'+text+'</a>'
+
+stages=[
+    '<div class="pair configurations">'+panel('הכנה באנרגיה נמוכה',low,'ללא תוספת מהירות')+panel('הכנה באנרגיה גבוהה',high,'לאחר 24 לחיצות Faster')+'</div><p class="takeaway">שני מצבים של אותו מודל: <bdi>N = 64</bdi>, קופסה באורך <bdi>L = 12</bdi> ביחידות המודל.</p>',
+    '<div class="pair forces">'+panel('מרחק קצר: דחייה',force_pair(True))+panel('מרחק בינוני: משיכה',force_pair(False))+'</div><div class="calculation"><span>מיקומים</span><i>←</i><span>כוחות</span><i>←</i><span>שינוי בתנועה</span><i>←</i><span>מיקומים חדשים</span></div><p class="takeaway">המודל כאן דו־ממדי; תכונותיו נקבעות גם על ידי האינטראקציות והגבולות.</p>',
+    '<div class="pair neighbours">'+panel('זמן ראשון',neighbours(FIRST),'שכני החלקיק המסומן: <bdi>1, 2, 3, 4</bdi>')+panel('זמן מאוחר יותר',neighbours(LATER),'שכני אותו חלקיק: <bdi>1, 2, 5, 6</bdi>')+'</div><p class="takeaway"><strong>2 מתוך 4 שכנים נשמרו.</strong> כאן ״שכנים״ הם ארבעת החלקיקים הקרובים ביותר.</p>',
+    '<div class="protocol"><div class="common">אותו מצב התחלתי שמור · <bdi>N = 64</bdi> · <bdi>L = 12</bdi></div><div class="branches"><div><span>הכנה נמוכה</span><b>0</b><small>לחיצות Faster</small></div><div><span>הכנה בינונית</span><b>8</b><small>לחיצות Faster</small></div><div><span>הכנה גבוהה</span><b>24</b><small>לחיצות Faster</small></div></div><div class="common bottom">אותו זמן הכנה, אותו זמן המתנה ואותו חלון מדידה</div></div><p class="takeaway">חוזרים על ההכנה הבינונית מאותו מצב כדי לבדוק את הליך הביצוע.</p>',
+    '<div class="research"><div class="region-figure">'+configuration(M/'presets/low_observed.txt',regions=True)+'<div class="region-labels" dir="ltr"><span>אזור א׳</span><span>אזור ב׳</span></div></div><div class="research-text"><p><b>מה מתעדים?</b>תיאור של המבנה בכל אחד מהאזורים, באותה תצפית.</p><p><b>מה בודקים?</b>האם הכרת אזור אחד מסייעת לתאר את האחר, לאורך אוסף תצפיות?</p><p class="research-tool">למידת מכונה היא כלי אפשרי לחקירת הקשר.</p></div></div>',
+    '<div class="research-question"><div class="question-rule"></div><p class="project-question">איך משתנים התנועה והשכנים<br>כאשר מוסיפים אנרגיה?</p></div><dl class="project-scope"><div><dt>משנים</dt><dd>את הכנת האנרגיה, במספר חלקיקים ובקופסה קבועים.</dd></div><div><dt>בשלב הראשון</dt><dd>מתארים תנועה וסידור; משווים טמפרטורה ואנרגיה.</dd></div><div><dt>בהמשך</dt><dd>מגדירים מדד לשינוי בשכנים ואת פרק הזמן להשוואה.</dd></div></dl>',
+    '<div class="demo-stage"><div class="demo-procedure"><p><b>לפני ההפעלה</b>רושמים תחזית על התנועה ועל הסידור.</p><p><b>במהלך ההדגמה</b>משווים הכנה נמוכה וגבוהה מאותו מצב שמור.</p><p><b>לאחר ההתבוננות</b>מפרידים בין מה שנראה לבין ההסבר שמציעים.</p><a href="https://physics.weber.edu/schroeder/md/">פתיחת ההדמיה ↗</a></div>'+panel('מצב מההדגמה המתועדת',high)+'</div>',
+    '<ol class="colab-steps"><li><b>יצירת עותק אישי</b><span><bdi>File → Save a copy in Drive</bdi> ושינוי שם המחברת.</span></li><li><b>תחזית והרצה</b><span>כותבים מה צפוי לקרות, מריצים ומציגים את הגרף.</span></li><li><b>שינוי פרמטר אחד</b><span>משנים <bdi>scale = 1</bdi> ל־<bdi>scale = 2</bdi> ומריצים שוב.</span></li><li><b>בדיקת שמירה וגישה</b><span>שומרים, פותחים מחדש ומשתפים עם חשבון המנחה.</span></li></ol><p class="activity-link">'+link('task-0.html','פתיחת Task 0 ↗')+'</p>',
+    '<table class="homework"><thead><tr><th>שלב</th><th>התוצר</th><th>זמן מתוכנן</th></tr></thead><tbody><tr><td>'+link('task-1.html','משימה 1: תצפית')+'</td><td>תחזית, שני צילומים, תיאור ושאלה להמשך.</td><td>20–30 דקות</td></tr><tr><td>'+link('task-2.html','משימה 2: השוואה')+'</td><td>ארבע הרצות, נתוני מקור, גרף ומסקנה קצרה.</td><td>60–90 דקות</td></tr></tbody></table><div class="submission"><b>להגשה</b><p>קישור למחברת האישית, עם הרשאה למנחה, וקובצי נתונים ותמונות שנשמרו בנפרד.</p>'+link('submit.html','הוראות שמירה והגשה ↗')+'</div>',
+    '<div class="appendix-plot">'+chart('potential')+'<div class="equation" dir="ltr">U(r) = 4ε [(σ/r)¹² − (σ/r)⁶]</div><p class="figure-note">r — מרחק; σ — סולם אורך; ε — סולם אנרגיה. זהו גרף אנרגיה, לא גרף כוח.</p></div>',
+    '<div class="appendix-plot">'+chart('energy')+'<p class="figure-note">כל ממוצע: 40 קריאות לאורך 5 יחידות זמן, לאחר הכנה והמתנה. החזרה חופפת לנקודה הבינונית.</p></div>',
+    '<div class="appendix-plot">'+chart('fluctuations')+'<p class="figure-note">40 קריאות מההכנה באנרגיה גבוהה. חלון קצר אינו מוכיח התכנסות או שיווי משקל.</p></div>'
 ]
-phases=['היכרות · 0–8','מחקר · 8–9:30','מחקר · 9:30–11','מחקר · 11–13','מחקר · 13–15','מחקר · 15–16:30','מחקר · 16:30–18','הדגמה · 18–30','Colab · 30–50','המשך הדרך · 50–60']
+provenance=[
+ 'תצפיות שמורות מהדגמת Schroeder; אותו קנה מידה. אין קביעה של פאזה בשיווי משקל.',
+ 'סכמה של אינטראקציה זוגית. נוסחת לנארד־ג׳ונס והגדרות היחידות מופיעות בנספח.',
+ 'דוגמה סינתטית להמחשת המדידה; אינה תוצאה של ההדמיה.',
+ 'Faster משנה מהירויות ואינו קובע טמפרטורה. חזרה זהה אינה אומדן לשונות בין הכנות עצמאיות.',
+ 'חלוקה סכמטית של תצורה שמורה. מוצגת שאלה מחקרית; לא נמדד כאן קשר בין האזורים.',
+ 'כיוון ראשוני לפרויקט. מדידת השכנים תוגדר בהמשך; אינה דרישה למשימת הבית הראשונה.',
+ 'הדגמה אחת בהובלת המנחה. מספר חלקיקים וקופסה קבועים; אין צורך לבצע את הניסוי המלא בכיתה.',
+ 'נתוני התרגול מומצאים. קובצי סביבת ההרצה זמניים ויש לשמור אותם בנפרד.',
+ 'מועדי ההגשה וערוץ שליחת הקישורים יימסרו במפגש. האתר אינו שומר תשובות.',
+ 'Schroeder (2015), doi:10.1119/1.4901185. מודל דו־ממדי עם קירות רכים.',
+ 'נתוני הדגמה בלבד: N=64, L=12, dt=0.005; 1000 צעדי הכנה ו־1000 צעדי המתנה לכל תנאי.',
+ 'מדידות מתועדות מההדגמה. מידע הדדי מתייחס להתפלגות של תצפיות; הוא אינו מחושב במצגת.'
+]
 sections=re.split(r'^## ',(M/'slides.md').read_text(),flags=re.M)[1:]
-assert len(sections)==10
+assert len(sections)==len(stages)==12
 slides=[]
-for idx,section in enumerate(sections):
-    lines=section.splitlines();title=re.sub(r'^\d+\. ','',lines[0]);items=[x[2:] for x in lines if x.startswith('- ')]
-    prompt=next(x[2:] for x in lines if x.startswith('> '))
-    source=('Schroeder (2015) · doi:10.1119/1.4901185' if idx in (1,2,3,5,7) else 'Olah · Visual Information Theory' if idx==4 else 'אלפא · מתחילים לחקור')
-    slides.append(f'''<section class="slide slide-{idx+1}" aria-label="שקף {idx+1}: {html.escape(title)}">
-    <header><span>אלפא / מאטומים לשאלה מחקרית</span><span>{phases[idx]}</span></header>
-    <h1>{html.escape(title)}</h1><div class="body"><div class="words"><ul>{''.join('<li>'+html.escape(x)+'</li>' for x in items)}</ul></div><div class="visual">{visuals[idx]}</div></div>
-    <div class="question"><span>שאלה אליכם</span>{html.escape(prompt)}</div>
-    <footer><span>{source}</span><span>{idx+1:02d} / 10</span></footer></section>''')
+for i,section in enumerate(sections):
+    lines=section.splitlines();title=re.sub(r'^\d+\. ','',lines[0]);lead=next(x[2:] for x in lines if x.startswith('- '))
+    group='מבוא למחקר' if i<6 else 'פעילות במפגש' if i<9 else 'נספח מדעי'
+    slides.append(f'<section class="slide s{i+1}" aria-label="שקף {i+1}: {html.escape(title)}"><header><span>אלפא · תנועה, מבנה ותכונות החומר</span><span>{group}</span></header><h1>{html.escape(title)}</h1><p class="lead">{html.escape(lead)}</p><div class="stage">{stages[i]}</div><footer><p>{html.escape(provenance[i])}</p><span><bdi>{i+1:02d} / 12</bdi></span></footer></section>')
 css='''
-*{box-sizing:border-box} :root{--ink:#172f39;--teal:#087f83;--paper:#faf7ef;--gold:#edaf59}
-html,body{margin:0;background:#172f39;color:var(--ink);font-family:"DejaVu Sans",Arial,sans-serif}
-.slide{width:1280px;height:720px;background:var(--paper);padding:30px 52px 24px;position:relative;overflow:hidden;display:none;transform-origin:top left}
-.slide.active{display:block} header,footer{display:flex;justify-content:space-between;align-items:center;font-size:15px;color:#53696b} header{border-bottom:1px solid #d7dfd8;padding-bottom:15px}
-h1{font-size:48px;line-height:1.2;margin:26px 0 18px;font-weight:700;letter-spacing:-1.1px}
-.body{display:grid;grid-template-columns:40% 57%;gap:3%;height:405px;align-items:center}.words ul{padding:0 24px 0 0;margin:0}.words li{font-size:27px;line-height:1.55;margin:0 0 20px;padding-right:5px}.words li::marker{color:var(--teal)}
-.visual{text-align:center;max-height:405px}.visual>img{width:100%;max-height:340px;object-fit:contain}.caption{font-size:14px;color:#53696b;line-height:1.5;margin:8px 10px}
-.question{position:absolute;bottom:66px;left:52px;right:52px;border-right:6px solid var(--gold);padding:15px 22px;background:#e8f0e9;font-size:25px;line-height:1.3;display:flex;gap:20px;align-items:center}.question>span{font-size:14px;color:var(--teal);white-space:nowrap;font-weight:700}
-footer{position:absolute;bottom:24px;left:52px;right:52px;font-size:12px}.photos{display:flex;gap:18px}.photos figure{margin:0;flex:1}.photos img{width:100%;height:260px;object-fit:contain;background:#fff;border-radius:18px;padding:10px}.photos figcaption{font-size:20px;margin-top:8px}
-.formula{font-size:22px;margin-top:-10px}.atom-hero svg{width:90%;height:300px}.atom-hero p{font-size:27px;color:var(--teal);font-weight:700}
-.slide-1 h1{font-size:61px}.slide-1{background:linear-gradient(135deg,#faf7ef 70%,#e6efdf)}
-.regions{display:flex;gap:18px}.regions>div{width:50%;padding:14px;background:#e6eeeb;border-radius:18px;border-top:5px solid var(--teal)}.regions>div+div{border-color:var(--gold)}.regions b{font-size:29px;display:block}.regions span{font-size:17px}.slide-5 .visual>svg{height:205px;width:80%}
-.steps{display:flex;gap:14px}.steps>div{flex:1;background:#e8efe9;border-radius:22px;padding:24px 12px;font-size:29px;font-weight:700}.steps b{display:block;color:var(--teal);font-size:49px;margin-bottom:20px}.steps span{display:block;font-size:17px;line-height:1.5;margin-top:20px;font-weight:400}
-.demo{position:relative}.demo img{height:355px;max-width:100%;border-radius:20px}.badge{position:absolute;bottom:16px;left:35px;background:var(--gold);padding:12px 18px;border-radius:30px;font-size:22px}
-.notebook{background:white;border:1px solid #d9e2db;border-radius:22px;overflow:hidden;text-align:right}.notebook-bar{background:#e6eeeb;padding:12px 24px;font-size:20px;font-weight:700}.notebook p{margin:14px 24px;font-size:19px}.notebook pre{background:#f3f5f1;padding:16px 30px;font-size:25px;line-height:1.6;text-align:left;margin:0 20px}.notebook pre span{color:var(--teal)}.mini-bars{height:70px;display:flex;align-items:end;gap:20px;padding:10px 45px}.mini-bars i{display:block;width:50px;background:var(--teal);height:65%}.mini-bars i:nth-child(2n){height:100%;background:var(--gold)}.mini-bars i:nth-child(3){height:80%}.notebook p.caption{font-size:13px}
-.homework{display:flex;gap:18px}.homework>div{flex:1;background:#e8efe9;border-radius:22px;padding:27px 12px}.homework small{font-size:18px}.homework b{display:block;font-size:38px;margin:18px 0}.homework span{font-size:18px;line-height:1.6;display:block}.site-link{display:block;margin-top:30px;color:var(--teal);font-size:23px;text-decoration:underline}
-.controls{position:fixed;bottom:9px;left:14px;display:flex;gap:8px;z-index:10;direction:rtl}.controls button{font:15px Arial;padding:8px 13px;color:#fff;background:#203e49;border:1px solid #8ba2aa;border-radius:8px;cursor:pointer}.controls button:focus-visible{outline:3px solid var(--gold)}
-@page{size:1280px 720px;margin:0}@media print{html,body{background:white} .slide,.slide.active{display:block!important;transform:none!important;break-after:page} .slide:last-child{break-after:auto}.controls{display:none}}
+*{box-sizing:border-box}html,body{margin:0;background:#e7eaed;color:#203246;font-family:NotoHebrew,Arial,sans-serif}
+.slide{width:1280px;height:720px;padding:30px 62px 24px;background:#fff;position:relative;display:none;transform-origin:top left;overflow:hidden}.slide.active{display:block}
+header{display:flex;justify-content:space-between;font-size:16px;letter-spacing:.2px;color:#607184;border-bottom:1px solid #d9e0e6;padding-bottom:13px}
+h1{font-size:43px;font-weight:650;line-height:1.3;margin:24px 0 10px;letter-spacing:-.4px}.lead{font-size:24px;line-height:1.45;font-weight:400;margin:0;color:#405469}.stage{height:438px;margin-top:18px}
+footer{position:absolute;bottom:23px;left:62px;right:62px;display:flex;align-items:start;justify-content:space-between;gap:24px;color:#596c7d;font-size:16px;line-height:1.4;border-top:1px solid #d9e0e6;padding-top:11px}footer p{margin:0;max-width:1030px}footer>span{white-space:nowrap}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:64px;direction:rtl}figure{margin:0;text-align:center}figcaption{font-size:24px;font-weight:600;margin-bottom:5px}.pair svg{width:100%;height:310px}.figure-note{font-size:18px;color:#566b7c;line-height:1.5;margin:5px 0}.takeaway{font-size:23px;text-align:center;line-height:1.5;margin:10px 0 0}.takeaway strong{color:#146d75;font-weight:600}
+.forces{padding-top:24px}.forces svg{height:200px}.calculation{display:flex;justify-content:center;gap:30px;align-items:center;font-size:27px;padding:16px 0;border-top:1px solid #d9e0e6;border-bottom:1px solid #d9e0e6;margin:12px 0 22px}.calculation i{font-style:normal;color:#146d75}
+.neighbours svg{height:290px}.neighbours .figure-note{font-size:22px}.s3 .takeaway{margin-top:20px}
+.protocol{margin:15px 35px 0}.common{text-align:center;background:#f5f7f9;border-top:1px solid #d9e0e6;border-bottom:1px solid #d9e0e6;padding:16px;font-size:24px}.branches{display:grid;grid-template-columns:repeat(3,1fr);gap:0;text-align:center;padding:24px 0}.branches>div+div{border-right:1px solid #d9e0e6}.branches span{font-size:22px;display:block}.branches b{font-size:54px;line-height:1.35;font-weight:500;color:#146d75;display:block}.branches small{font-size:18px;display:block}.s4 .takeaway{font-size:22px;margin-top:22px}
+.research{display:grid;grid-template-columns:52% 45%;gap:3%;align-items:center;padding-top:12px}.region-figure svg{height:345px;width:100%}.region-labels{display:flex;justify-content:center;gap:120px;font-size:22px;margin-top:-4px}.region-labels>span:first-child{color:#146d75}.region-labels>span+span{color:#a65d36}.research-text p{font-size:23px;line-height:1.55;margin:0 0 20px}.research-text b{display:block;font-weight:650;margin-bottom:4px}.research-text .research-tool{font-size:21px;color:#566b7c;border-top:1px solid #d9e0e6;padding-top:18px}
+.research-question{display:flex;gap:24px;align-items:stretch;padding:10px 0 20px}.question-rule{width:4px;background:#146d75}.project-question{font-size:38px;line-height:1.4;margin:0;font-weight:500}.project-scope{margin:10px 0 0}.project-scope>div{display:grid;grid-template-columns:180px 1fr;border-top:1px solid #d9e0e6;padding:16px 0;gap:24px;font-size:23px}.project-scope dt{font-weight:600;color:#146d75}.project-scope dd{margin:0}
+.demo-stage{display:grid;grid-template-columns:47% 50%;gap:3%;align-items:center}.demo-stage svg{height:320px;width:100%}.demo-procedure p{font-size:24px;line-height:1.5;margin:0 0 20px}.demo-procedure b{display:block;font-weight:650;font-size:21px;color:#146d75;margin-bottom:5px}a{color:#146d75;text-underline-offset:5px}.demo-procedure a{font-size:22px}
+.colab-steps{counter-reset:steps;list-style:none;padding:0;margin:5px 0 0}.colab-steps li{position:relative;padding:15px 60px 15px 0;border-bottom:1px solid #d9e0e6;display:grid;grid-template-columns:240px 1fr;font-size:23px;gap:18px;line-height:1.5}.colab-steps li:before{counter-increment:steps;content:counter(steps,decimal-leading-zero);position:absolute;right:0;top:15px;color:#146d75;font-size:24px}.colab-steps b{font-weight:600}.activity-link{font-size:24px;margin-top:22px}
+.homework{border-collapse:collapse;width:100%;font-size:23px;line-height:1.55;margin-top:12px}.homework td,.homework th{padding:20px 14px;text-align:right;border-bottom:1px solid #d9e0e6}.homework th{font-size:18px;color:#607184;font-weight:500}.homework td:last-child{white-space:nowrap}.submission{padding-top:28px;font-size:23px;line-height:1.5}.submission b{color:#146d75}.submission p{margin:8px 0 15px}
+.appendix-plot{text-align:center}.chart{height:340px;max-width:100%}.equation{font-size:26px;margin:0 0 8px}.appendix-plot .figure-note{font-size:20px}.s10 .chart{height:310px}
+.controls{position:fixed;bottom:8px;left:18px;display:flex;gap:8px;z-index:10;direction:rtl}.controls button,.controls select{font:15px NotoHebrew,Arial,sans-serif;padding:7px 12px;border:1px solid #aebac4;color:#203246;background:white;cursor:pointer;border-radius:2px}.controls :focus-visible{outline:3px solid #146d75}
+@page{size:1280px 720px;margin:0}@media print{html,body{background:white}.slide,.slide.active{display:block!important;transform:none!important;break-after:page}.slide:last-child{break-after:auto}.controls{display:none}}
 '''
-js='''let current=0; const slides=[...document.querySelectorAll('.slide')];
-function fit(){let scale=Math.min(innerWidth/1280,(innerHeight-48)/720);slides.forEach(s=>s.style.transform=`scale(${scale})`);}
+js='''let current=0;const slides=[...document.querySelectorAll('.slide')];
+function fit(){const scale=Math.min(innerWidth/1280,Math.max(1,innerHeight-48)/720);slides.forEach(s=>s.style.transform=`scale(${scale})`);}
 function show(n){current=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,i)=>{s.classList.toggle('active',i===current);s.setAttribute('aria-hidden',i!==current)});location.hash=String(current+1);fit();}
 document.querySelector('#next').onclick=()=>show(current+1);document.querySelector('#prev').onclick=()=>show(current-1);
+document.querySelector('#section').onchange=e=>{show(Number(e.target.value));e.target.blur()};
 document.querySelector('#full').onclick=()=>{if(document.fullscreenElement)document.exitFullscreen();else document.documentElement.requestFullscreen?.();};
-document.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','ArrowDown','ArrowUp',' '].includes(e.key)&&!(e.key===' '&&e.target.tagName==='BUTTON')){e.preventDefault();show(current+(['ArrowLeft','ArrowDown',' '].includes(e.key)?1:-1));}});
+document.addEventListener('keydown',e=>{if(e.target.tagName==='SELECT')return;if(['ArrowLeft','ArrowRight','ArrowDown','ArrowUp',' '].includes(e.key)&&!(e.key===' '&&e.target.tagName==='BUTTON')){e.preventDefault();show(current+(['ArrowLeft','ArrowDown',' '].includes(e.key)?1:-1));}});
 addEventListener('resize',fit);let start=Number(location.hash.slice(1));show(Number.isFinite(start)&&start>0?start-1:0);
 '''
-document='<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>אלפא — מאטומים לשאלה מחקרית</title><style>'+css+'</style></head><body>'+''.join(slides)+'<div class="controls"><button id="prev">הקודם →</button><button id="next">← הבא</button><button id="full">מסך מלא</button></div><script>'+js+'</script></body></html>'
+document='<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>אלפא — תנועה, מבנה ותכונות החומר</title><style>'+font_css+css+'</style></head><body>'+''.join(slides)+'<div class="controls"><button id="prev">הקודם →</button><button id="next">← הבא</button><select id="section" aria-label="בחירת חלק במצגת"><option value="0">מבוא למחקר</option><option value="6">פעילויות</option><option value="9">נספח מדעי</option></select><button id="full">מסך מלא</button></div><script>'+js+'</script></body></html>'
 (M/'slides.html').write_text(document)
 guide=markdown.markdown((M/'facilitator_plan_he.md').read_text(),extensions=['tables'])
-guide_css='''body{font-family:"DejaVu Sans",Arial,sans-serif;direction:rtl;color:#172f39;max-width:1050px;margin:35px auto;line-height:1.75;font-size:17px;padding:0 30px}h1{font-size:32px}h2{font-size:22px;color:#087f83;break-after:avoid;margin-top:30px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #d3ded9;padding:9px;text-align:right}th{background:#e8efe9}tr{break-inside:avoid}a{overflow-wrap:anywhere;color:#087f83}li{margin-bottom:7px}@page{size:A4;margin:17mm}@media print{body{font-size:11pt;line-height:1.6;margin:0;padding:0}h1{font-size:22pt}h2{font-size:16pt}table{font-size:9pt}}'''
+guide_css='''body{font-family:"NotoHebrew",Arial,sans-serif;direction:rtl;color:#172f39;max-width:1050px;margin:35px auto;line-height:1.75;font-size:17px;padding:0 30px}h1{font-size:32px}h2{font-size:22px;color:#087f83;break-after:avoid;margin-top:30px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #d3ded9;padding:9px;text-align:right}th{background:#e8efe9}tr{break-inside:avoid}a{overflow-wrap:anywhere;color:#087f83}li{margin-bottom:7px}@page{size:A4;margin:17mm}@media print{body{font-size:11pt;line-height:1.5;margin:0;padding:0}h1{font-size:22pt}h2{font-size:16pt;margin-top:18px}table{font-size:9pt}}'''
 (M/'facilitator_plan_he.html').write_text('<!doctype html><html lang="he" dir="rtl"><meta charset="utf-8"><title>סדר המפגש — אלפא</title><style>'+guide_css+'</style><body>'+guide+'</body></html>')
+# The guide shares the embedded font and remains an independent printable document.
+p=M/'facilitator_plan_he.html';p.write_text(p.read_text().replace('<style>','<style>'+font_css,1))
 with sync_playwright() as pw:
-    b=pw.chromium.launch(args=['--no-sandbox'])
-    page=b.new_page(viewport={'width':1280,'height':768})
+    b=pw.chromium.launch(args=['--no-sandbox']);page=b.new_page(viewport={'width':1280,'height':768})
     page.goto((M/'slides.html').as_uri());page.evaluate('document.fonts.ready')
     page.pdf(path=str(M/'slides.pdf'),print_background=True,prefer_css_page_size=True)
     page.goto((M/'facilitator_plan_he.html').as_uri());page.evaluate('document.fonts.ready')
     page.pdf(path=str(M/'facilitator_plan_he.pdf'),print_background=True,prefer_css_page_size=True)
     b.close()
-print('Built 10 Hebrew slides (HTML/PDF) and Hebrew facilitator guide (HTML/PDF).')
+print('Built 12 slides: 6 research, 3 activity, 3 appendix; embedded Hebrew font; guide HTML/PDF.')

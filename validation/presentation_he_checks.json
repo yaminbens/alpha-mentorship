@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-17T16:01:12.471321+00:00",
+  "checked_at": "2026-11-17T16:30:59.894201+00:00",
   "slides": [
     {
       "slide": 1,
@@ -40,11 +40,21 @@
     {
       "slide": 10,
       "layout": "passed"
+    },
+    {
+      "slide": 11,
+      "layout": "passed"
+    },
+    {
+      "slide": 12,
+      "layout": "passed"
     }
   ],
-  "pdf_pages": 10,
+  "pdf_pages": 12,
   "guide_pdf_pages": 4,
-  "navigation": "keyboard and buttons passed",
-  "figures": "existing demonstration data only; no new simulation",
-  "scope": "six research slides in ten minutes; ten slides support the full hour"
+  "navigation": "buttons, arrows after button focus, activity and appendix jumps passed",
+  "neighbour_schematic": "4 closest at each time; intersection 2; markers do not overlap",
+  "coordinate_figures": "64 saved particles per configuration, same scale; no new MD",
+  "font": "pinned Noto Sans Hebrew hashes and load verified",
+  "scope": "six research slides in ten minutes; three activity slides; three appendix slides"
 }

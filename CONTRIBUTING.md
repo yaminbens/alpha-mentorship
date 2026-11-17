@@ -13,9 +13,10 @@ python tools/check_notebooks.py
 python -m http.server 8000 --directory dist
 ```
 
-Use `python tools/build_slides.py` to rebuild the ten-slide Hebrew presentation
+Use `python tools/build_slides.py` to rebuild the twelve-slide Hebrew presentation
 (standalone HTML and PDF) and facilitator guide (HTML/PDF). Six research slides
-remain a ten-minute talk; the others support classroom activities. This builder and
+remain a ten-minute talk; three support classroom activities and three form a scientific appendix.
+The embedded Noto Sans Hebrew font is vendored with its SIL Open Font License. This builder and
 browser checks require Playwright, installed separately with `pip install playwright`
 and `python -m playwright install chromium`. No student needs these build tools.
 Keep source links, licenses, seeds, settings and units with copied or generated assets.
