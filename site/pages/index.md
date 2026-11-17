@@ -15,6 +15,8 @@ Then explain what the evidence supports — and what remains uncertain.
 | 30–50 | Open, edit, run, save and share a Colab notebook |
 | 50–60 | Find your home tasks and practise submitting work |
 
+[המצגת בעברית / Hebrew presentation](presentation/slides.html) · [Download PDF](presentation/slides.pdf)
+
 ## Your route through the project
 1. [Task 0: your first notebook](task-0.html) — begin together in class.
 2. [Task 1: watch what changes](task-1.html) — 20–30 minutes at home; save a prediction, two screenshots and observations.

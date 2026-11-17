@@ -41,7 +41,7 @@ See [the site and submission design](docs/student_site_and_submissions.md) and
 
 - [x] `meetings/01_introduction/agenda.md`: the 60-minute agenda, equipment,
   learning outcomes and expected student outputs.
-- [x] `meetings/01_introduction/slides.md`: six brief editable research slides for a ten-minute talk, following
+- [x] `meetings/01_introduction/slides.md`: ten Hebrew slides, including six brief research slides for a ten-minute talk, following
   the saved proposal, with simple figures and citations.
 - [x] `meetings/01_introduction/slides.pdf`: a presentation export checked for
   readable figures, equations and text. Record how to rebuild it.

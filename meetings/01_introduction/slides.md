@@ -1,34 +1,69 @@
-# Alpha research introduction
+# אלפא · מאטומים לשאלה מחקרית
+מצגת בעברית למפגש בן שעה. שקפים 2–7 הם ששת שקפי התוכן לעשר דקות;
+שקפים 1 ו־8–10 מלווים את שאר המפגש. שאלת ההשתתפות בכל שקף מסומנת ב־>.
 
-## 1. Materials from atoms
-- Solids and liquids can contain the same kinds of atoms.
-- Arrangement and motion help us describe their behaviour.
-- Prediction: what changes when we add energy?
+## 1. איך אטומים יוצרים חומר?
+- מתחילים מסקרנות, לא מניסיון בתכנות.
+- היום: שאלה, הדגמה ומחברת ראשונה.
+- מותר לנחש. מותר לטעות. כדאי לשאול.
+> מה הייתם רוצים להבין על חומר שסביבנו?
 
-## 2. Rules make motion
-- Positions determine forces; forces change motion.
-- Particles attract at moderate separation and repel at short separation.
-- A model is a useful simplification with assumptions.
+## 2. אותם אטומים. מה השתנה?
+- נסתכל בנפרד על הסידור ועל התנועה.
+- גם בחומר מוצק האטומים יכולים לנוע.
+- תמונה אחת אינה מספיקה כדי לזהות מצב צבירה.
+> מה תוכלו ללמוד מתמונה, ומה צריך לראות בסרט?
 
-## 3. A movie becomes evidence
-- Record settings, temperature, energy and neighbours.
-- Keep the comparison fair: fixed particle count and box.
-- Energy per particle is not a direct measure of structural order.
+## 3. מעט כללים, הרבה תנועה
+- המיקום קובע את הכוח; הכוח משנה את התנועה.
+- קרוב מאוד: דחייה. במרחק מתאים: משיכה.
+- זהו מודל פשוט, עם הנחות ומגבלות.
+> מה יקרה לשני חלקיקים שנמצאים קרוב מדי?
 
-## 4. Connection to our research
-- How does atomic arrangement connect to material behaviour?
-- How much can knowing one region tell us about another?
-- Machine learning is one possible tool to investigate these relationships.
+## 4. מסרט יפה לראיה שאפשר לבדוק
+- שומרים על אותו מספר חלקיקים ואותה קופסה.
+- מתעדים הכנה, זמן מדידה ויחידות.
+- אנרגיה אינה מדידה ישירה של הסידור.
+> איזה מספר יעזור לכם להשוות בין שתי הרצות?
 
-## 5. Many observations matter
-- One configuration is one observation.
-- Fluctuations and preparation history matter.
-- Mutual information describes a distribution, not one snapshot.
+## 5. ומה אנחנו חוקרים במעבדה?
+- איך הסידור האטומי קשור להתנהגות החומר?
+- מה אפשר ללמוד על אזור אחד מתוך אזור אחר?
+- למידת מכונה היא אחד הכלים לבדיקת קשרים כאלה.
+> אילו שתי תכונות הייתם מנסים לקשר?
 
-## 6. Your first experiment
-- Predict, observe, record, repeat and explain.
-- Today: one guided demonstration and your first saved notebook.
-- At home: compare three energy preparations and share your evidence.
+## 6. תצפית אחת היא התחלה
+- גדלים שנמדוד יכולים להשתנות בזמן.
+- צריך תצפיות רבות ולתעד כיצד נאספו.
+- גם תנאי ההתחלה משפיעים על ההשוואה.
+> האם צילום יחיד מספיק כדי לדעת מה קורה בדרך כלל?
 
-Sources: Schroeder (2015), doi:10.1119/1.4901185; Olah, Visual Information Theory.
-Model diagrams are illustrations; no physical phase boundary is claimed.
+## 7. השאלה שלכם מתחילה כאן
+- מה משתנה כשמוסיפים אנרגיה?
+- קודם חוזים, אחר כך מתבוננים ומודדים.
+- תוצאה מפתיעה היא סיבה לבדוק, לא למחוק.
+> ״אני חושב/ת ש… כי…״ — מה התחזית שלכם?
+
+## 8. בואו נבדוק יחד
+- אני מפעיל את ההדמיה; אתם חוזים ומתבוננים.
+- משנים אנרגיה ושומרים על מספר החלקיקים והקופסה.
+- מתארים תנועה וסידור לפני שקובעים הסבר.
+> יותר תנועה — האם בהכרח פחות סדר?
+
+## 9. המחברת הראשונה שלכם
+- שומרים עותק אישי ב־Drive לפני העריכה.
+- מריצים תא, כותבים תחזית ומשנים מספר אחד.
+- שומרים, פותחים מחדש ומשתפים עם המנחה.
+> איפה התשובה שלכם תישאר אחרי סגירת הלשונית?
+
+## 10. יוצאים עם צעד ראשון ברור
+- משימה 1: תחזית, שני צילומים ותיאור קצר.
+- משימה 2: ארבע הרצות, גרף אחד ומסקנה.
+- שולחים קישור למחברת וגם גישה לקובצי העזר.
+> מה תעשו קודם בבית, ואיך אדע שהעבודה מוכנה לבדיקה?
+
+מקורות: Daniel V. Schroeder (2015), doi:10.1119/1.4901185;
+Christopher Olah, Visual Information Theory.
+התמונות וגרפי הנתונים לקוחים מההדגמה המתועדת במאגר. אין כאן קביעה של פאזה
+בשיווי משקל. תרשימי החלקיקים והאזורים הם איורים. מדד מידע הדדי מתייחס
+להתפלגות של תצפיות, ולא לתמונה יחידה; במצגת לא מחושב מדד כזה.

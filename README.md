@@ -7,6 +7,8 @@ meeting, a guided particle simulation, Colab practice and independent work at ho
 
 ## Start here
 - [Mentor facilitation guide](mentor/facilitation_guide.md)
+- [Detailed Hebrew plan for November 18](meetings/01_introduction/facilitator_plan_he.md) and [printable guide](meetings/01_introduction/facilitator_plan_he.pdf)
+- [Hebrew presentation in the browser](https://yaminbens.github.io/alpha-mentorship/presentation/slides.html)
 - [60-minute agenda](meetings/01_introduction/agenda.md)
 - [Presentation PDF](meetings/01_introduction/slides.pdf) and [editable source](meetings/01_introduction/slides.md)
 - [Guided simulation](meetings/01_introduction/demonstration.md) and [exact browser procedure](simulation/browser_guide.md)

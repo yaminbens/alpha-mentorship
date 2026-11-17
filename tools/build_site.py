@@ -10,6 +10,9 @@ def main():
  if OUT.exists():shutil.rmtree(OUT)
  OUT.mkdir();shutil.copytree(ROOT/'site/assets',OUT/'assets')
  downloads=OUT/'downloads';downloads.mkdir()
+ presentation=OUT/'presentation';presentation.mkdir()
+ for name in ['slides.html','slides.pdf']:
+  shutil.copy2(ROOT/'meetings/01_introduction'/name,presentation/name)
  for p in (ROOT/'notebooks').glob('*.ipynb'):shutil.copy2(p,downloads/p.name)
  for p in ['assignments/01_first_experiment/exploration_template.md','assignments/01_first_experiment/results_template.csv','assignments/01_first_experiment/report_template.md','project/proposal_template.md','meetings/01_introduction/student_worksheet_he.md','assignments/01_first_experiment/task_he.md','readings/glossary_en_he.md','readings/questions_he.md']:
   shutil.copy2(ROOT/p,downloads/Path(p).name)

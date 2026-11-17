@@ -10,8 +10,10 @@
 - Student tasks now have numbered steps, sentence starters, completion checklists and
   matching fill-in notebook/document templates. Task 2 includes raw-export averaging,
   four explicit result rows and graph/CSV downloads. Hebrew instructions match.
-- Independent Git repository; 60-minute meeting package with six-slide editable source
-  and PDF, speaker notes, bilingual worksheet and a 12-minute demonstration guide.
+- Independent Git repository; 60-minute meeting package with ten Hebrew slides
+  (six research slides plus welcome/activity prompts), editable Markdown, standalone
+  HTML and PDF. Detailed Hebrew facilitator plan for 2026-11-18, speaker notes,
+  bilingual worksheet and a 12-minute demonstration guide.
 - Mentor facilitation, background, answers, assessment, troubleshooting, communications,
   program requirements, review workflow and blank private-record templates.
 - Reading guides, bilingual questions/glossary, references and source/license register.

@@ -1,0 +1,50 @@
+{
+  "checked_at": "2026-11-17T16:01:12.471321+00:00",
+  "slides": [
+    {
+      "slide": 1,
+      "layout": "passed"
+    },
+    {
+      "slide": 2,
+      "layout": "passed"
+    },
+    {
+      "slide": 3,
+      "layout": "passed"
+    },
+    {
+      "slide": 4,
+      "layout": "passed"
+    },
+    {
+      "slide": 5,
+      "layout": "passed"
+    },
+    {
+      "slide": 6,
+      "layout": "passed"
+    },
+    {
+      "slide": 7,
+      "layout": "passed"
+    },
+    {
+      "slide": 8,
+      "layout": "passed"
+    },
+    {
+      "slide": 9,
+      "layout": "passed"
+    },
+    {
+      "slide": 10,
+      "layout": "passed"
+    }
+  ],
+  "pdf_pages": 10,
+  "guide_pdf_pages": 4,
+  "navigation": "keyboard and buttons passed",
+  "figures": "existing demonstration data only; no new simulation",
+  "scope": "six research slides in ten minutes; ten slides support the full hour"
+}

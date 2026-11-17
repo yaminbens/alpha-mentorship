@@ -1,18 +1,29 @@
-# Speaker notes — ten-minute research introduction
-1. **Materials from atoms (1.5 min).** Ask what differs between the two configurations.
-   Label the pictures as model illustrations. Say atoms in solids can still move.
-2. **Rules make motion (1.5 min).** Point to separation and the attraction/repulsion
-   curve. Explain the position → force → motion → new position cycle.
-3. **A movie becomes evidence (2 min).** Ask what one would measure. Introduce energy,
-   temperature and neighbours. Energy is not a structural-order measurement.
-4. **Connection to research (2 min).** Explain interest in atomic arrangements and
-   statistical relationships. ML is a possible measurement tool, not a required
-   prerequisite for their first experiment. Do not present current lab estimators
-   as validated thermodynamic results.
-5. **Many observations (1.5 min).** Show fluctuating measurements. Explain that one
-   snapshot cannot define a probability distribution or establish MI.
-6. **Their experiment (1.5 min).** Fixed count and box; three energy preparations;
-   record, repeat, interpret. Move straight into the live demonstration.
+# הערות דובר — עשר דקות מחקר בתוך מפגש בן שעה
 
-When asked a question beyond the introduction, write it for follow-up. Preserve
-Colab save/share time. Finish by asking each student to explain what they will save.
+המדריך המלא בעברית נמצא ב־[facilitator_plan_he.md](facilitator_plan_he.md).
+במצגת החדשה יש עשרה שקפים. **שקפים 2–7 בלבד** הם ההרצאה המדעית בת עשר הדקות.
+שקף 1 מיועד להיכרות, ושקפים 8–10 מלווים את ההדגמה, Colab והסגירה.
+
+1. **שקף 2 — אותם אטומים (1.5 דקות).** שאל מה שונה בין התמונות ומה אי אפשר
+   לדעת בלי לראות תנועה. אלה תצפיות מהמודל, לא תצלומי חומר אמיתי. הצבעים
+   מסמנים מהירות, לא סוגי אטומים. גם אטומים במוצק יכולים לנוע.
+2. **שקף 3 — כללים ותנועה (1.5 דקות).** הסבר מיקום → כוח → תנועה → מיקום חדש.
+   הגרף מציג אנרגיית זוג כתלות במרחק, ולא את הכוח עצמו. אין צורך לגזור את
+   המשוואה. המודל מפשט את המציאות; הוא כולל הנחות ומגבלות.
+3. **שקף 4 — סרט לראיה (2 דקות).** שאל איזה מספר כדאי למדוד. הגרף נבנה
+   מהדגמה מתועדת: N=64, צלע קופסה 12, 40 קריאות בחלון של 5 יחידות זמן לאחר
+   הכנה והמתנה. החזרה מאותו מצב עשויה לחפוף לנקודה המקורית. האנרגיה כוללת
+   את אינטראקציות המודל; היא אינה מדידה ישירה של סדר. אין כאן עקומת התכה.
+4. **שקף 5 — המחקר במעבדה (2 דקות).** חבר בין סידור אטומי, התנהגות חומר
+   וקשרים סטטיסטיים. האיור אינו נתון מחקרי. למידת מכונה היא כלי אפשרי;
+   היא אינה דרישה מוקדמת מהתלמידים ואינה מוצגת כאן כתוצאה תרמודינמית מאומתת.
+5. **שקף 6 — תצפיות רבות (1.5 דקות).** הצבע על התנודות בגרף מההדגמה הקצרה.
+   אם עולה מידע הדדי: מדובר בקשר בין משתנים בהתפלגות של תצפיות. צריך להגדיר
+   את תנאי האיסוף ואת המשתנים; תצפית אחת אינה מגדירה את המדד. במפגש לא
+   מחשבים אומדן מידע הדדי, ותנודות או מראה יציב אינם הוכחת התכנסות.
+6. **שקף 7 — השאלה שלהם (1.5 דקות).** בקש תחזית על הוספת אנרגיה במספר
+   חלקיקים ובקופסה קבועים. חזור לתחזית אחרי ההדגמה. הפרד בין תחזית, תצפית
+   והסבר והמשך לשקף 8 ולהדמיה.
+
+שאלות שחורגות מהזמן נרשמות להמשך. שמור זמן לשמירה, לפתיחה מחדש ולשיתוף
+מחברת. סיים בבקשה מכל תלמיד להסביר מה יעשה בבית ומה ישלח לבדיקה.

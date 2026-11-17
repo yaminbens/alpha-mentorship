@@ -13,8 +13,10 @@ python tools/check_notebooks.py
 python -m http.server 8000 --directory dist
 ```
 
-Use `python tools/build_slides.py` to rebuild the six-slide PDF. Browser checks use
-Playwright, installed separately with `pip install playwright` and
-`python -m playwright install chromium`. No student needs these build tools.
+Use `python tools/build_slides.py` to rebuild the ten-slide Hebrew presentation
+(standalone HTML and PDF) and facilitator guide (HTML/PDF). Six research slides
+remain a ten-minute talk; the others support classroom activities. This builder and
+browser checks require Playwright, installed separately with `pip install playwright`
+and `python -m playwright install chromium`. No student needs these build tools.
 Keep source links, licenses, seeds, settings and units with copied or generated assets.
 Commit source and useful small teaching outputs; ignore temporary runtimes and student work.
