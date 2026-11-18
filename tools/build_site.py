@@ -4,7 +4,7 @@ import json,re,shutil,html
 import markdown
 ROOT=Path(__file__).resolve().parent.parent
 OUT=ROOT/'dist'
-PAGES=[('index','מתחילים כאן'),('task-0','פתיחה · סביבת העבודה'),('task-1','1 · פתיחת מחיצה'),('task-2','2 · חוק הקפיצה'),('task-3','3 · כותבים סימולציה'),('browser','הדגמת המנחה'),('readings','מקורות וקריאה'),('submit','שמירה ושיתוף'),('next','המשך וקריאה')]
+PAGES=[('index','מתחילים כאן'),('task-0','פתיחה · סביבת העבודה'),('task-1','1 · פתיחת מחיצה'),('task-2','2 · חוק הקפיצה'),('task-3','3 · כותבים סימולציה'),('browser','הדגמת המנחה'),('readings','מקורות וקריאה'),('submit','שמירה ושיתוף')]
 DOWNLOADS=['assignments/reflection_he.md','assignments/01_first_experiment/exploration_template.md','assignments/01_first_experiment/results_template.csv','assignments/01_first_experiment/report_template.md','project/proposal_template.md','meetings/01_introduction/student_worksheet_he.md','assignments/01_first_experiment/task_he.md','readings/glossary_en_he.md','readings/questions_he.md']
 def site_target(target):
  # Source Markdown uses real repository paths so it is also readable on GitHub.

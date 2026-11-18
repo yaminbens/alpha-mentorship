@@ -53,7 +53,7 @@ save a personal Drive copy.
 - [Detailed Hebrew facilitator plan](meetings/01_introduction/facilitator_plan_he.md)
 - [Hebrew presentation](https://yaminbens.github.io/alpha-mentorship/presentation/slides.html), [PDF](meetings/01_introduction/slides.pdf) and [guided demonstration](meetings/01_introduction/demonstration.md)
 - [Review workflow](mentor/review_workflow.md) and [troubleshooting](mentor/troubleshooting.md)
-- [Further scientific material](site/pages/next.md) and [original browser track archive](archive/browser_track/README.md)
+- [Scientific extension notebooks](notebooks/) and [original browser track archive](archive/browser_track/README.md)
 - [Project status](STATUS.md) and [implementation inventory](IMPLEMENTATION_PLAN.md)
 
 The new coding models contain no forces between particles. Mixing does not

@@ -40,11 +40,6 @@
     "status": "passed"
   },
   {
-    "page": "next",
-    "width": 1280,
-    "status": "passed"
-  },
-  {
     "page": "index",
     "width": 390,
     "status": "passed"
@@ -81,11 +76,6 @@
   },
   {
     "page": "submit",
-    "width": 390,
-    "status": "passed"
-  },
-  {
-    "page": "next",
     "width": 390,
     "status": "passed"
   }

@@ -4,7 +4,7 @@
 
 The student entry point is the [Hebrew GitHub Pages book](https://yaminbens.github.io/alpha-mentorship/).
 It retains chapter navigation, a first-hour agenda, activity pages, readings,
-saving/sharing instructions and further material. Repository documentation is
+saving/sharing instructions. Repository documentation is
 in English. Student notebooks and teaching assets intended for Hebrew use remain
 in Hebrew.
 
@@ -19,7 +19,7 @@ reading. Reflection invites interests, easy and difficult moments, and desired
 next steps. Partial work is welcome; no full report or grade is required. Code
 checks support debugging.
 
-There are nine website pages and ten active notebooks: five Hebrew notebooks and
+There are eight website pages and ten active notebooks: five Hebrew notebooks and
 five original English scientific extensions. Three original notebooks are retained
 under `archive/browser_track` separately from the active course.
 
@@ -46,7 +46,7 @@ The existing course validation covers:
 - Ten notebooks executed locally in fresh Python kernels, plus completed student
   paths for Activities 1–3. Running an empty template does not show that a student
   completed an activity.
-- 18 browser checks across nine pages and two viewport widths. Standalone HTML
+- 16 browser checks across eight pages and two viewport widths. Standalone HTML
   animations and PNG plots support review outside Colab.
 - Source Markdown links resolve inside GitHub and are converted to HTML links
   during the build, avoiding the former source-folder `task-0.html` error.

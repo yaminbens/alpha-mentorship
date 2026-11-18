@@ -2,61 +2,61 @@
   {
     "notebook": "00_getting_started.ipynb",
     "status": "passed",
-    "seconds": 1.65,
+    "seconds": 1.68,
     "execution": "fresh local Python kernel; not live Colab"
   },
   {
     "notebook": "01_first_simulation.ipynb",
     "status": "passed",
-    "seconds": 2.0,
+    "seconds": 2.1,
     "execution": "fresh local Python kernel; not live Colab"
   },
   {
     "notebook": "02_analyse_browser_data.ipynb",
     "status": "passed",
-    "seconds": 1.66,
+    "seconds": 1.68,
     "execution": "fresh local Python kernel; not live Colab"
   },
   {
     "notebook": "03_measure_structure_and_motion.ipynb",
     "status": "passed",
-    "seconds": 1.4,
+    "seconds": 1.32,
     "execution": "fresh local Python kernel; not live Colab"
   },
   {
     "notebook": "04_information_controls.ipynb",
     "status": "passed",
-    "seconds": 0.87,
+    "seconds": 0.92,
     "execution": "fresh local Python kernel; not live Colab"
   },
   {
     "notebook": "05_prediction_controls.ipynb",
     "status": "passed",
-    "seconds": 0.93,
+    "seconds": 1.06,
     "execution": "fresh local Python kernel; not live Colab"
   },
   {
     "notebook": "10_home_explore.ipynb",
     "status": "passed",
-    "seconds": 1.92,
+    "seconds": 1.7,
     "execution": "fresh local Python kernel; not live Colab"
   },
   {
     "notebook": "11_home_compare.ipynb",
     "status": "passed",
-    "seconds": 1.91,
+    "seconds": 1.97,
     "execution": "fresh local Python kernel; not live Colab"
   },
   {
     "notebook": "12_build_simulation.ipynb",
     "status": "passed",
-    "seconds": 1.24,
+    "seconds": 1.49,
     "execution": "fresh local Python kernel; not live Colab"
   },
   {
     "notebook": "student_workbook_he.ipynb",
     "status": "passed",
-    "seconds": 2.81,
+    "seconds": 2.74,
     "execution": "fresh local Python kernel; not live Colab"
   }
 ]

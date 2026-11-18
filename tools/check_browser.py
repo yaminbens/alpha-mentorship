@@ -17,7 +17,7 @@ try:
   for width in (1280,390):
    page=browser.new_page(viewport={'width':width,'height':900})
    page.on('pageerror',lambda e:errors.append(str(e)))
-   for slug in ['index','task-0','task-1','task-2','task-3','browser','readings','submit','next']:
+   for slug in ['index','task-0','task-1','task-2','task-3','browser','readings','submit']:
     response=page.goto(base+slug+'.html',wait_until='networkidle')
     assert response.status==200
     assert page.locator('h1').count()==1,(slug,page.locator('h1').count())
