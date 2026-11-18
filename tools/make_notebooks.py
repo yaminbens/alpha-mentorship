@@ -17,7 +17,10 @@ SAVE='''## Save and submit / שמירה והגשה
 שמרו עותק אישי, פתחו אותו מחדש ובדקו שהתשובות נשמרו. שיתוף מחברת אינו שיתוף אוטומטי של קובצי סביבת ההרצה.
 '''
 def notebook(name,title,cells):
- n=nbf.v4.new_notebook(cells=[md('# '+title),md(SAVE)]+cells+[md('## Reflection and revision\nWhat did you learn? What remains uncertain? What changed after feedback?\n\n**Your answer:** …')])
+ cfg=json.loads((ROOT/'site/config.json').read_text())
+ url=f"https://colab.research.google.com/github/{cfg['repository']}/blob/{cfg['branch']}/notebooks/{name}"
+ heading='# '+title+'\n\n[Open in Colab / פתיחה בקולאב]('+url+')\n\nGitHub shows a preview. To run or edit this notebook, open it in Colab and choose **File → Save a copy in Drive**.\n\nב־GitHub מוצגת תצוגה מקדימה. להרצה ולעריכה לחצו על הקישור ושמרו עותק אישי ב־Drive.'
+ n=nbf.v4.new_notebook(cells=[md(heading),md(SAVE)]+cells+[md('## Reflection and revision\nWhat did you learn? What remains uncertain? What changed after feedback?\n\n**Your answer:** …')])
  for i,cell in enumerate(n.cells): cell['id']=f'cell-{i:03d}'
  n.metadata={'kernelspec':{'display_name':'Python 3','language':'python','name':'python3'},'language_info':{'name':'python','version':'3'},'colab':{'name':name,'provenance':[]}}
  p=ROOT/'notebooks'/name;p.parent.mkdir(exist_ok=True);nbf.write(n,p)

@@ -11,6 +11,8 @@
 | Mentor gets access denied | Share with the exact designated account and test the link |
 | Plot cannot be interpreted | Check axes, units, example-versus-student data and preparation history |
 | GitHub template opens read-only | Save a personal copy in Drive before editing |
+| GitHub shows a notebook but there is no Run button | Follow Open in Colab at the top of the notebook or use the repository README table; GitHub provides a preview |
+| Colab cannot fetch the GitHub notebook | Download the notebook from the student site, open Colab and use File → Upload notebook; then save a copy in Drive |
 
 Use help from the program mentor for account restrictions; do not request student
 passwords. Record reproducible software problems with the task and error, without

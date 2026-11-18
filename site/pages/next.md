@@ -7,16 +7,21 @@ atoms change across energy preparations?** Define neighbours and the observation
 lag before collecting a larger dataset.
 
 ## Later notebooks
-{{notebook:01_first_simulation.ipynb}}
-{{notebook:02_analyse_browser_data.ipynb}}
-{{notebook:03_measure_structure_and_motion.ipynb}}
+[Open in Colab](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/01_first_simulation.ipynb)
+[Download notebook](../../notebooks/01_first_simulation.ipynb)
+[Open in Colab](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/02_analyse_browser_data.ipynb)
+[Download notebook](../../notebooks/02_analyse_browser_data.ipynb)
+[Open in Colab](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/03_measure_structure_and_motion.ipynb)
+[Download notebook](../../notebooks/03_measure_structure_and_motion.ipynb)
 
 ## Optional extensions
 These are not required for the first assignment.
-{{notebook:04_information_controls.ipynb}}
-{{notebook:05_prediction_controls.ipynb}}
+[Open in Colab](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/04_information_controls.ipynb)
+[Download notebook](../../notebooks/04_information_controls.ipynb)
+[Open in Colab](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/05_prediction_controls.ipynb)
+[Download notebook](../../notebooks/05_prediction_controls.ipynb)
 
 The extension examples use labelled synthetic data or known-answer probability laws.
 They are not physical validation of mutual-information or thermodynamic estimates.
 
-[Research outline template](downloads/proposal_template.md)
+[Research outline template](../../project/proposal_template.md)

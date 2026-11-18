@@ -5,6 +5,29 @@ meeting, a guided particle simulation, Colab practice and independent work at ho
 
 **[Student website](https://yaminbens.github.io/alpha-mentorship/)** · **[GitHub repository](https://github.com/yaminbens/alpha-mentorship)**
 
+## Open the notebooks in Colab / פתיחת המחברות
+
+**GitHub displays a preview. Use the links below to run and edit in Colab.**
+Then choose **File → Save a copy in Drive** and work in your personal copy.
+
+ב־GitHub מוצגת תצוגה מקדימה של המחברת. לפתיחה בקולאב לחצו על הקישור המתאים
+בטבלה, התחברו לחשבון Google ושמרו עותק אישי באמצעות **File → Save a copy in Drive**.
+
+| Activity | Open in Colab |
+|---|---|
+| **Task 0 — Classroom introduction / התחילו כאן** | [Open Task 0](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/00_getting_started.ipynb) |
+| Task 1 — Explore and record | [Open Task 1](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/10_home_explore.ipynb) |
+| Task 2 — Compare conditions | [Open Task 2](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/11_home_compare.ipynb) |
+| Later — First simulation | [Open simulation](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/01_first_simulation.ipynb) |
+| Later — Analyse browser data | [Open analysis](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/02_analyse_browser_data.ipynb) |
+| Later — Structure and motion | [Open measurements](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/03_measure_structure_and_motion.ipynb) |
+| Optional — Information controls | [Open information controls](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/04_information_controls.ipynb) |
+| Optional — Prediction controls | [Open prediction controls](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/05_prediction_controls.ipynb) |
+
+If a link fails, use **Download notebook** on the corresponding student website
+page, open [Colab](https://colab.research.google.com/), and choose
+**File → Upload notebook** to upload the `.ipynb` file. Save a personal Drive copy.
+
 ## Start here
 - [Mentor facilitation guide](mentor/facilitation_guide.md)
 - [Detailed Hebrew plan for November 18](meetings/01_introduction/facilitator_plan_he.md) and [printable guide](meetings/01_introduction/facilitator_plan_he.pdf)

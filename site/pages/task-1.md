@@ -4,13 +4,14 @@
 **Question:** what happens to the motion and arrangement of atoms when we add energy?
 Today you will describe what you see. The numerical measurements come in Task 2.
 
-{{notebook:10_home_explore.ipynb}}
+[Open in Colab](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/10_home_explore.ipynb)
+[Download notebook](../../notebooks/10_home_explore.ipynb)
 
 ## 1. Get ready
 Save your own copy as `YOUR-CODE_task-1`. It already contains a worksheet: replace
 `…` with your answers. You may answer in English or Hebrew. Short sentences are fine.
 Open [the simulator](https://physics.weber.edu/schroeder/md/) in a second tab and keep
-[the control guide](browser.html) available.
+[the control guide](browser.md) available.
 
 ## 2. Write a prediction before running
 Complete both sentences in the notebook:
@@ -21,7 +22,7 @@ Complete both sentences in the notebook:
 A prediction can turn out to be wrong. Keep it so you can compare it with your observation.
 
 ## 3. Observe the low-energy condition
-1. Open [ordered_initial.txt](presets/ordered_initial.txt) and copy all its text.
+1. Open [ordered_initial.txt](../../meetings/01_introduction/presets/ordered_initial.txt) and copy all its text.
 2. Pause the simulator. Open **Data**, choose **All atoms**, paste that text into its data box, and click **Input state**.
 3. Check **N = 64**, box side **12**, gravity **0**, and time step **0.005**.
    N means number of particles; the box side is a length in the model's own units.
@@ -59,12 +60,12 @@ A still image cannot show speed, and a short run cannot establish a phase.
 ## Finished when
 Your saved notebook contains your original prediction, settings, two observations,
 two screenshots or accessible image links, and one question for the mentor.
-Save the images separately in Drive and share them too. Follow [Save & submit](submit.html).
+Save the images separately in Drive and share them too. Follow [Save & submit](submit.md).
 
-[Download the fill-in worksheet](downloads/exploration_template.md).
+[Download the fill-in worksheet](../../assignments/01_first_experiment/exploration_template.md).
 If Colab is unavailable, copy this worksheet into a document and use the same prompts.
 
-**If the simulator will not load:** use the [recorded demonstration](browser.html),
+**If the simulator will not load:** use the [recorded demonstration](browser.md),
 label your work “provided demonstration, not my run”, and write what you can and
 cannot observe. Send the access problem to your mentor.
 

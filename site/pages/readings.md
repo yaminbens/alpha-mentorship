@@ -75,4 +75,4 @@ What must remain fixed in a fair comparison? What files will you save for review
 </div>
 
 
-[Download Hebrew questions](downloads/questions_he.md) · [English–Hebrew glossary](downloads/glossary_en_he.md)
+[Download Hebrew questions](../../readings/questions_he.md) · [English–Hebrew glossary](../../readings/glossary_en_he.md)

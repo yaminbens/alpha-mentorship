@@ -5,7 +5,7 @@ off, no added bonds, no anchored particles and no fixed-temperature particles.
 Lengths and times use reduced model units; temperatures are not automatically kelvin.
 
 ## Load a reproducible starting state
-1. Download [ordered_initial.txt](presets/ordered_initial.txt) from the course page or use the file in
+1. Download [ordered_initial.txt](../../meetings/01_introduction/presets/ordered_initial.txt) from the course page or use the file in
    `meetings/01_introduction/presets/`.
 2. Pause the simulator. Open **Data**, select **All atoms**, paste the file's complete text into the data
    box and click **Input state**. Keep a copy of the file you loaded.
@@ -52,11 +52,11 @@ an automated browser rehearsal. Use them as labelled examples if access fails.
 ## Recorded demonstration
 These are actual short browser-model observations, not phase classifications.
 
-<figure><img src="fallback/low.png" alt="Low-energy observation of an ordered cluster"><figcaption>Low-energy observation. Source: Schroeder browser simulation; course rehearsal.</figcaption></figure>
-<figure><img src="fallback/high.png" alt="High-energy observation with a less ordered arrangement"><figcaption>High-energy observation from the same model and box. No equilibrium phase assignment.</figcaption></figure>
-<figure><img src="fallback/demonstration.gif" alt="Recorded particle motion after high-energy preparation"><figcaption>Accelerated recording of the external model; not a live simulation.</figcaption></figure>
+<figure><img src="../../meetings/01_introduction/fallback/low.png" alt="Low-energy observation of an ordered cluster"><figcaption>Low-energy observation. Source: Schroeder browser simulation; course rehearsal.</figcaption></figure>
+<figure><img src="../../meetings/01_introduction/fallback/high.png" alt="High-energy observation with a less ordered arrangement"><figcaption>High-energy observation from the same model and box. No equilibrium phase assignment.</figcaption></figure>
+<figure><img src="../../meetings/01_introduction/fallback/demonstration.gif" alt="Recorded particle motion after high-energy preparation"><figcaption>Accelerated recording of the external model; not a live simulation.</figcaption></figure>
 
 
-[Download measured example averages](downloads/examples/window_averages.csv) · [Example provenance](downloads/examples/metadata.json)
+[Download measured example averages](../../data/examples/window_averages.csv) · [Example provenance](../../data/examples/metadata.json)
 
 If using these observations instead of your own run, explicitly label the source in your notebook.

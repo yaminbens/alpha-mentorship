@@ -26,6 +26,14 @@
 - Research question options, provisional plan, proposal/report/poster templates and timeline.
 
 ## Validation
+On 2026-11-18, fixed source-page links that incorrectly pointed to generated HTML
+inside GitHub (for example site/pages/task-0.html). Source pages now link to actual
+Markdown and repository assets; the site builder maps these to published paths.
+All eight notebooks and the README now include direct Colab launch links. Added
+regression checks for source links, notebook buttons and matching downloads.
+Only the first Markdown cell changed in each notebook; code and remaining cells
+are unchanged. Five relevant checks and 16 browser/page layout checks passed.
+
 The revised presentation distinguishes saved particle coordinates from synthetic
 neighbour diagrams. Font provenance and license are in vendor/fonts/. Scientific
 plots remain available in the appendix. No new simulation was run for the redesign.

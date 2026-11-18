@@ -5,7 +5,8 @@
 what it shows. You will also replay one condition to check your procedure.
 You do not need to write simulation code.
 
-{{notebook:11_home_compare.ipynb}}
+[Open in Colab](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/11_home_compare.ipynb)
+[Download notebook](../../notebooks/11_home_compare.ipynb)
 
 ## 1. Save your worksheet and write a prediction
 Save a copy as `YOUR-CODE_task-2`. Fill in the prediction and method sections before
@@ -13,7 +14,7 @@ collecting results. Keep your prediction even if the results surprise you.
 
 > When I add more energy, I predict … . I will check this by measuring … .
 
-Use a fresh copy of [ordered_initial.txt](presets/ordered_initial.txt) for every run.
+Use a fresh copy of [ordered_initial.txt](../../meetings/01_introduction/presets/ordered_initial.txt) for every run.
 Keep N = 64, box side = 12, gravity = 0, time step = 0.005, and the original model
 settings. Do not add bonds, anchor particles, or fix their temperature.
 
@@ -46,7 +47,7 @@ A `.tsv` file is a plain text table whose columns are separated by tabs.
 
 Each run has 1000 preparation steps, 1000 settling steps and 1000 measured steps.
 The measurement window lasts 5 model time units, with 40 readings at 0.125-unit
-intervals. See [the control guide](browser.html) if a control is unfamiliar.
+intervals. See [the control guide](browser.md) if a control is unfamiliar.
 
 ## 3. Turn each data file into two averages
 In your Task 2 notebook, find **Calculate one run's averages**. For each run:
@@ -94,11 +95,11 @@ Keep unexpected results and explain them rather than changing values to fit a pr
   and a short conclusion.
 - You saved four raw data files and screenshots, plus the graph and results CSV.
 - You reopened the notebook and checked that your mentor can access its supporting files.
-- You sent the link using [Save & submit](submit.html).
+- You sent the link using [Save & submit](submit.md).
 
-[Fill-in report template](downloads/report_template.md) ·
-[Blank results CSV](downloads/results_template.csv) ·
-[Hebrew instructions](downloads/task_he.md)
+[Fill-in report template](../../assignments/01_first_experiment/report_template.md) ·
+[Blank results CSV](../../assignments/01_first_experiment/results_template.csv) ·
+[Hebrew instructions](../../assignments/01_first_experiment/task_he.md)
 
 **Stuck?** Save what you have. Write the step number, what you expected, and what happened;
 include the error message if there is one. Send that with your notebook. Missing data

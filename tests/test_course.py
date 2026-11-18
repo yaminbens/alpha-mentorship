@@ -47,3 +47,27 @@ def test_upstream_hash_manifest():
  import hashlib
  for name,sha in manifest['sha256'].items():
   assert hashlib.sha256((R/'vendor/lennard_jones_fluid_lab'/name).read_bytes()).hexdigest()==sha
+
+def test_source_pages_links_work_on_github():
+ for p in (R/'site/pages').glob('*.md'):
+  source=p.read_text()
+  assert '{{notebook:' not in source
+  targets=re.findall(r'\]\(([^)]+)\)|(?:src|href)="([^"]+)"',source)
+  for markdown_target,html_target in targets:
+   target=markdown_target or html_target
+   if '://' in target or target.startswith(('#','mailto:','data:')):continue
+   assert (p.parent/target.split('#')[0]).exists(),(p,target)
+
+def test_notebook_launches_in_source_and_site():
+ cfg=json.loads((R/'site/config.json').read_text())
+ for p in (R/'notebooks').glob('*.ipynb'):
+  n=nbformat.read(p,as_version=4);nbformat.validate(n)
+  url=f"https://colab.research.google.com/github/{cfg['repository']}/blob/{cfg['branch']}/notebooks/{p.name}"
+  assert url in n.cells[0].source
+  pages=[s for s in (R/'site/pages').glob('*.md') if f'../../notebooks/{p.name}' in s.read_text()]
+  assert pages,p.name
+  for source in pages:
+   built=(R/'dist'/f'{source.stem}.html').read_text()
+   assert f'class="button" href="{url}"' in built
+   assert f'download href="downloads/{p.name}"' in built
+  assert (R/'dist/downloads'/p.name).read_bytes()==p.read_bytes()

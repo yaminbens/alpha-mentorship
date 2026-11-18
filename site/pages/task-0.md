@@ -5,7 +5,14 @@
 A notebook is a document containing text, code and the results of running that code.
 You do not need to understand every line of Python today.
 
-{{notebook:00_getting_started.ipynb}}
+[Open in Colab](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/00_getting_started.ipynb)
+[Download notebook](../../notebooks/00_getting_started.ipynb)
+
+**If the notebook does not open:** click **Download notebook** above. Open
+[Colab](https://colab.research.google.com/), choose **File → Upload notebook**,
+and select the downloaded `.ipynb` file. Then save your personal copy as described below.
+
+<div lang="he" dir="rtl" class="hebrew">אם המחברת אינה נפתחת: הורידו אותה באמצעות Download notebook, פתחו את Colab ובחרו File → Upload notebook. העלו את קובץ המחברת שהורדתם ושמרו עותק אישי ב־Drive.</div>
 
 ## 1. Make your own copy
 Click **Open in Colab**, sign in, then choose **File → Save a copy in Drive**.
@@ -30,7 +37,7 @@ These are invented values for learning to plot, not observations of atoms.
 
 ## 4. Check that your work is saved
 Save, close the notebook tab, and reopen your copy from Drive. Confirm that your
-answer and graph are still there. Follow [Save & submit](submit.html) and send a
+answer and graph are still there. Follow [Save & submit](submit.md) and send a
 practice link to your mentor. Ask the mentor to check that they can open it.
 
 ## Finished when
@@ -43,4 +50,4 @@ copy its message into a text cell and ask for help. You do not need to solve it 
 
 <div lang="he" dir="rtl" class="hebrew">המטרה: לשמור מחברת אישית, לכתוב תחזית, לשנות מספר אחד ולבדוק את הגרף. בסוף פתחו מחדש את המחברת ושלחו למנחה קישור לבדיקה.</div>
 
-[Hebrew classroom worksheet](downloads/student_worksheet_he.md)
+[Hebrew classroom worksheet](../../meetings/01_introduction/student_worksheet_he.md)

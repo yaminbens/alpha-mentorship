@@ -5,6 +5,17 @@ import markdown
 ROOT=Path(__file__).resolve().parent.parent
 OUT=ROOT/'dist'
 PAGES=[('index','Start here'),('task-0','0 · Your first notebook'),('task-1','1 · Explore motion'),('task-2','2 · Compare conditions'),('browser','Simulation guide'),('readings','Reading & questions'),('submit','Save & submit'),('next','Next steps')]
+DOWNLOADS=['assignments/01_first_experiment/exploration_template.md','assignments/01_first_experiment/results_template.csv','assignments/01_first_experiment/report_template.md','project/proposal_template.md','meetings/01_introduction/student_worksheet_he.md','assignments/01_first_experiment/task_he.md','readings/glossary_en_he.md','readings/questions_he.md']
+def site_target(target):
+ # Source Markdown uses real repository paths so it is also readable on GitHub.
+ path,separator,fragment=target.partition('#')
+ mapping={f'{slug}.md':f'{slug}.html' for slug,_ in PAGES}
+ mapping.update({'../../'+p:'downloads/'+Path(p).name for p in DOWNLOADS})
+ mapping.update({'../../meetings/01_introduction/slides.pdf':'presentation/slides.pdf'})
+ for source,destination in [('../assets/','assets/'),('../../data/examples/','downloads/examples/'),('../../meetings/01_introduction/presets/','presets/'),('../../meetings/01_introduction/fallback/','fallback/')]:
+  if path.startswith(source):return destination+path[len(source):]+separator+fragment
+ return mapping.get(path,path)+separator+fragment
+
 def main():
  cfg=json.loads((ROOT/'site/config.json').read_text())
  if OUT.exists():shutil.rmtree(OUT)
@@ -14,7 +25,7 @@ def main():
  for name in ['slides.html','slides.pdf']:
   shutil.copy2(ROOT/'meetings/01_introduction'/name,presentation/name)
  for p in (ROOT/'notebooks').glob('*.ipynb'):shutil.copy2(p,downloads/p.name)
- for p in ['assignments/01_first_experiment/exploration_template.md','assignments/01_first_experiment/results_template.csv','assignments/01_first_experiment/report_template.md','project/proposal_template.md','meetings/01_introduction/student_worksheet_he.md','assignments/01_first_experiment/task_he.md','readings/glossary_en_he.md','readings/questions_he.md']:
+ for p in DOWNLOADS:
   shutil.copy2(ROOT/p,downloads/Path(p).name)
  shutil.copytree(ROOT/'data/examples',downloads/'examples')
  for folder in ['presets','fallback']:
@@ -27,12 +38,13 @@ def main():
   return f'<div class="launch">{button}<a download href="downloads/{name}">Download notebook</a></div>'
  for idx,(slug,label) in enumerate(PAGES):
   text=(ROOT/f'site/pages/{slug}.md').read_text()
-  text=re.sub(r'\{\{notebook:([^}]+)\}\}',launch,text)
+  text=re.sub(r'\[Open in Colab\]\(https://colab\.research\.google\.com/[^\n]+\)\n\[Download notebook\]\(\.\./\.\./notebooks/([^\)]+)\)',launch,text)
   contact=''
   if cfg.get('mentor_email'):contact+='Mentor review account: **'+html.escape(cfg['mentor_email'])+'**.\n\n'
   if cfg.get('submission_channel'):contact+='Submission channel: '+html.escape(cfg['submission_channel'])
   text=text.replace('{{contact}}',contact)
   body=markdown.markdown(text,extensions=['tables','fenced_code','md_in_html'])
+  body=re.sub(r'((?:href|src)=")([^"]+)(")',lambda m:m[1]+site_target(m[2])+m[3],body)
   nav=''.join(f'<a href="{s}.html"'+(' aria-current="page"' if s==slug else '')+f'>{html.escape(l)}</a>' for s,l in PAGES)
   prev=(f'<a href="{PAGES[idx-1][0]}.html">← {PAGES[idx-1][1]}</a>' if idx else '<span></span>')
   nxt=(f'<a href="{PAGES[idx+1][0]}.html">{PAGES[idx+1][1]} →</a>' if idx+1<len(PAGES) else '<a href="index.html">Back to start</a>')
