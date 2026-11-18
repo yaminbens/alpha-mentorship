@@ -4,8 +4,8 @@ import json,re,shutil,html
 import markdown
 ROOT=Path(__file__).resolve().parent.parent
 OUT=ROOT/'dist'
-PAGES=[('index','Start here'),('task-0','0 · Your first notebook'),('task-1','1 · Explore motion'),('task-2','2 · Compare conditions'),('browser','Simulation guide'),('readings','Reading & questions'),('submit','Save & submit'),('next','Next steps')]
-DOWNLOADS=['assignments/01_first_experiment/exploration_template.md','assignments/01_first_experiment/results_template.csv','assignments/01_first_experiment/report_template.md','project/proposal_template.md','meetings/01_introduction/student_worksheet_he.md','assignments/01_first_experiment/task_he.md','readings/glossary_en_he.md','readings/questions_he.md']
+PAGES=[('index','מתחילים כאן'),('task-0','פתיחה · סביבת העבודה'),('task-1','1 · פתיחת מחיצה'),('task-2','2 · חוק הקפיצה'),('task-3','3 · כותבים סימולציה'),('browser','הדגמת המנחה'),('readings','מקורות וקריאה'),('submit','שמירה ושיתוף'),('next','המשך וקריאה')]
+DOWNLOADS=['assignments/reflection_he.md','assignments/01_first_experiment/exploration_template.md','assignments/01_first_experiment/results_template.csv','assignments/01_first_experiment/report_template.md','project/proposal_template.md','meetings/01_introduction/student_worksheet_he.md','assignments/01_first_experiment/task_he.md','readings/glossary_en_he.md','readings/questions_he.md']
 def site_target(target):
  # Source Markdown uses real repository paths so it is also readable on GitHub.
  path,separator,fragment=target.partition('#')
@@ -34,11 +34,11 @@ def main():
  def launch(m):
   name=m.group(1);repo=cfg['repository'];branch=cfg['branch']
   if not (downloads/name).exists():raise ValueError('Missing notebook '+name)
-  button=(f'<a class="button" href="https://colab.research.google.com/github/{html.escape(repo)}/blob/{html.escape(branch)}/notebooks/{name}">Open in Colab</a>' if repo else '<a class="button" href="https://colab.research.google.com/">Open Colab</a><small>Download this notebook, then use File → Upload notebook.</small>')
-  return f'<div class="launch">{button}<a download href="downloads/{name}">Download notebook</a></div>'
+  button=(f'<a class="button" href="https://colab.research.google.com/github/{html.escape(repo)}/blob/{html.escape(branch)}/notebooks/{name}">פתיחה ב־Colab</a>' if repo else '<a class="button" href="https://colab.research.google.com/">Open Colab</a><small>Download this notebook, then use File → Upload notebook.</small>')
+  return f'<div class="launch">{button}<a download href="downloads/{name}">הורדת המחברת</a></div>'
  for idx,(slug,label) in enumerate(PAGES):
   text=(ROOT/f'site/pages/{slug}.md').read_text()
-  text=re.sub(r'\[Open in Colab\]\(https://colab\.research\.google\.com/[^\n]+\)\n\[Download notebook\]\(\.\./\.\./notebooks/([^\)]+)\)',launch,text)
+  text=re.sub(r'\[(?:Open in Colab|פתיחה ב־Colab)\]\(https://colab\.research\.google\.com/[^\n]+\)\n\[(?:Download notebook|הורדת המחברת)\]\(\.\./\.\./notebooks/([^\)]+)\)',launch,text)
   contact=''
   if cfg.get('mentor_email'):contact+='Mentor review account: **'+html.escape(cfg['mentor_email'])+'**.\n\n'
   if cfg.get('submission_channel'):contact+='Submission channel: '+html.escape(cfg['submission_channel'])
@@ -47,8 +47,8 @@ def main():
   body=re.sub(r'((?:href|src)=")([^"]+)(")',lambda m:m[1]+site_target(m[2])+m[3],body)
   nav=''.join(f'<a href="{s}.html"'+(' aria-current="page"' if s==slug else '')+f'>{html.escape(l)}</a>' for s,l in PAGES)
   prev=(f'<a href="{PAGES[idx-1][0]}.html">← {PAGES[idx-1][1]}</a>' if idx else '<span></span>')
-  nxt=(f'<a href="{PAGES[idx+1][0]}.html">{PAGES[idx+1][1]} →</a>' if idx+1<len(PAGES) else '<a href="index.html">Back to start</a>')
-  page=f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="A guided introduction to molecular simulation, Colab and independent research for Alpha students."><title>{html.escape(label)} · Alpha</title><link rel="stylesheet" href="assets/style.css"></head><body><a class="skip" href="#main">Skip to content</a><header><a href="index.html">ALPHA / MOLECULAR SIMULATION</a><span class="eyebrow">Observe · Measure · Explain</span></header><div class="layout"><nav aria-label="Course chapters"><div class="nav-label">Student field guide</div>{nav}</nav><main id="main">{body}<div class="pager">{prev}{nxt}</div></main></div><footer>Alpha mentorship · Save answers in your personal Colab notebook. This site does not collect submissions.<br>Educational models and examples have limits; record your conditions and sources.</footer></body></html>'''
+  nxt=(f'<a href="{PAGES[idx+1][0]}.html">{PAGES[idx+1][1]} →</a>' if idx+1<len(PAGES) else '<a href="index.html">חזרה להתחלה</a>')
+  page=f'''<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="A guided introduction to molecular simulation, Colab and independent research for Alpha students."><title>{html.escape(label)} · Alpha</title><link rel="stylesheet" href="assets/style.css"></head><body><a class="skip" href="#main">דילוג לתוכן</a><header><a href="index.html">אלפא / מעבדה חישובית</a><span class="eyebrow">משנים קוד · רואים תנועה · בודקים</span></header><div class="layout"><nav aria-label="פרקי העבודה"><div class="nav-label">מסלול התלמידים</div>{nav}</nav><main id="main">{body}<div class="pager">{prev}{nxt}</div></main></div><footer>אלפא · שמרו תשובות בעותק האישי של המחברת ב־Colab. האתר אינו אוסף הגשות.<br>תעדו את תנאי הריצה, הקוד ששיניתם והקבצים ששמרתם.</footer></body></html>'''
   (OUT/f'{slug}.html').write_text(page)
  (OUT/'.nojekyll').touch();print('Built',len(PAGES),'student pages in',OUT)
 if __name__=='__main__':main()

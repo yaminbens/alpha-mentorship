@@ -1,7 +1,7 @@
 {
-  "local_notebooks_passed": 8,
-  "unit_checks_passed": 6,
-  "browser_page_viewport_checks_passed": 16,
+  "local_notebooks_passed": 10,
+  "unit_checks_passed": 15,
+  "browser_page_viewport_checks_passed": 18,
   "pdf_pages_rendered": 12,
   "local_document_links": "passed",
   "advertised_deliverable_paths": "all exist",
@@ -13,5 +13,9 @@
   "live_notebook_downloads_match_source": 8,
   "student_task_workflow": "step-by-step worksheets, averaging controls, missing-data behavior and file export passed",
   "hebrew_facilitator_guide_pages": 4,
-  "hebrew_presentation_layout_checks_passed": 12
+  "hebrew_presentation_layout_checks_passed": 12,
+  "completed_student_paths_passed": 3,
+  "primary_language": "Hebrew",
+  "student_workflow": "three coding experiments with integrated reading and open reflection; no grading",
+  "live_site_note": "Previous deployment checks; refresh after Hebrew-track publication."
 }

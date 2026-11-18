@@ -1,3 +1,5 @@
+> The original meeting proposal below is retained for context. The active independent-work sequence is now the [Hebrew coding track](../mentor/hebrew_coding_track.md). The one-hour introduction remains; the original browser homework is archived.
+
 # Introductory meeting proposal
 
 Prepared for Yamin's Alpha mentorship, 2026-11-15. The meeting should take place

@@ -1,15 +1,7 @@
-# Reviewing saved work
-Before class, identify the mentor Google account and the private channel for notebook
-links. During Task 0, have each student save a Drive copy, reopen it, share it with
-Commenter access and send the link. Open the link using the intended mentor account.
+# שיחה וסקירת עבודה במסלול החדש
 
-For each homework submission: record the link privately; check answer cells, saved
-plots and separate file access; apply feedback_rubric.md; add comments or return a
-short feedback document; request a revision note in the same working notebook.
-A submission snapshot can be a dated downloaded .ipynb plus data. A live shared link
-may change as the student edits. Never assume sharing a runtime shares its files.
+הזמינו את התלמידים לשתף דבר אחד שבחרו: קוד, אנימציה, תוצאה לא צפויה או תקלה. אפשר לשתף גם עבודה חלקית. פתחו בשיחה על מה עניין אותם, מה היה קל או קשה ומה ירצו ללמוד או לנסות בהמשך. דף ההתרשמות שבמחברת הוא מקום חופשי לשיחה הזאת.
 
-Copy review_tracker_template.csv outside the public repository before filling it.
-No live student access check has been performed by the build tests: this is a human
-account-access rehearsal to conduct before the class. Keep public teaching materials
-free of real submission links, student names and personal feedback.
+בדקו יחד שהעותק נשמר ושאפשר לפתוח את הקבצים שנבחרו. התייחסו לבדיקות הקוד ככלי לאיתור תקלות, לא כציון או כתנאי לקבלת משוב. הציעו צעד המשך שמתאים לתלמיד. אין צורך בדוח מלא או במענה לכל סעיף.
+
+קבלו קישורים בערוץ פרטי ופתחו אותם עם החשבון המיועד של המנחה. המחברת אינה משתפת אוטומטית את קובצי סביבת ההרצה. שמרו תיעוד אישי מחוץ למאגר הציבורי. אין לפרסם שמות, קישורי הגשות או משוב אישי ב־GitHub.

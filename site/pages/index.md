@@ -1,39 +1,29 @@
-# From atoms to evidence
-A first research project in molecular simulation.
+# מעבדה חישובית: משנים קוד, רואים תנועה
+שלושה תרגילים לבניית מיומנות בסימולציה: שליטה בתנאי הניסוי, שינוי חוקי תנועה וכתיבת מודל משלכם.
 
-Watch how simple rules produce motion. Make a prediction. Collect observations.
-Then explain what the evidence supports — and what remains uncertain.
+## מתחילים במחברת המרכזית
+המחברת בעברית כוללת תרגול פתיחה ואת שלושת התרגילים. פתחו אותה ב־Colab, שמרו עותק אישי ב־Drive והמשיכו באותו עותק לאורך המסלול. אין צורך להתקין תוכנה או להוריד קובץ מצב התחלתי.
 
-<div class="hero-art" aria-label="Illustration of ordered and irregular particle arrangements"><img src="../assets/particles.svg" alt="Model illustration: ordered particles beside an irregular arrangement. These are not measured phase classifications."></div>
+[פתיחה ב־Colab](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/student_workbook_he.ipynb)
+[הורדת המחברת](../../notebooks/student_workbook_he.ipynb)
 
-## Your first hour
-| Minutes | Together in class |
-|---|---|
-| 0–8 | Meet each other and discuss a reading question |
-| 8–18 | Meet the research: atoms, motion and measurements |
-| 18–30 | Watch one guided simulation and make a prediction |
-| 30–50 | Open, edit, run, save and share a Colab notebook |
-| 50–60 | Find your home tasks and practise submitting work |
+| שלב | מה בונים או משנים? | הכלי המרכזי | זמן מוצע |
+|---|---|---|---|
+| [פתיחה](task-0.md) | משתנה, גרף ועותק אישי | סביבת Colab ושמירה | 20 דקות בכיתה |
+| [תרגיל 1](task-1.md) | פתח במחיצה בין חלקיקים | ניסוי מבוקר, ספירה וגרף | 35–45 דקות |
+| [תרגיל 2](task-2.md) | חוק הקפיצה מהרצפה | השוואת ריצות בלולאה וממוצע | 40–50 דקות |
+| [תרגיל 3](task-3.md) | סימולציה שכתבתם | פונקציות, תנאים, לולאת זמן ובדיקות | 50–70 דקות |
 
-[המצגת בעברית / Hebrew presentation](https://yaminbens.github.io/alpha-mentorship/presentation/slides.html) · [Download PDF](../../meetings/01_introduction/slides.pdf)
+כל תרגיל מתחיל בתופעה נראית לעין, ממשיך בשינוי קוד ומסתיים בתוצר קצר. אפשר לחלק את העבודה לכמה מפגשים. המנחה יתאם את מועד השיחה הבאה.
 
-## Your route through the project
-1. [Task 0: your first notebook](task-0.md) — begin together in class.
-2. [Task 1: watch what changes](task-1.md) — 20–30 minutes at home; save a prediction, two screenshots and observations.
-3. [Task 2: measure and compare](task-2.md) — allow 60–90 minutes; collect four runs, fill the table and explain one graph.
-4. [Read and ask questions](readings.md) — develop your explanation.
-5. [Save and submit](submit.md) — share your work for feedback.
+## עבודה דרך GitHub
+זהו המקור של ההוראות והמחברות. לחצו על **פתיחה ב־Colab** כדי לערוך ולהריץ. GitHub עצמו מציג תצוגה מקדימה. הקישורים בין הדפים עובדים גם בתוך המאגר וגם באתר.
 
-Bring a laptop and charger. Check that your Google account can use Colab. No prior
-programming or local installation is required for the first meeting.
+[שמירה ושיתוף למנחה](submit.md) · [המשך וקריאה](next.md)
 
-<div lang="he" dir="rtl" class="hebrew">ברוכים הבאים. נתחיל מהתבוננות ושאלות, נלמד לשמור מחברת אישית, ואת הניסוי המלא תבצעו בבית. אין צורך בניסיון קודם בתכנות.</div>
+## המפגש הראשון
+המפגש נשאר באורך שעה: 8 דקות היכרות, 10 דקות הצגת מחקר, 12 דקות הדגמת המנחה, 20 דקות היכרות עם Colab ו־10 דקות הסבר על המשך העבודה. שלושת התרגילים המלאים מיועדים לעבודה עצמאית.
 
-## Start with the template
-Each task button opens a notebook with headings and blanks to fill in. Save your own
-copy first. You may write in Hebrew or English. Follow the tasks in order; later and
-optional notebooks are not part of this first homework. Your mentor will give the due date.
+[מצגת ההיכרות](https://yaminbens.github.io/alpha-mentorship/presentation/slides.html) · [הדגמת המנחה בדפדפן](browser.md)
 
-Prefer a document? Download the [Task 1 worksheet](../../assignments/01_first_experiment/exploration_template.md)
-or [Task 2 report template](../../assignments/01_first_experiment/report_template.md). These are plain text files:
-open them and copy their contents into a document.
+המחברות החדשות משתמשות במודל לימודי של חלקיקים ללא כוחות ביניהם. הדגמת המנחה וחומר ההמשך עוסקים גם במודל עם כוחות בין חלקיקים; אלה מודלים שונים ואין להשוות ביניהם כתוצאות של אותו ניסוי.

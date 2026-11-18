@@ -1,61 +1,33 @@
-# Delivery status
+# מצב המסלול
 
-## Published
-- Source and history: https://github.com/yaminbens/alpha-mentorship
-- Student book: https://yaminbens.github.io/alpha-mentorship/
-- GitHub Actions build and deployment succeeded on 2026-11-15.
-- Colab launch links now point to the public repository templates.
+## המסלול הפעיל
 
-## Implemented
-- Student tasks now have numbered steps, sentence starters, completion checklists and
-  matching fill-in notebook/document templates. Task 2 includes raw-export averaging,
-  four explicit result rows and graph/CSV downloads. Hebrew instructions match.
-- Independent Git repository; 60-minute meeting package with twelve Hebrew slides
-  (six research slides, three activity slides and three scientific appendix slides), editable Markdown, standalone
-  HTML and PDF. Detailed Hebrew facilitator plan for 2026-11-18, speaker notes,
-  bilingual worksheet and a 12-minute demonstration guide.
-- Mentor facilitation, background, answers, assessment, troubleshooting, communications,
-  program requirements, review workflow and blank private-record templates.
-- Reading guides, bilingual questions/glossary, references and source/license register.
-- Eight self-contained notebooks: classroom introduction; later simulation, export
-  analysis, neighbour persistence; two optional controls; two homework records.
-- Eight-page responsive student book, notebook downloads and configurable Colab links.
-- GitHub Pages workflow publishing only the built student site.
-- Browser rehearsal: exact initial/final states, actual measurement files, screenshots,
-  accelerated recording and worked example. No equilibrium phase claim.
-- Research question options, provisional plan, proposal/report/poster templates and timeline.
+המסלול בעברית כולל מחברת מרכזית וארבע מחברות נפרדות: היכרות עם Colab ושלושה תרגילים. תרגיל 1 עוסק במעבר דרך מחיצה ובערבוב; תרגיל 2 בחוקי קפיצה ודעיכה; תרגיל 3 בכתיבת סימולציה של חלקיק בקופסה. הקוד מוסבר לתלמידים שמכירים משתנים, תנאים ולולאות. השפה משתמשת בכותרות ובהסברים זורמים.
 
-## Validation
-On 2026-11-18, fixed source-page links that incorrectly pointed to generated HTML
-inside GitHub (for example site/pages/task-0.html). Source pages now link to actual
-Markdown and repository assets; the site builder maps these to published paths.
-All eight notebooks and the README now include direct Colab launch links. Added
-regression checks for source links, notebook buttons and matching downloads.
-Only the first Markdown cell changed in each notebook; code and remaining cells
-are unchanged. Five relevant checks and 16 browser/page layout checks passed.
+הקריאה משולבת במקום שבו משתמשים ברעיון: הסבר בעברית, קטע מוגדר במקור ופעולה בקוד. המקורות באנגלית זמינים להעמקה. בסוף המחברות מופיע מקום חופשי לספר על עניין, קושי, קלות וכיווני המשך. השיתוף הוא בסיס לשיחה; אין דרישה להשלים הכול, דוח או ציון. בדיקות הקוד הן כלי לתיקון הסימולציה.
 
-The revised presentation distinguishes saved particle coordinates from synthetic
-neighbour diagrams. Font provenance and license are in vendor/fonts/. Scientific
-plots remain available in the appendix. No new simulation was run for the redesign.
+ה־README הוא נקודת הכניסה דרך GitHub. האתר כולל תשעה דפים, קישורי Colab והורדות. קיימות עשר מחברות פעילות: חמש בעברית וחמש הרחבות מדעיות מקוריות באנגלית. שלוש מחברות מהמסלול המקורי נשמרו תחת archive/browser_track; הן אינן המסלול הראשי.
 
-Live Pages checks passed for all eight pages at desktop and mobile widths. All
-eight hosted notebook downloads match the source files. Repository-specific Colab
-launch links were verified; this does not test Google sign-in or sharing. See
-validation/github_pages.json.
+## גבולות מדעיים
 
-Notebook execution records are in validation/notebook_execution.json. These are fresh
-local Python executions, not authenticated Google Colab sessions. Browser layout and
-download checks are in validation/browser_checks.json. Unit checks cover the agenda,
-known-answer neighbour/MI controls, empty student results, site asset links and pinned
-source hashes. The rehearsal procedure is reproducible through tools/rehearse_demo.py.
+הסימולציות החדשות קטנות ועצמאיות, על CPU, עם חלקיקים ללא כוחות ביניהם. הן מדגימות תנועה, תנאי שפה ומדידה; אין בהן טענה להתכה, לשיווי משקל או לתכונות של חומר אמיתי. המודל המולקולרי עם כוחות בין חלקיקים נמצא בהדגמת הדפדפן ובחומר ההמשך. הנתונים והמצגת הקודמים נשמרו בנפרד.
 
-## Requires external account access or a human check
-- Authenticated live Colab save/reopen/share and mentor feedback using the actual
-  accounts. Local execution cannot certify these Google-account operations.
-- Mentor review account and private submission channel: configure or announce in class.
-- Classroom projector/pacing check and actual student access check.
-- Obtain official Alpha proposal requirements; they were not supplied in the email.
+המפגש הראשון נשאר בן שעה עם הדגמה אחת בהובלת המנחה והיכרות עם Colab. התרגילים המלאים נעשים בנפרד, בכמה מפגשים לפי הצורך.
 
-No student personal information, real submissions or private feedback are included.
-Mentor answers in a public source repository remain readable even though excluded from
-the student website. The public content consists of generic teaching guidance.
+## בדיקות
+
+- 15 בדיקות מקומיות עברו: קישורי המקור והאתר, מבנה המחברות, חסימת מעבר במחיצה, תנועה אלסטית ושימור אנרגיה במודל המתאים, דעיכה במודל הלא־אלסטי, מנוחה ללא כבידה וזמן פגיעה ידוע.
+- תבנית הקוד הלא־מושלמת בתרגיל 3 אינה עוברת את כל הבדיקות ואינה יוצרת מסלול באמצעות פתרון מוסתר. פתרון הייחוס עובר; מימוש תנועה שגוי נכשל.
+- עשר המחברות הורצו מקומית בסביבות Python נפרדות. גם מסלולי העבודה לאחר השלמות קוד בתרגילים 1–3 נבדקו. ריצה של תבנית ריקה אינה מעידה שתלמיד השלים את התרגיל.
+- 18 בדיקות דפדפן בוצעו בתשע כתובות ובשני גדלי מסך. שמירת אנימציות HTML עצמאיות מאפשרת סקירה גם מחוץ ל־Colab; גרפי PNG מספקים גיבוי סטטי.
+- הקישורים בתוך דפי המקור מפנים לקובצי Markdown אמיתיים ב־GitHub. בניית האתר ממירה אותם לכתובות HTML. התיקון מונע את שגיאת task-0.html בתיקיית המקור.
+
+עדויות נמצאות תחת validation/, לרבות notebook_execution.json, completed_student_paths.json ו־browser_checks.json. בדיקות מקומיות אינן בדיקת חשבון Google אמיתי, שמירה ב־Drive או הרשאות שיתוף של תלמיד.
+
+## פרסום ושיתוף
+
+המקור: https://github.com/yaminbens/alpha-mentorship
+
+האתר: https://yaminbens.github.io/alpha-mentorship/
+
+המאגר ציבורי, ולכן גם מדריך המנחה ופתרון הייחוס גלויים. הם אינם מיובאים למחברות התלמידים. אין בו הגשות אמיתיות, פרטי תלמידים או משוב אישי. החשבון והערוץ הפרטי לשיתוף נמסרים על ידי המנחה; יש לבדוק בפועל את פתיחת המחברת והקבצים דרך החשבון הזה.

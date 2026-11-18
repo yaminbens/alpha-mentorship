@@ -1,92 +1,54 @@
-# Alpha molecular simulation mentorship
+# אלפא — מעבדה חישובית לתלמידים
 
-A complete introductory teaching package for high-school students: a one-hour
-meeting, a guided particle simulation, Colab practice and independent work at home.
+שלושה תרגילים בעברית: פותחים מחיצה בין חלקיקים, משנים חוק קפיצה, וכותבים סימולציה בעזרת פונקציות ולולאה. המסלול מתאים לתלמידים שמכירים משתנים, תנאים ולולאות.
 
-**[Student website](https://yaminbens.github.io/alpha-mentorship/)** · **[GitHub repository](https://github.com/yaminbens/alpha-mentorship)**
+## מתחילים כאן
 
-## Open the notebooks in Colab / פתיחת המחברות
+**[פתיחת המחברת האינטראקטיבית בעברית ב־Colab](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/student_workbook_he.ipynb)**
 
-**GitHub displays a preview. Use the links below to run and edit in Colab.**
-Then choose **File → Save a copy in Drive** and work in your personal copy.
+המחברת כוללת את ההסברים, האנימציות, קטעי הקוד להשלמה, הבדיקות ותאי התיעוד. ב־GitHub רואים תצוגה מקדימה; כדי להריץ ולערוך לחצו על הקישור ושמרו עותק אישי באמצעות **File → Save a copy in Drive**. אין צורך להתקין תוכנה או לטעון קובץ מצב התחלתי.
 
-ב־GitHub מוצגת תצוגה מקדימה של המחברת. לפתיחה בקולאב לחצו על הקישור המתאים
-בטבלה, התחברו לחשבון Google ושמרו עותק אישי באמצעות **File → Save a copy in Drive**.
+**[דפי ההוראות בתוך GitHub](site/pages/index.md)** · **[אתר התלמידים](https://yaminbens.github.io/alpha-mentorship/)** · **[שמירה ושיתוף](site/pages/submit.md)**
 
-| Activity | Open in Colab |
-|---|---|
-| **Task 0 — Classroom introduction / התחילו כאן** | [Open Task 0](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/00_getting_started.ipynb) |
-| Task 1 — Explore and record | [Open Task 1](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/10_home_explore.ipynb) |
-| Task 2 — Compare conditions | [Open Task 2](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/11_home_compare.ipynb) |
-| Later — First simulation | [Open simulation](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/01_first_simulation.ipynb) |
-| Later — Analyse browser data | [Open analysis](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/02_analyse_browser_data.ipynb) |
-| Later — Structure and motion | [Open measurements](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/03_measure_structure_and_motion.ipynb) |
-| Optional — Information controls | [Open information controls](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/04_information_controls.ipynb) |
-| Optional — Prediction controls | [Open prediction controls](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/05_prediction_controls.ipynb) |
+| שלב | הפעילות | מחברת נפרדת |
+|---|---|---|
+| [פתיחה](site/pages/task-0.md) | משנים משתנה, מוסיפים שורת קוד ושומרים גרף | [Colab](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/00_getting_started.ipynb) |
+| [תרגיל 1 — פתיחת מחיצה](site/pages/task-1.md) | חוקרים ערבוב, משלימים ספירה ומוסיפים גרף | [Colab](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/10_home_explore.ipynb) |
+| [תרגיל 2 — חוק הקפיצה](site/pages/task-2.md) | יוצרים קפיצות מתמשכות או דעיכה ומשווים ריצות בלולאה | [Colab](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/11_home_compare.ipynb) |
+| [תרגיל 3 — כותבים סימולציה](site/pages/task-3.md) | משלימים תנועה וקירות, בונים לולאת זמן ובודקים את הקוד | [Colab](https://colab.research.google.com/github/yaminbens/alpha-mentorship/blob/main/notebooks/12_build_simulation.ipynb) |
 
-If a link fails, use **Download notebook** on the corresponding student website
-page, open [Colab](https://colab.research.google.com/), and choose
-**File → Upload notebook** to upload the `.ipynb` file. Save a personal Drive copy.
+אפשר להשתמש במחברת המרכזית לאורך כל המסלול, או במחברות הנפרדות. את התרגילים המלאים מבצעים בבית בכמה מפגשים; אין צורך להספיק את כולם בשיעור הראשון.
 
-## Start here
-- [Mentor facilitation guide](mentor/facilitation_guide.md)
-- [Detailed Hebrew plan for November 18](meetings/01_introduction/facilitator_plan_he.md) and [printable guide](meetings/01_introduction/facilitator_plan_he.pdf)
-- [Hebrew presentation in the browser](https://yaminbens.github.io/alpha-mentorship/presentation/slides.html)
-- [60-minute agenda](meetings/01_introduction/agenda.md)
-- [Presentation PDF](meetings/01_introduction/slides.pdf) and [editable source](meetings/01_introduction/slides.md)
-- [Guided simulation](meetings/01_introduction/demonstration.md) and [exact browser procedure](simulation/browser_guide.md)
-- [Student website source](site/pages/index.md)
-- [Reading guide](readings/reading_guide.md) and [first assignment](assignments/01_first_experiment/task.md)
-- [Task 1 fill-in worksheet](assignments/01_first_experiment/exploration_template.md) and [Task 2 report template](assignments/01_first_experiment/report_template.md)
-- [Review workflow](mentor/review_workflow.md)
-- [Delivery status and remaining account checks](STATUS.md)
-- [Detailed implementation checklist](IMPLEMENTATION_PLAN.md)
+## שמירה וסקירת העבודה
 
-## First meeting
-8 minutes introductions, 10 minutes research, 12 minutes mentor-led simulation,
-20 minutes Colab and 10 minutes homework/submission walkthrough. Students need a
-laptop, browser, internet and access to Colab. The full experiment is homework.
+שומרים את העותק האישי ב־Drive, את הקוד והתשובות, ומורידים את קובצי האנימציה, הגרפים, הנתונים ותנאי הריצה. משתפים את המחברת ותיקיית הקבצים עם החשבון שהמנחה מסר ושולחים קישור בערוץ הפרטי שסוכם. אין לפרסם הגשות או פרטים אישיים במאגר הציבורי.
 
-## Student work
-The website explains tasks. Students save personal Colab copies in Drive, preserve
-separate data files, share with the designated mentor account and send their link
-through the agreed private channel. The website does not store or submit answers.
-No GitHub account is required for students using the public notebook templates.
-The instructor sets the mentor account/channel in site/config.json or gives them
-privately in class; no personal account is inferred from Git configuration.
+אם Colab אינו מצליח לפתוח את הקישור, השתמשו ב״הורדת המחברת״ בדף התרגיל באתר, פתחו [Colab](https://colab.research.google.com/) ובחרו **File → Upload notebook**. שמרו לאחר מכן עותק ב־Drive.
 
-## Build and preview
+## למנחה
+
+- [מדריך המסלול החדש והצעות למשוב](mentor/hebrew_coding_track.md)
+- [הנחיות בדיקה ופתרון לדוגמה](mentor/coding_reference.py) — חומר ציבורי לעיון לאחר ניסיון עצמאי.
+- [תוכנית המפגש הראשון — שעה](meetings/01_introduction/agenda.md)
+- [המצגת](https://yaminbens.github.io/alpha-mentorship/presentation/slides.html) ו[הדגמת המנחה](meetings/01_introduction/demonstration.md)
+- [מדריך סקירת הגשות](mentor/review_workflow.md) ו[פתרון תקלות](mentor/troubleshooting.md)
+- [חומר מדעי להמשך](site/pages/next.md), כולל סימולציה עם כוחות בין חלקיקים. מחברות ההרחבה באנגלית.
+- [המסלול הקודם בסימולטור הדפדפן](archive/browser_track/README.md), שנשמר בנפרד.
+- [מצב הפרויקט והבדיקות](STATUS.md)
+
+המודלים החדשים נועדו ללימוד כלים: אין בהם כוחות בין חלקיקים. אין לפרש ערבוב כהתכה או חלקיקים ליד הרצפה כמוצק. המצגת והדגמת הדפדפן נשמרו כחומר מבוא למודל מולקולרי אחר.
+
+## פיתוח ופרסום
+
+המאגר עצמאי ואינו תלוי ב־GNN. אין צורך ב־GPU. קוד המנוע נמצא ב־[simulation/teaching_particles.py](simulation/teaching_particles.py) ומוטמע במחברות כדי לאפשר הרצה עצמאית.
+
 ```sh
 python -m pip install -r requirements.txt
-python tools/build_site.py
-python -m http.server 8000 --directory dist
-```
-Open http://localhost:8000. The site is a static, book-style guide with Markdown
-sources and an explicit public-content allowlist. No backend or API key is needed.
-
-```sh
 python tools/make_notebooks.py
-python tools/build_slides.py
+python tools/build_site.py
 python -m pytest tests -q
 python tools/check_notebooks.py
+python -m http.server 8000 --directory dist
 ```
-Optional browser checks: install Playwright and Chromium, then run
-`python tools/check_browser.py`. See [contributing](CONTRIBUTING.md).
 
-## Hosting and backup
-The source and full Git history are backed up in
-[yaminbens/alpha-mentorship](https://github.com/yaminbens/alpha-mentorship).
-The [student book](https://yaminbens.github.io/alpha-mentorship/) is deployed through
-GitHub Actions. Pushing `main` rebuilds and publishes the student site. Notebook
-buttons open the corresponding public GitHub templates in Colab.
-
-For a separate copy, configure `repository` in site/config.json and use
-`python tools/publish_github.py --owner OWNER --name REPOSITORY` after GitHub CLI
-sign-in. The helper creates a public repository and does not replace unrelated
-remote history.
-
-This repo is independent of GNN and lives in its ignored workstreams/ directory.
-It must be committed/backed up separately. It uses no GNN datasets, server or GPU.
-See [third-party attribution](THIRD_PARTY.md) and [license](LICENSE).
-Student records belong outside tracked history; mentor answer keys here are generic
-and visible to anyone who can access the source repository.
+הגדרות המאגר והשיתוף נמצאות ב־[site/config.json](site/config.json). דחיפה לענף `main` בונה ומפרסמת את האתר. דפי המקור משתמשים בקישורים אמיתיים בתוך GitHub; הבנייה ממירה אותם לכתובות האתר. ראו [הנחיות עריכה](CONTRIBUTING.md), [רישיון](LICENSE) ו[מקורות חיצוניים](THIRD_PARTY.md).

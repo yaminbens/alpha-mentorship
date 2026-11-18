@@ -26,7 +26,7 @@ def test_information_known_laws():
  assert abs(scope['mi']([[1,0],[0,1]])-1)<1e-12
 
 def test_empty_homework_not_fabricated():
- n=nbformat.read(R/'notebooks/11_home_compare.ipynb',as_version=4)
+ n=nbformat.read(R/'archive/browser_track/notebooks/11_home_compare.ipynb',as_version=4)
  scope={}
  for c in n.cells:
   if c.cell_type=='code':exec(c.source,scope)

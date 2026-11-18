@@ -1,78 +1,66 @@
-# Reading guide
-| When | Resource | Selected material | Purpose |
-|---|---|---|---|
-| Before meeting; about 20 min | [Schroeder](https://arxiv.org/html/1502.06169v1) | Introduction, Section II, Figure 1 and Exercise 1 in Section VI | Understand a particle model and observations |
-| After meeting; about 20–30 min | [Olah](https://colah.github.io/posts/2015-09-Visual-Information/) | Visualizing Probability Distributions; Entropy and Multiple Variables; Mutual Information | Build intuition about dependence |
-| Optional Hebrew; about 15 min | [Levitt](https://kids.frontiersin.org/he/articles/10.3389/frym.2020.603629-he) | Main explanation | Understand why scientists use simplified models |
-| Before later simulation coding | [Grazioli lab](https://github.com/ggrazioli/LennardJonesFluidLab) | Background and setup only | Connect the model with Python |
+# קריאה בתוך העבודה
 
-Times are planning estimates. Focus on explanations and figures; advanced derivations
-are optional. For each reading write one claim, its supporting explanation, one
-limitation and one unresolved question. Use the questions below.
+הקריאה מפוזרת לאורך התרגילים ונועדה לעזור בשלב הבא בקוד. בכל יחידה מופיעים הסבר בעברית, הפניה לחלק קצר במקור ופעולה במחברת. אפשר להתחיל מההסבר כאן ולפתוח את המקור לצד המחברת להעמקה; אין צורך לתרגם כל מילה או לסכם מאמר שלם.
 
-## A small reading task
-For each assigned reading, allow the time above. Read the selected parts, then choose
-**two** of its guiding questions below. Write 1–3 sentences for each in a text cell in
-your current notebook. You may answer in Hebrew or English. Unknown words and questions
-are useful things to bring to the meeting; you do not need to understand every equation.
-Levitt is optional; Grazioli is for a later activity.
+שלוש היחידות הראשונות דורשות יחד כ־15 דקות, נוסף לזמן הניסוי בקוד. קראו רק את היחידה שמתאימה לתרגיל שבו אתם עובדים. יחידת ההמשך מחברת את הכלים שלמדתם למחקר בחומרים, ואפשר לדחות אותה לשיחה עם המנחה.
 
-Copy this answer template into a text cell:
+אם משפט במקור אינו ברור, סמנו אותו והמשיכו בעזרת ההסבר בעברית. אפשר לשמור שימוש אחד ברעיון — הערה בקוד, חישוב, פונקציה או בדיקה — ולבחור אם להראות אותו בשיחה.
 
-> Reading title: …
->
-> Question I chose: …
->
-> My answer in my own words: …
->
-> Second question and my answer: …
->
-> One claim from the reading: …
->
-> A figure or explanation that supports it: …
->
-> One limitation of the model or explanation: …
->
-> One word or question I want to discuss: …
+## מצב החלקיק וכלל התנועה
+*קריאה של כ־4 דקות, לפני פתיחת המחיצה.*
 
-**Finished when:** your saved notebook has the title, two short answers and the four
-reflection prompts. Point to a section or figure when useful; do not paste whole paragraphs.
+במודל שלנו מצב של חלקיק מתואר במיקום ובמהירות. בתחילת הריצה קובעים את המצבים האלה. מכאן המחשב מתקדם בצעדים קטנים: מחשב לאן החלקיקים נעים, בודק פגיעות בקירות ושומר את המצב החדש. כל צעד מתחיל מהתוצאה של הצעד הקודם.
 
-## Guiding questions
-## Schroeder
-What are the particles and what rules govern them? What is simplified? How would
-arrangement and motion help distinguish solid-like and liquid-like behaviour?
-Why should a numerical experiment record its particle count, box and energy history?
-## Olah
-Give a pair of quantities where knowing one helps predict the other. What would
-independence mean? Why are many paired observations needed? Can dependence alone
-establish which variable causes the other?
-## Levitt
-What can simulations teach us? Why simplify a model? What external evidence could
-help decide whether a model is useful for a particular question?
-## Notebook background
-What are inputs and outputs? Is an initial temperature the same as a thermostat?
-What must remain fixed in a fair comparison? What files will you save for review?
+שינוי הפתח במחיצה משנה היכן מתרחשת פגיעה בקיר. שינוי המהירות משנה את הדרך שהחלקיק עובר באותו זמן. כדי להבין את ההשפעה של כל אחד מהם, נשנה אותם בנפרד. `seed` קובע את ההגרלה של המיקומים וכיווני המהירות בתחילת הריצה; שמירה על ערכו מאפשרת להתחיל שוב מאותו מצב.
+
+אפשר להעמיק בפסקה הקצרה במבוא של [Schroeder](https://arxiv.org/html/1502.06169v1#S1), שמתחילה במילים “To study systems that are free”, ובפסקה שאחריה. הן מציגות את הרעיון של חישוב תנועה מסדרה של מצבים. עצרו שם; אין צורך לקרוא כעת את המשך המאמר. המילים **state**, **model** ו־**initial condition** מציינות מצב, מודל ותנאי התחלה.
+
+חזרו לתא הריצה והוסיפו הערת קוד ליד `seed`, ליד `opening` וליד `speed`, שתסביר מה כל אחד קובע. בניסוי הראשון בחרו שינוי אחד והשאירו את השאר קבועים. שלוש ההערות והריצה המתועדת הן תוצר הקריאה; אין צורך בסיכום נפרד.
 
 
-<div lang="he" dir="rtl" markdown="1">
+## אנרגיה ומהירות בפגיעה בקיר
+*קריאה וניסוי קצר של כ־5 דקות, לפני שינוי חוק הקפיצה.*
 
-## שאלות מנחות לקריאה
-## שרדר
-מהם החלקיקים ומהם החוקים שמניעים אותם? מה פשוט יותר במודל מאשר במציאות?
-כיצד הסידור והתנועה עוזרים להבחין בין התנהגות דמוית מוצק לדמוית נוזל?
-מדוע צריך לתעד את מספר האטומים, גודל הקופסה והוספת האנרגיה?
-## אולה
-תנו דוגמה שבה ידיעת משתנה אחד עוזרת לנבא אחר. מהי אי־תלות?
-מדוע נדרשות תצפיות רבות? האם תלות מוכיחה סיבתיות?
-## לויט
-מה אפשר ללמוד מהדמיה? מדוע מפשטים מודל? כיצד נבדוק שהוא מועיל לשאלה שלנו?
-## המחברת
-מהם הקלטים והפלטים? האם טמפרטורה התחלתית נשמרת בהמשך?
-מה צריך להשאיר קבוע, ואילו קבצים תשמרו כדי שהמנחה יוכל לבדוק את העבודה?
+קפיצה יכולה להחזיר גוף כמעט לאותו גובה, או לגובה נמוך יותר. ההבדל קשור לאנרגיה שנותרת בתנועה לאחר הפגיעה. בהתנגשות אלסטית האנרגיה הקינטית הכוללת של הגופים המתנגשים נשמרת; בהתנגשות לא־אלסטית חלק ממנה הופך לצורות אחרות.
+
+אצלנו הקיר נשאר קבוע והחלקיק לבדו אינו מערכת סגורה: הקיר משנה את התנע שלו. המודל מייצג אובדן באנרגיה המכנית באמצעות הקטנת רכיב המהירות האנכי אחרי הפגיעה. הוא אינו מחשב את חימום הקיר.
+
+הכלל שבו נשתמש הוא `vy_after = -e * vy_before`. סימן המינוס משנה את כיוון התנועה, והמספר e קובע כמה מגודל המהירות נשמר. האנרגיה הקינטית האנכית פרופורציונית לריבוע המהירות, ולכן e=0.7 שומר 49% ממנה. זהו הבדל שכדאי לראות גם בחישוב וגם באנימציה.
+
+ההגדרה מופיעה ב־[OpenStax, Types of Collisions](https://openstax.org/books/university-physics-volume-1/pages/9-4-types-of-collisions). מצאו את הכותרת **Elastic** וקראו את הפסקה הראשונה שלה, יחד עם שלוש השורות שמשוות בין האנרגיות לפניה. דלגו על הסעיף Explosions ועל הדוגמאות המחושבות. **Kinetic energy** היא אנרגיה קינטית, ו־**restitution** הוא מקדם ההחזרה.
+
+הוסיפו למחברת תא עם `print(0.7**2)`. בחרו ערך e נוסף וחזרו על החישוב, ואז צפו בריצה המתאימה. לצד שני החישובים כתבו משפט שמקשר בינם לבין גובה הקפיצות שראיתם. בכך השתמשתם בקריאה כדי לפרש שינוי ממשי במודל.
 
 
-</div>
+## פונקציה שאפשר להשתמש בה ולבדוק אותה
+*כ־5–7 דקות של קריאה וקוד, לפני כתיבת הסימולציה.*
+
+פונקציה מאפשרת לתת שם לחישוב ולהפעיל אותו על קלטים שונים. הפרמטרים שלה מקבלים את ערכי הקלט, ו־`return` מחזיר תוצאה שאפשר לשמור במשתנה או להעביר לחישוב הבא. `print` מציג מידע על המסך; הוא אינו תחליף להחזרת התוצאה.
+
+העתיקו את הדוגמה הבאה לתא חדש. הפונקציה מחשבת ערך כפול, והלולאה משתמשת בה שלוש פעמים:
+
+```python
+def twice(number):
+    return 2 * number
+
+for value in [1, 3, -2]:
+    print(value, twice(value))
+```
+
+שנו את הפונקציה כך שתחזיר פי שלושה, ועדכנו גם את שמה. לאחר מכן הוסיפו בדיקה עם קלט שאת תשובתו אתם יודעים. בגרסה המקורית אפשר לכתוב `assert twice(3) == 6`; בגרסה ששיניתם צריך לעדכן את הבדיקה. `assert` עובר בשקט כשהתנאי נכון ומציג שגיאה כשהוא אינו נכון. כך אפשר לבדוק חישוב קטן לפני שמשלבים אותו בתוכנית גדולה.
+
+הסבר נוסף נמצא בסעיף [הגדרת פונקציות במדריך Python](https://docs.python.org/3/tutorial/controlflow.html#defining-functions). התמקדו בפסקה על `return`; אין צורך להבין את אלגוריתם פיבונאצ׳י שבדוגמה. לחזרה על לולאות מספיקים הדוגמה הראשונה בסעיף [for](https://docs.python.org/3/tutorial/controlflow.html#for-statements) והדוגמה `range(5)` בסעיף שאחריו. עצרו לפני הדוגמאות שמשנות אוספים.
+
+שמרו במחברת את הפונקציה ששיניתם, את השימוש בה בלולאה ואת הבדיקה שעוברת. בהמשך תשתמשו באותו מבנה כדי לבדוק תנועה ופגיעה בקיר.
 
 
-[Download Hebrew questions](../../readings/questions_he.md) · [English–Hebrew glossary](../../readings/glossary_en_he.md)
+## מעבר ממודל תנועה למודל של חומר
+*קריאת המשך של כ־8–10 דקות, אחרי תרגיל 3 ובתיאום עם המנחה.*
+
+בתרגילים שלנו חלקיק אינו משפיע על חלקיק אחר. אפשר כבר ליצור תנועה מורכבת בקופסה, אבל חסר מרכיב מרכזי בתיאור חומר: כוחות בין החלקיקים. כוח שתלוי במרחק בין זוג חלקיקים יכול לשנות את המהירות גם כשאין פגיעה בקיר.
+
+סעיף [The Lennard-Jones model במאמר של Schroeder](https://arxiv.org/html/1502.06169v1#S2) מציג מודל כזה. קראו את הפסקה הראשונה, הסתכלו בנוסחה (1) וקראו את ההסבר על r, sigma ו־epsilon מיד אחריה. התמקדו בקשר בין מרחק לאנרגיה; אין צורך לגזור כוח או לחשב חזקות ביד.
+
+הוספת כוחות משנה גם את מבנה התוכנית. לפני שמעדכנים מיקומים צריך לחשב כוחות ולעדכן את המהירויות. כתבו במחברת את הרצף ״חישוב כוחות → עדכון מהירויות → עדכון מיקומים״, וסמנו מה כבר קיים בקוד שלכם ומה צריך להוסיף. הציעו בדיקה למקרה שבו הכוח אפס.
+
+התרשים והבדיקה המוצעת הם נקודת מוצא לשיחה על הפרויקט הבא. הם מתארים הרחבה שעדיין צריך לממש ולבדוק, ולא תוצאה שהמודל הנוכחי כבר השיג.

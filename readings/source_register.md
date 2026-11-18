@@ -14,3 +14,13 @@ Checked during preparation on 2026-11-15.
 Course schematic figures and synthetic notebook values are labelled as such. Actual
 browser-rehearsal results are kept separately under data/examples/. No student data
 are included. The live Google-account sharing path still needs a human access check.
+
+## Hebrew coding track — guided units, 2026-11-18
+
+- Daniel V. Schroeder, *Interactive molecular dynamics*, introduction and Section II: https://arxiv.org/html/1502.06169v1 . Used for short original Hebrew explanations and precise reading directions; no copied figures or long passages.
+- OpenStax, *University Physics Volume 1*, Section 9.4: https://openstax.org/books/university-physics-volume-1/pages/9-4-types-of-collisions . Guided selection: the elastic-collision definition and energy comparisons, with an explicit distinction between closed-system collisions and our fixed-wall model.
+- Python documentation, *More Control Flow Tools*: https://docs.python.org/3/tutorial/controlflow.html . Guided selections: first for-loop example, range(5), and the return discussion. The twice function in the reading unit is an original teaching example.
+
+The Hebrew explanations and reading directions are in cards_he.json and embedded
+in the active student notebooks. English originals are optional depth, not a language
+prerequisite. No new MI interpretation or thermodynamic inference is introduced.

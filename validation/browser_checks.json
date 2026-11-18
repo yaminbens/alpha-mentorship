@@ -20,6 +20,11 @@
     "status": "passed"
   },
   {
+    "page": "task-3",
+    "width": 1280,
+    "status": "passed"
+  },
+  {
     "page": "browser",
     "width": 1280,
     "status": "passed"
@@ -56,6 +61,11 @@
   },
   {
     "page": "task-2",
+    "width": 390,
+    "status": "passed"
+  },
+  {
+    "page": "task-3",
     "width": 390,
     "status": "passed"
   },

@@ -1,0 +1,34 @@
+[
+  {
+    "notebook": "10_home_explore.ipynb",
+    "completed_learner_path": "passed",
+    "artifacts": [
+      "task1_closed.csv",
+      "task1_closed.html",
+      "task1_closed.png",
+      "task1_closed_settings.json"
+    ]
+  },
+  {
+    "notebook": "11_home_compare.ipynb",
+    "completed_learner_path": "passed",
+    "artifacts": [
+      "task2_comparison.json",
+      "task2_comparison.png",
+      "task2_elastic.csv",
+      "task2_elastic.html",
+      "task2_elastic.png",
+      "task2_elastic_settings.json"
+    ]
+  },
+  {
+    "notebook": "12_build_simulation.ipynb",
+    "completed_learner_path": "passed",
+    "artifacts": [
+      "task3_my_simulation.csv",
+      "task3_my_simulation.html",
+      "task3_my_simulation.png",
+      "task3_my_simulation_settings.json"
+    ]
+  }
+]

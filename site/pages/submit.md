@@ -1,51 +1,26 @@
-# Save, share and receive feedback
-**Your work belongs in your saved notebook. This website does not collect answers.**
+# שמירה ושיתוף
+ה־GitHub מכיל את התבניות. העבודה האישית שלכם נשמרת בעותק שלכם ב־Drive ובקבצים שהורדתם.
 
-## Save your own work
-1. From the course template choose **Save a copy in Drive**. Use your student code
-   and task number in the name.
-2. Keep answers, small observation tables and plots in that copy. Save it.
-3. Download data and screenshots or store them explicitly in Drive. Files left only
-   in the Colab runtime are temporary and are not shared automatically with the notebook.
-4. Reopen your copy. Check answers, plots and any linked files.
+## בתחילת העבודה
+1. לחצו **פתיחה ב־Colab** ובחרו **File → Save a copy in Drive**.
+2. תנו שם ברור, למשל `A12_תרגילים` עם קוד התלמיד שהמנחה קבע.
+3. המשיכו לערוך את העותק האישי. אפשר להשתמש במחברת המרכזית לכל שלושת התרגילים.
 
-## Submit for review
-Use the mentor Google account and private submission channel given in class.
-Share with that account, normally as **Commenter**, and keep general access restricted.
-Send the notebook link through the agreed channel. **Giving access and sending the
-submission link are two separate steps.** The mentor should check your practice link
-before you leave the first meeting.
-
-If your school account prevents sharing, download the notebook (`.ipynb`) and data
-and send them through the agreed program channel. Do not publish personal work in
-public GitHub issues. Your mentor can return comments or a short feedback document.
-
-## Message template
-Copy this into the private channel agreed with your mentor and replace the brackets:
-
-> Student code: [your code] — Task: [0, 1 or 2]
->
-> My notebook: [link to my saved copy]
->
-> Supporting files: [shared folder or file links]
->
-> Status: [complete / partial — stopped at step …]
->
-> One thing I found: […]
->
-> One thing I would like help with: […]
-
-For Task 1, include your two screenshots. For Task 2, include the four raw tables,
-screenshots, graph and results CSV. Check file access as well as notebook access.
-If you do not yet have the mentor's account or submission channel, ask for them;
-keep your work saved until they are provided.
-
-## After feedback
-Revise the same working copy and add a short revision note. If you need a fixed
-submission version, keep a dated notebook download as a snapshot.
+## שיתוף של משהו שבחרתם
+1. שמרו את המחברת ופתחו אותה מחדש כדי לוודא שהקוד והתשובות מופיעים.
+2. דרך סמל התיקייה ב־Colab הורידו את קובצי הריצות שבחרתם לשמור. ליד כל קובץ: שלוש נקודות → **Download**.
+3. שמרו אנימציות `.html`, תמונות `.png`, נתונים `.csv` וקובצי `_settings.json`. אפשר לשמור גם את טבלת ההשוואה אם יצרתם אותה.
+4. שמרו עותק מתוארך של המחברת: **File → Download → Download .ipynb**.
+5. לחצו **Share**, הוסיפו את חשבון המנחה שנמסר בכיתה, והעניקו הרשאת **Commenter** אלא אם התבקשתם אחרת. שלחו את הקישור בערוץ הפרטי שסוכם.
+6. שתפו גם את תיקיית הקבצים. שיתוף המחברת אינו משתף אוטומטית קבצים מסביבת ההרצה.
 
 {{contact}}
 
-[Colab saving and sharing documentation](https://research.google.com/colaboratory/faq.html)
+בחרו ריצה או שינוי שתרצו להראות ושמרו גם את תנאי הריצה. אין צורך לסיים את כל הסעיפים כדי לשתף. אפשר לשלוח קוד חלקי, צילום של תקלה או רעיון שלא הספקתם לבדוק.
 
-<div lang="he" dir="rtl" class="hebrew">שיתוף אינו הגשה: אחרי שנתתם למנחה גישה, שלחו את הקישור בערוץ שסוכם. בדקו שגם קובצי הנתונים נגישים. האתר עצמו אינו שומר תשובות או שולח אותן למנחה.</div>
+בסוף המחברת יש מקום חופשי לספר מה עניין אתכם, מה היה קל או קשה ומה תרצו להמשיך ללמוד. אפשר גם להשתמש ב[דף ההתרשמות הקצר](../../assignments/reflection_he.md). המשוב הזה יעזור לנו לבחור יחד את הכיוון הבא.
+
+אין צורך לפרסם תשובות, פרטים אישיים או קישורי שיתוף ב־GitHub הציבורי. אם חשבון בית הספר מגביל שיתוף, שלחו את קובץ המחברת והקבצים בערוץ הפרטי שהמנחה אישר.
+
+## פתיחת אנימציות אחרי העבודה
+פתחו את קובץ ה־HTML שהורדתם בדפדפן. תמונת ה־PNG משמשת גיבוי סטטי. כשסביבת Colab מתאפסת, צריך להריץ שוב את תא כלי ההדמיה ואת התאים של התרגיל; עצם שמירת המחברת אינה שומרת את המשתנים בזיכרון.

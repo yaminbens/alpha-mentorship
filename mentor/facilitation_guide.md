@@ -1,3 +1,5 @@
+> עדכון: למסלול התכנות והמשוב הפעיל השתמשו ב־[מדריך בעברית](hebrew_coding_track.md). החלקים הבאים מתעדים את המפגש ואת מסלול הדפדפן המקורי.
+
 # Facilitation guide
 ## Before the meeting
 Open the course start page, the Hebrew presentation (HTML or PDF), the Schroeder demo and notebook 00.
