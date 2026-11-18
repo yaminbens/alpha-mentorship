@@ -1,62 +1,46 @@
-# Browser simulation guide
-Use [Schroeder's Interactive Molecular Dynamics](https://physics.weber.edu/schroeder/md/).
-The demonstration and homework use 64 particles in a square of side 12, with gravity
-off, no added bonds, no anchored particles and no fixed-temperature particles.
-Lengths and times use reduced model units; temperatures are not automatically kelvin.
+# הדגמת המנחה: תנועה של חלקיקים
 
-## Load a reproducible starting state
-1. Download [ordered_initial.txt](../../meetings/01_introduction/presets/ordered_initial.txt) from the course page or use the file in
-   `meetings/01_introduction/presets/`.
-2. Pause the simulator. Open **Data**, select **All atoms**, paste the file's complete text into the data
-   box and click **Input state**. Keep a copy of the file you loaded.
-3. Check N=64, box side=12, gravity=0 and time step=0.005. The file specifies all
-   particle positions and velocities. It is a seeded triangular starting arrangement.
-4. Set **Steps per frame** to 200 and press **Step** five times. This advances 1000
-   steps, or 5 reduced time units. This preparation is used before every comparison.
+נשתמש ב[סימולטור המולקולרי של דניאל שרודר](https://physics.weber.edu/schroeder/md/). בהדגמה יש 64 חלקיקים בריבוע שאורך צלעו 12, ללא כבידה, קשרים נוספים, חלקיקים מעוגנים או חלקיקים בטמפרטורה קבועה. האורכים והזמנים נמדדים ביחידות המודל; הטמפרטורה אינה בהכרח בקלווין.
 
-## Guided demonstration
-Predict what adding energy will change. From the prepared state, use **Faster** to
-increase speeds. The rehearsed high condition uses 24 clicks while paused. Keep
-particle count and box fixed. Press Step five times, then observe the motion and
-arrangement. Show the low/high recorded screenshots if live access fails. A disordered
-snapshot is not a demonstrated equilibrium liquid phase.
+זהו מודל עם כוחות בין חלקיקים, בשונה משלושת תרגילי התכנות. ההדגמה תיעשה יחד בכיתה. ההוראות המפורטות להמשך מאפשרות לחזור אליה באופן עצמאי אם תרצו להעמיק.
 
-## Three conditions at home
-Reload the same initial state and perform the 1000-step preparation each time.
-Use 0, 8 and 24 Faster clicks for low, middle and high energy preparations. The speed
-multipliers are respectively 1, about 2.144 and about 9.850; they are not temperatures.
-After the intervention, take another 1000 steps as a recorded settling interval.
-This is a classroom protocol, not a proof of equilibration.
+## מתחילים מאותו מצב
 
-## Record a measurement window
-Press **Reset stats** after settling; this resets the displayed time/statistics,
-not the particle state. Open Data, choose **System totals** and **More detail**.
-Set **Auto interval** to its off setting and clear old data. Set Steps per frame to 25. Repeat **Step**, then **Write data**, 40 times. This records a 5-unit window in increments of 0.125. Copy the tab-separated
-data into a text file and save it outside the simulator.
+1. הורידו את [קובץ המצב ההתחלתי](../../meetings/01_introduction/presets/ordered_initial.txt).
+2. עצרו את הסימולטור, פתחו **Data**, בחרו **All atoms**, הדביקו את תוכן הקובץ במלואו ולחצו **Input state**. שמרו את הקובץ שטענתם.
+3. בדקו שמספר החלקיקים הוא 64, אורך הצלע 12, הכבידה 0 וצעד הזמן 0.005. הקובץ מגדיר מיקומים ומהירויות התחלתיים בסידור משולש, שנוצר באמצעות זרע אקראי קבוע.
+4. הגדירו **Steps per frame** לערך 200 ולחצו **Step** חמש פעמים. כך מתקדמים 1,000 צעדים, שהם 5 יחידות זמן. חוזרים על ההכנה הזאת לפני כל השוואה.
 
-The detailed export includes N, KE and PE. Average KE/N for temperature in this 2D
-unanchored model, and PE/N for potential energy per particle across the recorded
-rows. The displayed T column can be a running average; do not treat that column as
-an independent instantaneous sample. The Task 2 notebook includes a helper for this detailed
-export; notebook 02 is an optional later analysis tool. Save screenshots and record settings, preparation and the measurement window.
+## ההדגמה בכיתה
 
-Repeat the middle condition from the same saved state. Exact replay checks the
-procedure; it is not an independent-seed uncertainty estimate. A broader study needs
-independent preparations and sampling diagnostics. Preserve unexpected outcomes.
+לפני השינוי ננסה לצפות כיצד תוספת אנרגיה תשפיע על התנועה. מהמצב שהכנו, הכפתור **Faster** מגדיל את המהירויות. במצב האנרגיה הגבוהה שתועד בהדגמה לחצנו עליו 24 פעמים כשהסימולטור עצור. נשאיר את מספר החלקיקים ואת הקופסה קבועים, נלחץ **Step** חמש פעמים ונתבונן בתנועה ובסידור.
 
-## Source and fallback
-The simulator's page documents its physics and controls. The course contains an
-attributed recording, screenshots, starting states and measured example data from
-an automated browser rehearsal. Use them as labelled examples if access fails.
+אם הסימולטור אינו זמין, אפשר להשתמש בתיעוד המופיע בהמשך. תמונה של סידור לא מסודר אינה מספיקה כדי לקבוע שהמערכת היא נוזל בשיווי משקל.
 
-## Recorded demonstration
-These are actual short browser-model observations, not phase classifications.
+## למי שרוצה להמשיך: שלוש הכנות להשוואה
 
-<figure><img src="../../meetings/01_introduction/fallback/low.png" alt="Low-energy observation of an ordered cluster"><figcaption>Low-energy observation. Source: Schroeder browser simulation; course rehearsal.</figcaption></figure>
-<figure><img src="../../meetings/01_introduction/fallback/high.png" alt="High-energy observation with a less ordered arrangement"><figcaption>High-energy observation from the same model and box. No equilibrium phase assignment.</figcaption></figure>
-<figure><img src="../../meetings/01_introduction/fallback/demonstration.gif" alt="Recorded particle motion after high-energy preparation"><figcaption>Accelerated recording of the external model; not a live simulation.</figcaption></figure>
+טענו מחדש את אותו מצב התחלתי ובצעו בכל פעם את 1,000 צעדי ההכנה. נסו 0, 8 ו־24 לחיצות על **Faster** ליצירת הכנות באנרגיה נמוכה, בינונית וגבוהה. מכפילי המהירות הם בהתאמה 1, כ־2.144 וכ־9.850; אלה אינם ערכי טמפרטורה. לאחר השינוי התקדמו עוד 1,000 צעדים כפרק המתנה מתועד. זהו נוהל לימודי, ואין בו הוכחה שהמערכת הגיעה לשיווי משקל.
 
+## תיעוד חלון מדידה
 
-[Download measured example averages](../../data/examples/window_averages.csv) · [Example provenance](../../data/examples/metadata.json)
+לאחר ההמתנה לחצו **Reset stats**. הכפתור מאפס את הזמן והסטטיסטיקה המוצגים, ולא את מצב החלקיקים. פתחו **Data**, בחרו **System totals** ו־**More detail**, כבו את **Auto interval** ונקו נתונים קודמים. הגדירו **Steps per frame** לערך 25. חזרו 40 פעמים על **Step** ואחריו **Write data**. כך נרשם חלון של 5 יחידות זמן במרווחים של 0.125. העתיקו את הנתונים המופרדים בטאבים לקובץ טקסט ושמרו אותו מחוץ לסימולטור.
 
-If using these observations instead of your own run, explicitly label the source in your notebook.
+הייצוא המפורט כולל את מספר החלקיקים N, האנרגיה הקינטית KE והאנרגיה הפוטנציאלית PE. במודל הדו־ממדי הזה, ללא חלקיקים מעוגנים, ממוצע KE/N על השורות שנרשמו נותן את הטמפרטורה ביחידות המודל. ממוצע PE/N נותן אנרגיה פוטנציאלית לחלקיק. עמודת T המוצגת עשויה להיות ממוצע מצטבר, ולכן אין להתייחס לכל ערך בה כאל דגימה רגעית עצמאית.
+
+מחברת תרגיל 2 מהמסלול המקורי שבארכיון כוללת כלי עזר לייצוא הזה; מחברת ההרחבה 02 היא אפשרות נוספת לניתוח בהמשך. שמרו גם צילומי מסך ותעדו הגדרות, הכנה וחלון מדידה.
+
+אפשר לחזור על התנאי האמצעי מאותו מצב שמור. שחזור זהה בודק את הנוהל; הוא אינו אומדן אי־ודאות מזרעים עצמאיים. מחקר רחב יותר דורש הכנות עצמאיות ובדיקות של הדגימה. שמרו גם תוצאות שלא ציפיתם להן.
+
+## מקור וגיבוי להדגמה
+
+באתר הסימולטור מוסברים חוקי המודל והפקדים. חומרי הקורס כוללים הקלטה, תמונות, מצבי התחלה ונתוני דוגמה מדודים מהרצת הכנה אוטומטית בדפדפן. כשמשתמשים בהם, מציינים במחברת שמדובר בנתוני הדוגמה ומציינים את המקור.
+
+## ההדגמה המתועדת
+
+אלה תצפיות קצרות מהמודל בדפדפן; הן אינן סיווגים של מצבי צבירה.
+
+<figure><img src="../../meetings/01_introduction/fallback/low.png" alt="תצפית באנרגיה נמוכה: צבר מסודר"><figcaption>תצפית באנרגיה נמוכה. מקור: סימולטור שרודר, הרצת הכנה לקורס.</figcaption></figure>
+<figure><img src="../../meetings/01_introduction/fallback/high.png" alt="תצפית באנרגיה גבוהה עם סידור פחות מסודר"><figcaption>תצפית באנרגיה גבוהה באותו מודל ובאותה קופסה. לא נקבע כאן מצב צבירה בשיווי משקל.</figcaption></figure>
+<figure><img src="../../meetings/01_introduction/fallback/demonstration.gif" alt="הקלטה של תנועת החלקיקים לאחר הכנה באנרגיה גבוהה"><figcaption>הקלטה מואצת של המודל החיצוני.</figcaption></figure>
+
+[הורדת ממוצעי המדידות לדוגמה](../../data/examples/window_averages.csv) · [פרטי מקור הנתונים](../../data/examples/metadata.json)

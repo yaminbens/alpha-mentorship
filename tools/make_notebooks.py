@@ -13,7 +13,7 @@ def md(text):
     return nbf.v4.new_markdown_cell('<div dir="rtl">\n\n'+text.strip()+'\n\n</div>')
 def code(text):return nbf.v4.new_code_cell(text.strip())
 SAVE='''## עותק אישי להמשך העבודה
-1. פותחים מה־GitHub של המנחה באמצעות **פתיחה ב־Colab**. GitHub מציג תצוגה בלבד.
+1. פותחים מאתר התלמידים באמצעות **פתיחה ב־Colab**.
 2. בוחרים **File → Save a copy in Drive** ומשנים את השם ל־`קוד-תלמיד_תרגילים`.
 3. מריצים תאים לפי הסדר באמצעות המשולש. אחרי שינוי בתא מריצים אותו שוב; תאים שכבר רצו אינם מתעדכנים בעצמם.
 4. תשובות כותבים בתאי הטקסט במקום `…`. קוד כותבים בתאים המסומנים **תורכם לכתוב**.
@@ -283,7 +283,7 @@ else:
 **להגשה:** המחברת עם הקוד שלכם, פלט שמונה הבדיקות, שתי אנימציות עם תנאים שונים ותיאור קצר של תיקון אחד. אם משהו עדיין לא עובד, כתבו מה ניסיתם ושמרו את הודעת השגיאה; אין צורך להמציא תוצאה.
 
 ## המשך לפרויקט הבא
-אחרי שהמודל עובד, אפשר להוסיף כוחות בין חלקיקים ולשאול על מבנה של חומר. זו הרחבה מדעית חדשה שצריך לבדוק בפני עצמה. חומר ההמשך נמצא בדף ״המשך וקריאה״ ב־GitHub של המנחה.''')]
+אחרי שהמודל עובד, אפשר להוסיף כוחות בין חלקיקים ולשאול על מבנה של חומר. זו הרחבה מדעית חדשה שצריך לבדוק בפני עצמה. חומר ההמשך נמצא בדף ״המשך וקריאה״ באתר התלמידים.''')]
 
 
 # End each activity with a small saved example, not a graded submission checklist.
@@ -301,7 +301,7 @@ TASK3.append(md(CARDS['extension']))
 
 def write(name,title,cells):
     url=f"https://colab.research.google.com/github/{CFG['repository']}/blob/{CFG['branch']}/notebooks/{name}"
-    heading=md('# '+title+'\n\n[פתיחה ב־Colab]('+url+') · [דף התלמידים ב־GitHub](https://github.com/'+CFG['repository']+'/blob/'+CFG['branch']+'/README.md)\n\nב־GitHub רואים תצוגה מקדימה. לעריכה ולהרצה פתחו ב־Colab ושמרו עותק ב־Drive.')
+    heading=md('# '+title+'\n\n[פתיחה ב־Colab]('+url+') · [אתר התלמידים](https://yaminbens.github.io/alpha-mentorship/)\n\nב־GitHub רואים תצוגה מקדימה. לעריכה ולהרצה פתחו ב־Colab ושמרו עותק ב־Drive.')
     all_cells=copy.deepcopy([heading,md(SAVE)]+cells+[md(REFLECTION)])
     for i,c in enumerate(all_cells):
         c.id=f'cell-{i:03d}'

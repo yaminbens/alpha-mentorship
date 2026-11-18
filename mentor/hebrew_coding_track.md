@@ -1,45 +1,86 @@
-# הנחיית המסלול בעברית
+# Facilitating the Hebrew coding track
 
-המשוב שהוביל לשינוי: התלמידים מכירים משתנים, תנאים ולולאות, רוצים לכתוב קוד ולראות תוצאות מעניינות. המסלול נותן משימה ברורה, שינוי בקוד, תוצאה חזותית ובדיקה; התיעוד נשאר קצר. השפה ישירה ומכבדת, ללא סיפור מסגרת ילדותי.
+Students already know variables, conditions and loops. They want to write code
+and see interesting results. Each activity connects a clear task, a code change,
+a visible outcome and a check. Keep documentation brief and use direct,
+respectful language.
 
-## חלוקת העבודה
+## Schedule and activities
 
-במפגש הראשון נשמרים 60 הדקות: ההדגמה בכיתה היא בהובלת המנחה, ו־20 דקות מוקדשות להיכרות עם Colab. שלושת התרגילים הם עבודה עצמאית, אפשר בכמה פגישות. אין צורך להעמיס את כל המסלול על המפגש הראשון.
+Keep the first meeting to 60 minutes, including one mentor-led demonstration and
+20 minutes of Colab practice. The three full activities are independent work and
+may span several sessions.
 
-| תרגיל | התופעה | כלי התכנות | תוצר לביקורת |
+| Activity | Phenomenon | Programming tools | Possible material to discuss |
 |---|---|---|---|
-| 1 | מעבר וערבוב אחרי פתיחת מחיצה | לולאה ותנאי לספירה, בחירת נתונים ממערך, גרף | ספירה תקינה, גרף ואנימציות סגורה ופתוחה |
-| 2 | קפיצות מתמשכות מול דעיכה | רשימת פרמטרים, לולאת השוואה, ממוצע ומקסימום | גרף לכמה ערכי e וטבלת גובה בזמן הסופי |
-| 3 | מסלול של חלקיק אלסטי בתוך ריבוע | פונקציות, ערכי החזרה, לולאת זמן ובדיקות | קוד התלמיד, שמונה בדיקות ושתי אנימציות |
+| 1 | Crossing and mixing after opening a partition | Counting with a loop and condition, array selection, plotting | Count, plot and closed/open animations |
+| 2 | Sustained bouncing versus decay | Parameter lists, comparison loop, mean and maximum | Plot for several restitution values and final heights |
+| 3 | Elastic particle trajectory in a square | Functions, return values, time loop and checks | Student code, eight checks and two animations |
 
-## דרך הנחיה
+## Facilitation
 
-פתח בשינוי חזותי קצר, ותן להם לתאר מה הפתיע אותם. שאל ״איזה חלק בקוד יכול לשנות את זה?״. אפשר זמן לערוך, להריץ ולטעות לפני ההסבר. כשיש תקלה, בקש את הקלט, התוצאה הצפויה והתוצאה שהתקבלה. שאלת הפיזיקה נועדה לעזור לבחור מדידה או להסביר תוצאה, ולא להחליף את העבודה בקוד.
+Begin with a brief visible change and invite students to describe what surprised
+them. Help them identify the code that could affect it. Allow time to edit, run
+and make mistakes before explaining. When debugging, identify the input, expected
+output and actual result. Physical reasoning should help choose a measurement or
+explain a result while students actively work with the code.
 
-אתגרי התכנון אינם מבחן עם תשובה יחידה: בתרגיל 1 מחפשים פתח שעומד ביעד מעבר בזמן נתון; בתרגיל 2 מחפשים ערך החזרה שעומד ביעד גובה. חשוב לתעד גם ניסיונות שלא השיגו את המטרה. אין צורך לדרוש גרף חלק או מגמה מונוטונית מריצה קצרה עם מספר קטן של חלקיקים.
+Design challenges have multiple possible solutions. Activity 1 seeks an opening
+that meets a crossing target at a specified time; Activity 2 seeks restitution
+that meets a height target. Preserve attempts that miss the target. A short run
+with few particles need not produce a smooth graph or monotonic trend.
 
-## גבולות המודל
+## Model boundaries
 
-שני התרגילים הראשונים משתמשים בחלקיקים בלתי תלויים בקופסה באורך יחידה. אין כוחות או התנגשויות בין חלקיקים. השמות צבע, גובה וערבוב אינם קביעה של טמפרטורה או מצב צבירה.
+The first two activities use independent particles in a unit-length box. There
+are no interparticle forces or collisions. Colour, height and mixing do not
+establish temperature or phase.
 
-בתרגיל 1 הקירות אלסטיים ובמרכז יש מחיצה עם פתח. החישוב בודק את נקודת החצייה של המחיצה. בתרגיל 2 התנועה האנכית בליסטית בין פגיעות; זמני הפגיעה מחושבים מתוך משוואת התנועה. גודל המהירות האנכית אחרי הפגיעה מוכפל ב־e. מהירות חזרה נמוכה מ־0.001 יחידות המודל ברצפה מטופלת כמגע רציף, כדי לייצג את גבול ריבוי ההתנגשויות. זה כלל נומרי שמפורש במחברת.
+Activity 1 uses elastic walls and a central partition with an opening. The engine
+checks the crossing point at the partition. Activity 2 uses ballistic vertical
+motion between impacts and solves impact times from the equation of motion.
+After impact, the vertical speed magnitude is multiplied by restitution `e`.
+Floor rebound speeds below 0.001 model speed units are treated as continuous
+contact to represent the limit of repeated impacts. The notebook explains this
+numerical rule.
 
-בתרגיל 3 אין כבידה. הקוד לתלמיד מטפל בפגיעה אחת לכל ציר בכל צעד, עם dt=0.02 ורכיבי מהירות עד 1. התצוגה משתמשת במסלול שהקוד שלו מחזיר; אין פתרון מוסתר שמשלים את הפונקציות. ריצה של תבנית ריקה תפיק הודעות על מה שחסר, לא הצלחה כוזבת.
+Activity 3 has no gravity. Student code handles one impact per axis per step,
+with `dt=0.02` and velocity components up to 1. The animation uses the trajectory
+returned by student code. No hidden solution completes the functions; running an
+unfinished template reports missing pieces rather than false success.
 
-המצגת והדגמת הדפדפן משתמשות במודל לנארד־ג׳ונס עם כוחות בין חלקיקים. הן נשמרו בנפרד, ואין להציג את הנתונים מהן כתוצאות המודלים החדשים.
+The presentation and browser demonstration use a separate Lennard–Jones model
+with interparticle forces. Keep their data distinct from the new activities.
 
-## עזרה בקוד ושיחה על החוויה
+## Coding support and reflection
 
-תרגיל 1: בתוך התנאי מוסיפים `count_right += 1`. הגרף מקבל כותרת באמצעות `plt.title` ושמירה באמצעות `plt.savefig` לפני `show`.
+For Activity 1, add `count_right += 1` inside the condition. Use `plt.title` for
+the title and `plt.savefig` before `show` to save the plot.
 
-תרגיל 2: מחשבים `np.mean(final_y)` ומוסיפים ערכים ל־`cases`. מקסימום מתקבל מ־`np.max(final_y)`. קוד שמציג רק מספר קבוע אינו פתרון תקין, גם אם התאים לריצה אחת.
+For Activity 2, compute `np.mean(final_y)` and add values to `cases`. Use
+`np.max(final_y)` for a maximum. A fixed number that happens to match one run
+does not implement a general calculation.
 
-תרגיל 3: [קוד הייחוס](coding_reference.py). הוא ציבורי ואינו מיובא למחברות. בקש מהתלמיד להסביר את הקוד ולהדגים שינוי בקלט. בדוק שהצליח להבין כישלון של בדיקה, לא רק להגיע לפלט ״עבר״.
+For Activity 3, consult the [reference code](coding_reference.py). It is public
+but is not imported into learner notebooks. Invite students to explain their
+code and demonstrate a changed input. Help them interpret a failed check rather
+than focusing only on a passing result.
 
-בסיום מזמינים את התלמיד לבחור משהו שהוא רוצה להראות. המשוב נועד לברר מה סיקרן אותו, מה זרם, מה היה קשה ואיזה כיוון ירצה להמשיך. אפשר לדבר גם על עבודה חלקית או על רעיון שלא הצליח. אין ציונים, דרישה לענות על כל סעיף או מכסת תוצרים.
+At the end, invite students to choose something to show. Discuss what interested
+them, what came easily, what was difficult and what they want to explore next.
+Partial work and unsuccessful ideas are welcome. There are no grades, mandatory
+responses to every prompt or quotas of outputs. The
+[Hebrew reflection page](../assignments/reflection_he.md) is included in each notebook.
 
-בדיקות התוכנה מספקות עזרה טכנית; אין להשתמש במספר הבדיקות שעברו כציון לתלמיד. אם יש תקלה, פותרים איתו מקרה קטן. בוחרים את ההמשך לפי תחומי העניין והקושי שהוא מתאר. [דף ההתרשמות](../assignments/reflection_he.md) משולב בסוף כל מחברת.
+Code checks provide technical feedback; their pass count is not a student grade.
+Debug a small case together and choose the next step around the student's
+interests and difficulties.
 
-## שמירה וסקירה
+## Saving and review
 
-ה־README הוא נקודת הכניסה דרך GitHub. המחברת המרכזית מכילה את כל המסלול; יש גם מחברת לכל תרגיל. תלמידים שומרים עותק ב־Drive ומשתפים עם המנחה בערוץ פרטי. את קובצי האנימציות והגרפים צריך לשמור ולשתף בנפרד. אם הפלט האינטראקטיבי אינו נשמר, קובץ HTML עצמאי ותמונת PNG מאפשרים סקירה.
+The [student website](https://yaminbens.github.io/alpha-mentorship/) is the entry
+point. Each activity page opens its own notebook; a combined workbook is also
+available. Students save personal Drive copies and share them through a private
+channel. Animations and plots must be saved and shared separately. Standalone
+HTML animations and PNG images support review when interactive output is not
+preserved in the notebook.

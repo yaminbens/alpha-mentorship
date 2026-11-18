@@ -1,6 +1,11 @@
-# עדכון המסלול בעברית — 18 בנובמבר 2026
+# Current course update — November 18, 2026
 
-המסלול הפעיל מתואר ב־README וב־STATUS: מחברת מרכזית בעברית, שלושה תרגילי קוד וסימולציה, קריאה משולבת ומשוב פתוח. הממשק הוא GitHub עם פתיחה ב־Colab, שמירה ב־Drive וייצוא קבצים. המפגש הראשון נשאר שעה; העבודה המלאה עצמאית. המסלול המקורי למטה נשמר כרקע היסטורי.
+The active course is described in README.md and STATUS.md: a Hebrew GitHub Pages
+book, three coding activities, integrated reading and open reflection. Repository
+documentation remains in English. Students open notebooks from the website, save
+personal Drive copies and export files for review. The first meeting remains one
+hour; full activities are independent work. The original inventory below is retained
+as historical background.
 
 # Implementation plan
 

@@ -1,7 +1,16 @@
-# שיחה וסקירת עבודה במסלול החדש
+# Conversation and review of student work
 
-הזמינו את התלמידים לשתף דבר אחד שבחרו: קוד, אנימציה, תוצאה לא צפויה או תקלה. אפשר לשתף גם עבודה חלקית. פתחו בשיחה על מה עניין אותם, מה היה קל או קשה ומה ירצו ללמוד או לנסות בהמשך. דף ההתרשמות שבמחברת הוא מקום חופשי לשיחה הזאת.
+Invite students to share something they choose: code, an animation, an unexpected
+result or a problem. Partial work is welcome. Start with what interested them,
+what felt easy or difficult, and what they would like to learn or try next.
+The notebook reflection offers space for this conversation.
 
-בדקו יחד שהעותק נשמר ושאפשר לפתוח את הקבצים שנבחרו. התייחסו לבדיקות הקוד ככלי לאיתור תקלות, לא כציון או כתנאי לקבלת משוב. הציעו צעד המשך שמתאים לתלמיד. אין צורך בדוח מלא או במענה לכל סעיף.
+Together, check that the personal copy is saved and the selected files open.
+Use code checks to locate problems, rather than as grades or conditions for
+receiving feedback. Suggest a next step that fits the student's interests and
+experience. No full report or response to every prompt is required.
 
-קבלו קישורים בערוץ פרטי ופתחו אותם עם החשבון המיועד של המנחה. המחברת אינה משתפת אוטומטית את קובצי סביבת ההרצה. שמרו תיעוד אישי מחוץ למאגר הציבורי. אין לפרסם שמות, קישורי הגשות או משוב אישי ב־GitHub.
+Receive links through the agreed private channel and open them using the intended
+mentor account. Sharing a notebook does not automatically share files in its
+runtime. Keep personal notes outside the public repository. Do not publish names,
+student links or individual feedback on GitHub.

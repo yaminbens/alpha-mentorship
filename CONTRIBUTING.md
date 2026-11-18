@@ -27,7 +27,11 @@ Keep source links, licenses, seeds, settings and units with copied or generated 
 Commit source and useful small teaching outputs; ignore temporary runtimes and student work.
 
 ## Hebrew coding track
-The active student entry is notebooks/student_workbook_he.ipynb. Edit the Hebrew
+The student entry point is the Hebrew GitHub Pages book, built from site/pages/.
+Keep its chapter navigation and per-activity Colab links. The combined workbook
+notebooks/student_workbook_he.ipynb is optional. Keep repository documentation
+in English; student-facing pages, notebooks and requested Hebrew teaching assets
+remain in Hebrew. Edit the Hebrew
 lessons in tools/make_notebooks.py and the independent-particle engine in
 simulation/teaching_particles.py, then regenerate notebooks. The engine is embedded
 verbatim so students need no repo checkout. Reading units live in readings/cards_he.json

@@ -1,4 +1,5 @@
-> עדכון: למסלול התכנות והמשוב הפעיל השתמשו ב־[מדריך בעברית](hebrew_coding_track.md). החלקים הבאים מתעדים את המפגש ואת מסלול הדפדפן המקורי.
+> For the current coding activities and open reflection, use the [coding track guide](hebrew_coding_track.md). The sections below document the meeting and original browser track.
+
 
 # Facilitation guide
 ## Before the meeting

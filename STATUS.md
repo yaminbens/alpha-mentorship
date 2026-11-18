@@ -1,33 +1,67 @@
-# מצב המסלול
+# Course status
 
-## המסלול הפעיל
+## Active course
 
-המסלול בעברית כולל מחברת מרכזית וארבע מחברות נפרדות: היכרות עם Colab ושלושה תרגילים. תרגיל 1 עוסק במעבר דרך מחיצה ובערבוב; תרגיל 2 בחוקי קפיצה ודעיכה; תרגיל 3 בכתיבת סימולציה של חלקיק בקופסה. הקוד מוסבר לתלמידים שמכירים משתנים, תנאים ולולאות. השפה משתמשת בכותרות ובהסברים זורמים.
+The student entry point is the [Hebrew GitHub Pages book](https://yaminbens.github.io/alpha-mentorship/).
+It retains chapter navigation, a first-hour agenda, activity pages, readings,
+saving/sharing instructions and further material. Repository documentation is
+in English. Student notebooks and teaching assets intended for Hebrew use remain
+in Hebrew.
 
-הקריאה משולבת במקום שבו משתמשים ברעיון: הסבר בעברית, קטע מוגדר במקור ופעולה בקוד. המקורות באנגלית זמינים להעמקה. בסוף המחברות מופיע מקום חופשי לספר על עניין, קושי, קלות וכיווני המשך. השיתוף הוא בסיס לשיחה; אין דרישה להשלים הכול, דוח או ציון. בדיקות הקוד הן כלי לתיקון הסימולציה.
+The active track has a combined workbook and four separate notebooks: Colab
+onboarding, partition opening and mixing, bouncing and dissipation, and writing
+a particle-in-a-box simulation. It assumes familiarity with variables, conditions
+and loops. Instructions use headings and flowing explanations.
 
-ה־README הוא נקודת הכניסה דרך GitHub. האתר כולל תשעה דפים, קישורי Colab והורדות. קיימות עשר מחברות פעילות: חמש בעברית וחמש הרחבות מדעיות מקוריות באנגלית. שלוש מחברות מהמסלול המקורי נשמרו תחת archive/browser_track; הן אינן המסלול הראשי.
+Reading is integrated where ideas are applied: a Hebrew explanation, a specified
+source passage and a connection to the code. English sources support further
+reading. Reflection invites interests, easy and difficult moments, and desired
+next steps. Partial work is welcome; no full report or grade is required. Code
+checks support debugging.
 
-## גבולות מדעיים
+There are nine website pages and ten active notebooks: five Hebrew notebooks and
+five original English scientific extensions. Three original notebooks are retained
+under `archive/browser_track` separately from the active course.
 
-הסימולציות החדשות קטנות ועצמאיות, על CPU, עם חלקיקים ללא כוחות ביניהם. הן מדגימות תנועה, תנאי שפה ומדידה; אין בהן טענה להתכה, לשיווי משקל או לתכונות של חומר אמיתי. המודל המולקולרי עם כוחות בין חלקיקים נמצא בהדגמת הדפדפן ובחומר ההמשך. הנתונים והמצגת הקודמים נשמרו בנפרד.
+## Scientific scope
 
-המפגש הראשון נשאר בן שעה עם הדגמה אחת בהובלת המנחה והיכרות עם Colab. התרגילים המלאים נעשים בנפרד, בכמה מפגשים לפי הצורך.
+The new simulations are small, independent CPU examples with no interparticle
+forces. They teach motion, boundary conditions and measurement; they do not establish
+melting, equilibrium or properties of real materials. The browser demonstration
+and further material use an interacting molecular model. Earlier data and the
+presentation are preserved separately.
 
-## בדיקות
+The first meeting remains one hour with a mentor-led demonstration and Colab
+practice. Full exercises take place independently over as many sessions as needed.
 
-- 15 בדיקות מקומיות עברו: קישורי המקור והאתר, מבנה המחברות, חסימת מעבר במחיצה, תנועה אלסטית ושימור אנרגיה במודל המתאים, דעיכה במודל הלא־אלסטי, מנוחה ללא כבידה וזמן פגיעה ידוע.
-- תבנית הקוד הלא־מושלמת בתרגיל 3 אינה עוברת את כל הבדיקות ואינה יוצרת מסלול באמצעות פתרון מוסתר. פתרון הייחוס עובר; מימוש תנועה שגוי נכשל.
-- עשר המחברות הורצו מקומית בסביבות Python נפרדות. גם מסלולי העבודה לאחר השלמות קוד בתרגילים 1–3 נבדקו. ריצה של תבנית ריקה אינה מעידה שתלמיד השלים את התרגיל.
-- 18 בדיקות דפדפן בוצעו בתשע כתובות ובשני גדלי מסך. שמירת אנימציות HTML עצמאיות מאפשרת סקירה גם מחוץ ל־Colab; גרפי PNG מספקים גיבוי סטטי.
-- הקישורים בתוך דפי המקור מפנים לקובצי Markdown אמיתיים ב־GitHub. בניית האתר ממירה אותם לכתובות HTML. התיקון מונע את שגיאת task-0.html בתיקיית המקור.
+## Validation
 
-עדויות נמצאות תחת validation/, לרבות notebook_execution.json, completed_student_paths.json ו־browser_checks.json. בדיקות מקומיות אינן בדיקת חשבון Google אמיתי, שמירה ב־Drive או הרשאות שיתוף של תלמיד.
+The existing course validation covers:
 
-## פרסום ושיתוף
+- 15 automated tests: source/site links, notebook structure, closed-partition
+  crossing, elastic motion and energy conservation, dissipation, zero-gravity
+  rest and a known impact time.
+- The unfinished Activity 3 template reports missing code and does not generate
+  a trajectory using a hidden solution. The reference passes; incorrect motion fails.
+- Ten notebooks executed locally in fresh Python kernels, plus completed student
+  paths for Activities 1–3. Running an empty template does not show that a student
+  completed an activity.
+- 18 browser checks across nine pages and two viewport widths. Standalone HTML
+  animations and PNG plots support review outside Colab.
+- Source Markdown links resolve inside GitHub and are converted to HTML links
+  during the build, avoiding the former source-folder `task-0.html` error.
 
-המקור: https://github.com/yaminbens/alpha-mentorship
+Evidence is stored under `validation/`, including `notebook_execution.json`,
+`completed_student_paths.json` and `browser_checks.json`. Local tests do not verify
+an authenticated student's Google account, Drive saving or sharing permissions.
 
-האתר: https://yaminbens.github.io/alpha-mentorship/
+## Publication and privacy
 
-המאגר ציבורי, ולכן גם מדריך המנחה ופתרון הייחוס גלויים. הם אינם מיובאים למחברות התלמידים. אין בו הגשות אמיתיות, פרטי תלמידים או משוב אישי. החשבון והערוץ הפרטי לשיתוף נמסרים על ידי המנחה; יש לבדוק בפועל את פתיחת המחברת והקבצים דרך החשבון הזה.
+Source: https://github.com/yaminbens/alpha-mentorship
+
+Website: https://yaminbens.github.io/alpha-mentorship/
+
+The public repository includes mentor guidance and reference code. Reference code
+is not imported into student notebooks. No real submissions, student details or
+personal feedback belong here. The mentor supplies the sharing account and private
+channel; access to shared notebooks and files must be checked using that account.
