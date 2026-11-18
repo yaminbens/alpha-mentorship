@@ -9,13 +9,13 @@
   "github_backup": "source and Git history pushed to https://github.com/yaminbens/alpha-mentorship",
   "classroom_projector_rehearsal": "mentor check pending",
   "github_pages": "deployed successfully at https://yaminbens.github.io/alpha-mentorship/",
-  "live_pages_page_viewport_checks_passed": 16,
-  "live_notebook_downloads_match_source": 8,
+  "live_pages_page_viewport_checks_passed": 18,
+  "live_notebook_downloads_match_source": 10,
   "student_task_workflow": "step-by-step worksheets, averaging controls, missing-data behavior and file export passed",
   "hebrew_facilitator_guide_pages": 4,
   "hebrew_presentation_layout_checks_passed": 12,
   "completed_student_paths_passed": 3,
   "primary_language": "Hebrew",
   "student_workflow": "three coding experiments with integrated reading and open reflection; no grading",
-  "live_site_note": "Previous deployment checks; refresh after Hebrew-track publication."
+  "live_site_note": "Hebrew track deployment verified; see hebrew_track_live.json"
 }
